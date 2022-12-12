@@ -18,14 +18,15 @@
                   <input class="box1" type="password" name="password" id="passworddrop">
                   <input class="button" type="submit" value="OK" />
                   <br>
-                  <a class="links" href="">Cadastre-se!</a>
+                  <router-link to="/Cadastro">Cadastre-se!</router-link>
                   <a class="links" href="">Esqueceu sua senha?</a>
-                </form>
-              </div>
+                </form>               
+              </div>             
             </ul>
           </div>
         </div>
         <div id="inicio" class="navigation">
+          
           <div><router-link to="/">Home</router-link></div>
           <div><router-link to="/Acomodacoes">Acomodações</router-link></div>
           <div><router-link to="/Reservas">RESERVAS</router-link></div>
@@ -38,7 +39,7 @@
             <input class="box1 pswd" type="password" name="password" id="password">
             <input class="button btnLogin" type="button" value="OK" id="btnLogin" />
             <br>
-            <a class="links" href="">Cadastre-se!</a>
+            <router-link to="/Cadastro">Cadastre-se!</router-link>
             <a class="links" href="">Esqueceu sua senha?</a>
           </form>
         </div>
@@ -72,8 +73,8 @@
         <div class="menufooter">
             <h3>LINKS ÚTEIS</h3>
             <router-link class="links" to="/">Home</router-link>
-            <router-link to="/aula_vue_1/src/views/AcomodacoesView.vue" class="links">Acomodações</router-link>
-            <router-link class="links" to="./views/">Home</router-link>
+            <router-link to="/Acomodacoes" class="links">Acomodações</router-link>
+            <router-link class="links" to="/Reservas">Reservas</router-link>
         </div>
         <!--/RodapéFooter-->
     </footer>
@@ -268,4 +269,6 @@ footer .logodireitosreservados img {
   width: 100%; 
   object-position: center;
 }
+
+
 </style>

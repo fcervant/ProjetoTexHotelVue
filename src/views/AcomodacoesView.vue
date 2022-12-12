@@ -185,7 +185,7 @@
   <script>
   // @ is an alias to /src
     export default {
-      name: 'ReservasView',
+      name: 'AcomodacoesView',
       components: {
         
       }
