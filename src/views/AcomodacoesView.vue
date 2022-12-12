@@ -184,7 +184,12 @@
   
   <script>
   // @ is an alias to /src
-  
+    export default {
+      name: 'ReservasView',
+      components: {
+        
+      }
+    }
   
   </script>
   <style scoped>

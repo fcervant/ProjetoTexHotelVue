@@ -5,7 +5,11 @@
 </template>   
 
 <script>
-
+    export default {
+        name: 'ReservasView',
+        components: {
+        }
+    }
 </script>
 
 <style scoped>

@@ -27,8 +27,8 @@
         </div>
         <div id="inicio" class="navigation">
           <div><router-link to="/">Home</router-link></div>
-          <div><router-link to="/aula_vue_1/src/views/AcomodacoesView.vue">Acomodações</router-link></div>
-          <div><router-link to="/aula_vue_1/src/views/ReservasView.vue">RESERVAS</router-link></div>
+          <div><router-link to="/Acomodacoes">Acomodações</router-link></div>
+          <div><router-link to="/Reservas">RESERVAS</router-link></div>
         </div>
         <div class="campologin">
           <form action="campologin" method="post">
