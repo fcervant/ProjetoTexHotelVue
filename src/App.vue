@@ -59,9 +59,9 @@
                 <img src="./assets/github.png" alt="Logo do github"></a>
                 <a href="https://chat.whatsapp.com/KthRdCQBgphIxusvtrUFs7" target="_blank">
                     <img src="./assets/whatsapp.png" alt="Logo do whatsapp"></a>
-                    <a class="links" href="">
+                    <router-link to="/Contato" class="links">
                         <h3>Fale conosco</h3>
-                    </a>
+                    </router-link>
         </div>
         <div class="logodireitosreservados">
             <img src="./assets/logo_hotel.png" alt="Logo">

@@ -80,8 +80,7 @@ body {
   transition: all 0.3s ease;
 }
     
-.cadinput,
-.cadselect {
+.cadinput .cadselect {
   display: inline-block;
   width: 8.1vw;
   margin: 2px;
@@ -97,10 +96,6 @@ body {
   width: 17.3vw;
 }
 
-.cadcheck {
-  display: flex;
-  flex-direction: row;
-}
 
 .checkbox {
   width: 1vw;
@@ -146,7 +141,7 @@ body {
   background-color: #112434;
   color: #fff;
   padding: 10px;
-  font-size: 1.25rem;
+  font-size: 0.90rem;
 }
 
 .formularios li {
