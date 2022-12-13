@@ -3,7 +3,7 @@
             <section class="sec">
             <h2 class="efeito">BEM-VINDO</h2>
 
-            <a href=""><button class="botaoreserva"> Reserve já ! </button> </a>
+            <router-link to="/Reservas"><button class="botaoreserva"> Reserve já ! </button> </router-link>
             <h3 class="efeito">CONHEÇA O HOTEL . . .</h3>
 
             <p>No Hotel Casa de Praia, você desfruta de uma das mais belas praias do Litoral Norte de São Paulo,

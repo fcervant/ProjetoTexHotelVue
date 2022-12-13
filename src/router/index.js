@@ -1,25 +1,34 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import AcomodacoesView from '../views/AcomodacoesView.vue'
-import ReservasView from '@/views/ReservasView.vue'
+
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: "/",
+    name: "home",
+    component: HomeView,
   },
   {
-    path: '/aula_vue_1/src/views/AcomodacoesView.vue',
-    name: 'acomodacoes',
-    component: AcomodacoesView
+    path: "/Acomodacoes",
+    name: "acomodacoes",
+    component: () => import("../views/AcomodacoesView.vue"),
   },
   {
-    path: '/aula_vue_1/src/views/ReservasView.vue',
-    name: 'reservas',
-    component: ReservasView
-  }
-]
+    path: "/Reservas",
+    name: "reservas",
+    component: () => import("../views/ReservasView.vue"),
+  },
+  {
+    path: "/Cadastro",
+    name: "cadastro",
+    component: () => import("../views/CadastroView.vue"),
+  },
+  {
+    path: "/Contato",
+    name: "contato",
+    component: () => import("../views/ContatoView.vue"),
+  },
+];
 
 const router = createRouter({
   history: createWebHashHistory(),
