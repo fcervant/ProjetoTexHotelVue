@@ -37,7 +37,7 @@
             <div class="serviços">
                 <h3>Gazebos</h3>
 
-                <a href="/root/pages/formulario.html"><img src="/root/images/png/gazebo.jpg" alt="gazebos"></a>
+                <a href="/root/pages/formulario.html#/Reservas"><img src="../assets/png/gazebo.jpg" alt="gazebos"></a>
                 <p>Localizado á 50 mtrs da praia de Ubatuba, o CASA NA PRAIA possui serviços de gazebos a beira mar.
                     Além de pedidos que serão preparados direto pela cozinha do Hotel, mantendo a qualidade e
                     higiene
@@ -45,7 +45,7 @@
             </div>
             <div class="serviços">
                 <h3><b><u>Piscinas-Bar</u></b></h3>
-                <a href="/root/pages/formulario.html"><img src="/root/images/png/piscinas-bar.jpg"
+                <a href="/root/pages/formulario.html#/Reservas"><img src="../assets/png/piscinas-bar.jpg"
                         alt="piscinas-bar"></a>
                 <p>Anexo a piscina esta o Point bar do nosso hotel, um bar ao lado da piscina que atende aos
                     hospedes de
@@ -53,19 +53,19 @@
             </div>
             <div class="serviços">
                 <h3><b><u>Piscinas</u></b></h3>
-                <a href="/root/pages/formulario.html"><img src="/root/images/png/piscinas.jpg" alt="piscinas"></a>
+                <a href="/root/pages/formulario.html#/Reservas"><img src="../assets/png/piscinas.jpg" alt="piscinas"></a>
                 <P>Proporcionando lazer a toda familia nossa piscina é extensa é uma otima opção para quem quer
                     aproveitar as ferias dentro das dependencias do Hotel com tranqilidade.</P>
             </div>
             <div class="serviços">
                 <h3><b><u>Lazer</u></b></h3>
-                <a href="/root/pages/formulario.html"> <img src="/root/images/png/lazer.jpg" alt="lazer"></a>
+                <a href="/root/pages/formulario.html#/Reservas"> <img src="../assets/png/lazer.jpg" alt="lazer"></a>
                 <p>No Hotel Casa na Praia as crianças tambem tem vez. O hotel possui um playground totalmente
                     interativo, com monitores proporcionando brincadeiras e atividades para os pequenos.</p>
             </div>
             <div class="serviços">
                 <h3><b><u>Brinquedoteca</u></b></h3>
-                <a href="/root/pages/formulario.html"><img src="/root/images/png/brinquedoteca.jpg"
+                <a href="/root/pages/formulario.html#/Reservas"><img src="../assets/png/brinquedoteca.jpg"
                         alt="brinquedoteca"></a>
                 <P>Na brinquedoteca as crianças aprendem brincando durante as férias. O ambiente é voltado
                     totalmente
@@ -73,7 +73,7 @@
             </div>
             <div class="serviços">
                 <h3><b><u>Turismo</u></b></h3>
-                <a href="/root/pages/formulario.html"><img src="/root/images/png/cachoeiras.jpg" alt="cachoeiras"></a>
+                <a href="/root/pages/formulario.html#/Reservas"><img src="../assets/png/cachoeiras.jpg" alt="cachoeiras"></a>
                 <p>Para que nossos hospedes possam aproveitar ao maximo todas as atrações de Ubatuba, o Casa na
                     Praia
                     possui um programa de guia turistico proporcionando passeios únicos e inesquecíveis.</p>
@@ -92,7 +92,7 @@
 
                 <h3><b>Saboreie nossa Culinaria</b></h3>
                 <div class="gastronomia">
-                    <a href="/root/pages/formulario.html"><img src="/root/images/png/buffet.jpg" alt="Buffet"></a>
+                    <a href="/root/pages/formulario.html#/Reservas"><img src="../assets/png/buffet.jpg" alt="Buffet"></a>
                     <p>Um Buffet completo, entre massas, carnes, peixes e aves nossas refeições são balanceadas por
                         nutricionistas especializados, para proporcionar toda a satisfação para o hóspede.</p>
                 </div>
@@ -103,12 +103,12 @@
                         tipicas, e lanches artesanais feitos feitos na brasa, mantendo assim o sabor natural do
                         alimento
                         e acrescentando aquele abor inconfundivel de churrasco.</p>
-                    <a href="/root/pages/formulario.html"><img src="/root/images/png/lanches.jpg" alt="lanches"></a>
+                    <a href="/root/pages/formulario.html#/Reservas"><img src="../assets/png/lanches.jpg" alt="lanches"></a>
                 </div>
                 <br><br>
                 <h3><b>Drinks e Sucos</b></h3>
                 <div class="gastronomia">
-                    <a href="/root/pages/formulario.html"><img src="/root/images/png/drinks.jpg" alt="drinks"></a>
+                    <a href="/root/pages/formulario.html#/Reservas"><img src="../assets/png/drinks.jpg" alt="drinks"></a>
                     <p>Frutas selecionadas da mais alta qualidade diretamente do produtor, proporcionando alimentos
                         frescos e saudaveis possibilitando um melhor preparo de Drinks e Sucos.</p>
                 </div>
@@ -119,7 +119,7 @@
 
                     <h3><b>Quarto Premium Casal</b></h3>
 
-                    <a href="/root/pages/acomodacoes.html"><img src="/root/images/png/room3_basic.jpg"
+                    <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/png/room3_basic.jpg"
                             alt="Quarto03"></a>
                 </div>
 
@@ -127,14 +127,14 @@
                     <h3><b>Quarto Premium Solteiro</b></h3>
 
 
-                    <a href="/root/pages/acomodacoes.html"><img src="/root/images/png/room4_basic.jpg"
+                    <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/png/room4_basic.jpg"
                             alt="Quarto01"></a>
                 </div>
 
                 <div class="quartos">
                     <h3><b>Quarto Família</b></h3>
 
-                    <a href="/root/pages/acomodacoes.html"><img src="/root/images/png/room02_family.jpg"
+                    <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/png/room02_family.jpg"
                             alt="Quarto02"></a>
                 </div>
                 <br><br>
@@ -143,7 +143,7 @@
                 <div class="mural">
                     <h4>FÉRIAS EM FAMÍLIA</h4>
 
-                    <img src="/root/images/png/familia.jpg" alt="familia">
+                    <img src="../assets/png/familia.jpg" alt="familia">
                     <q> Foram as férias de nossas vidas, as crianças amaram, e o meu esposo e eu pudemos ter
                         momentos
                         relaxantes e ver nossos filhos se divertindo e interagindo com outras crianças, o serviço é
@@ -155,7 +155,7 @@
                 <div class="mural">
                     <h4>LUA DE MEL</h4>
 
-                    <img src="/root/images/png/noivos.jpg" alt="Quarto01">
+                    <img src="../assets/png/noivos.jpg" alt="noivos">
                     <q> Eu quis fazer uma surpresa para minha esposa, contratei o pacote Lua de Mel, para comemorar
                         nosso casamento, ja na chegada minha esposa recebeu um lindo buque de rosas, com certeza
                         voltaremos pra comemorar nossas bodas com vocês </q>
@@ -165,7 +165,7 @@
                 <div class="mural">
                     <h4>MELHOR IDADE</h4>
 
-                    <img src="/root/images/png/melhor_idade.jpg" alt="melhor_idade">
+                    <img src="../assets/png/melhor_idade.jpg" alt="melhor_idade">
                     <q> Minha filha disse mãe, vou marcar uma viajem pra senhora sair um pouco, e descobri um lugar
                         com
                         uma total extrutura para terceira idade, com aulas de hidroginastica, rampas de acesso e os
@@ -250,7 +250,7 @@ export default {
   top: 40%;
   font-weight: bold;
   font-size: 1em;
-  background-color: red;
+  background-color: rgb(89, 0, 255);
   color: rgb(240, 241, 245);
   border-radius: 5em;
   border: none;
@@ -264,5 +264,91 @@ export default {
   -moz-box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
   transition: all 0.3s ease-out;
+}
+.mural {
+  display: inline-block;
+  width: 410px;
+}
+
+.mural q {
+  display: inline-block;
+  width: 300px;
+}
+
+.mural h4 {
+  text-align: center;
+}
+
+.mural img {
+  border-radius: 15px;
+  width: 300px;
+  border: solid white 3px;
+}
+
+
+
+.quartos {
+  display: inline-block;
+  width: 410px;
+}
+
+.quartos h3 {
+  text-align: center;
+}
+
+.quartos img {
+  border-radius: 15px;
+  width: 400px;
+  border: solid white 3px;
+}
+
+
+._serviços {
+  display: flex;
+  align-items: center;
+}
+
+
+.serviços {
+  display: inline-block;
+  width: 410px;
+}
+
+.serviços p {
+  display: inline-block;
+  width: 400px;
+  text-align: left;
+}
+
+.serviços img {
+  border-radius: 15px;
+  width: 270px;
+  border: solid white 3px;
+}
+
+.gastronomia {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.gastronomia img {
+  border: solid white 3px;
+  border-radius: 15px;
+  width: 500px;
+}
+
+.gastronomia p {
+  padding: 0px 50px 0px 50px;
+  text-align: center;
+}
+
+.gastronomia_inc {
+  text-align: center;
+  width: 100%;
+}
+
+.efeito {
+  text-shadow: 4px 4px 4px;
 }
 </style>
