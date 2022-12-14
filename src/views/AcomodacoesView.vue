@@ -3,6 +3,7 @@
         <section class="sec">
             <div class="acomodacoes">
                 <h2 class="">ACOMODAÇÕES DO NOSSO HOTEL</h2>
+                <router-link to="/Reservas"><button class="botaoreserva"> Reserve já ! </button> </router-link>
                 <p>
                 Todas as nossas acomodações possuem serviços inclusos de wi-fi,
                 cofre, estacionamento e serviços de quarto. <br />
@@ -14,33 +15,31 @@
                     </tdRight>
                     <tdLeft>
                     <br />
-                    <h2>Premium Master Suite - "Ninho das Araras"</h2>
-                    <br />
+                    <h2>Premium Master Suite - "Ninho das Araras"</h2>                    
                     <div class="acomodacoes">
-                        <div id="acomodacoes_card_imgMaster1" class="acomodacoes_card card">
+                        <div id="acomodacoes_card_imgMaster1" class="acomodacoes_card , acomodacoes_card_imgMaster1">
                         <h2 class="card__titulo_"></h2>
-                        <a href="" id="card__btn"></a>
+                        <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Premium master" /></a>                        
                         </div>
-                        <div id="acomodacoes_card_imgMaster2" class="acomodacoes_card card">
+                        <div id="acomodacoes_card_imgMaster2" class="acomodacoes_card">
                         <h2 class="card__titulo_"></h2>
-                        <a href="" id="card__btn"></a>
+                        <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Premium master" /></a>                        
                         </div>
-
-                        <div id="acomodacoes_card_imgMaster3" class="acomodacoes_card card">
+                        <div id="acomodacoes_card_imgMaster3" class="acomodacoes_card">
                         <h2 class="card__titulo_"></h2>
-                        <a href="" id="card__btn"></a>
+                        <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Premium master" /></a>                        
                         </div>
-                        <div id="acomodacoes_card_imgMaster4" class="acomodacoes_card card">
-                        <h2 class="card__titulo_"></h2>
-                        <a href="" id="card__btn"></a>
+                        <div id="acomodacoes_card_imgMaster4" class="acomodacoes_card">
+                        <h2 class="card__titulo_"></h2>                        
+                        <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Premium master" /></a>                        
                         </div>
-                        <div id="acomodacoes_card_imgMaster5" class="acomodacoes_card card">
+                        <div id="acomodacoes_card_imgMaster5" class="acomodacoes_card">
                         <h2 class="card__titulo_"></h2>
-                        <a href="" id="card__btn"></a>
+                        <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Premium master" /></a>                        
                         </div>
-                        <div id="acomodacoes_card_imgMaster6" class="acomodacoes_card card">
+                        <div id="acomodacoes_card_imgMaster6" class="acomodacoes_card">
                         <h2 class="card__titulo_"></h2>
-                        <a href="" id="card__btn"></a>
+                        <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Premium master" /></a>
                         </div>
                     </div>
                     </tdLeft>
@@ -63,7 +62,7 @@
                     <br /><br />
                     <h4>R$ $$$$$</h4>
                     <br /><br />
-                    <input type="button" value="Reservas!" onclick="location.href='../pages/formulario.html';" />
+                    
                     <hr />
                     </tdRight>
                 </tr>
@@ -72,29 +71,29 @@
                     <h2>Família Suite - "Pousada dos Tucanos"</h2>
                     <br />
                     <div class="acomodacoes">
-                        <div id="acomodacoes_card_imgFamilia1" class="acomodacoes_card card">
+                        <div id="acomodacoes_card_imgFamilia1" class="acomodacoes_card">
                         <h2 class="card__titulo_"></h2>
-                        <a href="" id="card__btn"></a>
+                       <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Familia Suite" /></a>                        
                         </div>
                         <div id="acomodacoes_card_imgFamilia2" class="acomodacoes_card card">
                         <h2 class="card__titulo_"></h2>
-                        <a href="" id="card__btn"></a>
+                        <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Familia Suite" /></a>
                         </div>
                         <div id="acomodacoes_card_imgFamilia3" class="acomodacoes_card card">
                         <h2 class="card__titulo_"></h2>
-                        <a href="" id="card__btn"></a>
+                        <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Familia Suite" /></a>
                         </div>
                         <div id="acomodacoes_card_imgFamilia4" class="acomodacoes_card card">
                         <h2 class="card__titulo_"></h2>
-                        <a href="" id="card__btn"></a>
+                        <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Familia Suite" /></a>
                         </div>
                         <div id="acomodacoes_card_imgFamilia5" class="acomodacoes_card card">
                         <h2 class="card__titulo_"></h2>
-                        <a href="" id="card__btn"></a>
+                        <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Familia Suite" /></a>
                         </div>
                         <div id="acomodacoes_card_imgFamilia6" class="acomodacoes_card card">
                         <h2 class="card__titulo_"></h2>
-                        <a href="" id="card__btn"></a>
+                        <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Familia Suite" /></a>
                         </div>
                     </div>
                     <p></p>
@@ -113,11 +112,10 @@
                         mais uma pessoa. E você pode contar com um frigobar, uma
                         pequena pia e uma cafeteira.
                     </p1>
-                    <p></p>
+                    
                     <br />
                     <h4>R$ $$$</h4>
                     <br /><br />
-                    <input type="button" value="Reservas!" onclick="location.href='../pages/formulario.html';" />
                     <hr />
                     </tdRight>
                 </tr>
@@ -128,27 +126,27 @@
                     <div class="acomodacoes">
                         <div id="acomodacoes_card_imgSingle1" class="acomodacoes_card card">
                         <h2 class="card__titulo_"></h2>
-                        <a href="" id="card__btn"></a>
+                        <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Economic Single" /></a>
                         </div>
                         <div id="acomodacoes_card_imgSingle2" class="acomodacoes_card card">
                         <h2 class="card__titulo_"></h2>
-                        <a href="" id="card__btn"></a>
+                        <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Economic Single" /></a>
                         </div>
                         <div id="acomodacoes_card_imgSingle3" class="acomodacoes_card card">
                         <h2 class="card__titulo_"></h2>
-                        <a href="" id="card__btn"></a>
+                        <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Economic Single" /></a>
                         </div>
                         <div id="acomodacoes_card_imgSingle4" class="acomodacoes_card card">
                         <h2 class="card__titulo_"></h2>
-                        <a href="" id="card__btn"></a>
+                        <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Economic Single" /></a>
                         </div>
                         <div id="acomodacoes_card_imgSingle5" class="acomodacoes_card card">
                         <h2 class="card__titulo_"></h2>
-                        <a href="" id="card__btn"></a>
+                        <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Economic Single" /></a>
                         </div>
                         <div id="acomodacoes_card_imgSingle6" class="acomodacoes_card card">
                         <h2 class="card__titulo_"></h2>
-                        <a href="" id="card__btn"></a>
+                        <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Economic Single" /></a>
                         </div>
                     </div>
                     <p></p>
@@ -170,7 +168,7 @@
                     <br /><br />
                     <h4>R$ $$</h4>
                     <br /><br />
-                    <input class="" type="button" value="Reservas!" onclick="location.href='../pages/formulario.html';" />
+                    
                     <br />
                     <hr />
                     </tdRight>
@@ -197,6 +195,28 @@
     margin-top: -1%;
   }
 
+.botaoreserva {
+  position: fixed;
+  left: 93%;
+  top: 40%;
+  font-weight: bold;
+  font-size: 1em;
+  background-color: rgb(89, 0, 255);
+  color: rgb(240, 241, 245);
+  border-radius: 5em;
+  border: none;
+  padding: 1em 1em 1em 1em;
+  cursor: pointer;
+}
+
+.botaoreserva:hover {
+  transform: translate(0px, -2px);
+  -webkit-box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
+  transition: all 0.3s ease-out;
+}
+
   .acomodacoes {
   min-width: 1170px;
   margin: 0 auto;
@@ -209,13 +229,14 @@
   justify-content: space-around;
 }
 
-.acomodacoes_card {
-  width: 15%;
+.acomodacoes_card img{
+  width: 120%;
   height: 100px;
   margin-right: 0.6rem;
   margin-bottom: 1rem;
   /* box-shadow: 8px 8px 10px #999999; */
   border-radius: 8px;
+  border: solid white 3px;
   box-sizing: border-box;
 }
 
@@ -229,7 +250,7 @@
 
 /* CARDS de Acomodacoes...*/
 /* CARDS - MASTER */
-#acomodacoes_card_imgMaster1 {
+.acomodacoes_card_imgMaster1 {
   background-image: url();
   background-size: cover;
   /*& h2::before {
@@ -594,13 +615,16 @@
   margin-bottom: 1em;
 }
 
-.sec q {
-  color: #fff;
-}
-
 .sec p {
   font-size: 1em;
   color: #fff;
   font-weight: 300;
 }
+
+.sec p1 {
+  font-size: 1em;
+  color: #fff;
+  font-weight: 300;
+}
+
 </style>

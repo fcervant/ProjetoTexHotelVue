@@ -89,7 +89,7 @@
                     baixa
                     caloria.</p>
                 <br>
-                <div class="gastronomia">
+                <div class="gastronomia1">
                     <a href="/root/pages/formulario.html#/Reservas"><img src="../assets/pratos.webp" alt="Buffet"></a>
                     <p>Um Buffet completo, entre massas, carnes, peixes e aves nossas refeições são balanceadas por
                         nutricionistas especializados, para proporcionar toda a satisfação para o hóspede.</p>
@@ -334,6 +334,14 @@ export default {
 .gastronomia {
   display: flex;
   width: 100%;
+  align-items: center;
+}
+
+.gastronomia1 img {
+  border: solid white 3px;
+  border-radius: 15px;
+  width:100%;
+  height: 370px;
   align-items: center;
 }
 
