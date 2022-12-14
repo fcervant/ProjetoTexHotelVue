@@ -18,17 +18,18 @@
                   <input class="box1" type="password" name="password" id="passworddrop">
                   <input class="button" type="submit" value="OK" />
                   <br>
-                  <a class="links" href="">Cadastre-se!</a>
+                  <router-link to="/Cadastro">Cadastre-se!</router-link>
                   <a class="links" href="">Esqueceu sua senha?</a>
-                </form>
-              </div>
+                </form>               
+              </div>             
             </ul>
           </div>
         </div>
         <div id="inicio" class="navigation">
+          
           <div><router-link to="/">Home</router-link></div>
-          <div><router-link to="/aula_vue_1/src/views/AcomodacoesView.vue">Acomodações</router-link></div>
-          <div><router-link to="/aula_vue_1/src/views/ReservasView.vue">RESERVAS</router-link></div>
+          <div><router-link to="/Acomodacoes">Acomodações</router-link></div>
+          <div><router-link to="/Reservas">RESERVAS</router-link></div>
         </div>
         <div class="campologin">
           <form action="campologin" method="post">
@@ -38,7 +39,7 @@
             <input class="box1 pswd" type="password" name="password" id="password">
             <input class="button btnLogin" type="button" value="OK" id="btnLogin" />
             <br>
-            <a class="links" href="">Cadastre-se!</a>
+            <router-link to="/Cadastro">Cadastre-se!</router-link>
             <a class="links" href="">Esqueceu sua senha?</a>
           </form>
         </div>
@@ -58,9 +59,9 @@
                 <img src="./assets/github.png" alt="Logo do github"></a>
                 <a href="https://chat.whatsapp.com/KthRdCQBgphIxusvtrUFs7" target="_blank">
                     <img src="./assets/whatsapp.png" alt="Logo do whatsapp"></a>
-                    <a class="links" href="">
+                    <router-link to="/Contato" class="links">
                         <h3>Fale conosco</h3>
-                    </a>
+                    </router-link>
         </div>
         <div class="logodireitosreservados">
             <img src="./assets/logo_hotel.png" alt="Logo">
@@ -72,8 +73,8 @@
         <div class="menufooter">
             <h3>LINKS ÚTEIS</h3>
             <router-link class="links" to="/">Home</router-link>
-            <router-link to="/aula_vue_1/src/views/AcomodacoesView.vue" class="links">Acomodações</router-link>
-            <router-link class="links" to="./views/">Home</router-link>
+            <router-link to="/Acomodacoes" class="links">Acomodações</router-link>
+            <router-link class="links" to="/Reservas">Reservas</router-link>
         </div>
         <!--/RodapéFooter-->
     </footer>
@@ -268,4 +269,6 @@ footer .logodireitosreservados img {
   width: 100%; 
   object-position: center;
 }
+
+
 </style>

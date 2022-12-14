@@ -184,7 +184,12 @@
   
   <script>
   // @ is an alias to /src
-  
+    export default {
+      name: 'AcomodacoesView',
+      components: {
+        
+      }
+    }
   
   </script>
   <style scoped>
