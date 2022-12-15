@@ -21,7 +21,7 @@
       <input type="number" id="qtPessoas" name="qtPessoas" value="1" />
       <!-- manter botão aqui para agilizar os testes...-->
       <button type="button" class="btn" id="btnResumo">Fechar reserva!</button>
-      <button type="button" class="btn" id="btnConfirma">Modal Confirma</button>
+      <!-- <button type="button" class="btn" id="btnConfirma">Modal Confirma</button> -->
     </div>
   </div>
 </template>
@@ -61,27 +61,27 @@ export default {
     // jquery criado antes que identifica mudanças no form e atualiza localStorage e tela
     // deve ter um outro jeito em VUEX...
     window.$("#dtEntrada").change(function () {
-      console.log("mudou dt entrada");
+      //console.log("mudou dt entrada");
       atualizaLocalStorage();
     });
 
     window.$("#dtSaida").change(function () {
-      console.log("mudou dt saida");
+      //console.log("mudou dt saida");
       atualizaLocalStorage();
     });
 
     window.$("#qtPessoas").change(function () {
-      console.log("mudou qt pessoas");
+      //console.log("mudou qt pessoas");
       atualizaLocalStorage();
     });
 
     window.$("input[type=radio][name=tipoApto]").change(function () {
       if (this.value == "Master") {
-        console.log("Selecionou Master");
+        //console.log("Selecionou Master");
       } else if (this.value == "Family") {
-        console.log("Selecionou Family");
+        //console.log("Selecionou Family");
       } else {
-        console.log("Selecionou Comfort");
+        //console.log("Selecionou Comfort");
       }
       atualizaLocalStorage();
     });
@@ -93,7 +93,7 @@ export default {
         // executa function para checar dados da reserva...
         check = confirmaReserva();
         // check = msgAula();
-        console.log("btnResumo - Check ", check);
+        //console.log("btnResumo - Check ", check);
 
         if (check) {
           window.$("#modalResumo").modal("show");
@@ -132,6 +132,12 @@ export function atualizaLocalStorage() {
   // armazena a data atual como data do dia da reserva...
   dateReserva = formatDate(new Date());
 
+  // inicializa cupomDesconto para primeira utilização...checar depois para incluir a data tb.
+  if (localStorage.getItem("cupomDescontoValido") == null) {
+    console.log("Atualizei a primeira vez o cupomDescontoValido, para OK...");
+    localStorage.setItem("cupomDescontoValido", "OK");
+  }
+
   // limpa variavel de valor total com desconto...estava variavel só é gerada na confirmação
   localStorage.removeItem("vlrTotalDesconto");
 
@@ -143,7 +149,7 @@ export function atualizaLocalStorage() {
 
   // inicializa localStorage - datas
   dateStartAux = dtEntrada.split("-");
-  console.log("dataemtradaaux", dateStartAux);
+  //console.log("dataemtradaaux", dateStartAux);
   dateStart = new Date(dateStartAux[0], dateStartAux[1] - 1, dateStartAux[2]);
   localStorage.setItem("dtEntrada", formatDate(dateStart));
   dateEndAux = dtSaida.split("-");
@@ -201,17 +207,17 @@ export function atualizaLocalStorage() {
       qtPessoas.value
     }","difDates":"${difDates}","tipoApto":"${tipoApto}"}]`;
 
-  console.log("localstorage dtReserva", `Reserva_${formatDate(dateReserva)}`);
+  //console.log("localstorage dtReserva", `Reserva_${formatDate(dateReserva)}`);
   localStorage.setItem(`Reserva_${formatDate(dateReserva)}`, ReservaAux);
-  console.log(
-    "atualizaLocalStorage...",
-    dtEntrada,
-    dtSaida,
-    dateReserva,
-    qtPessoas,
-    tipoApto,
-    difDates
-  );
+  //console.log(
+  //   "atualizaLocalStorage...",
+  //   dtEntrada,
+  //   dtSaida,
+  //   dateReserva,
+  //   qtPessoas,
+  //   tipoApto,
+  //   difDates
+  // );
   return true;
 }
 
@@ -225,7 +231,7 @@ export function formatDate(inputDate) {
 
   date = date.toString().padStart(2, "0");
   month = month.toString().padStart(2, "0");
-  console.log(inputDate, `${date}/${month}/${year}`);
+  // console.log(inputDate, `${date}/${month}/${year}`);
   return `${date}/${month}/${year}`;
 }
 
@@ -260,14 +266,14 @@ export function checkInfo() {
     msgReturn = [false, "Tipo de apartamento não selecionado"];
   }
 
-  console.log("CheckInfo...", dtEntrada, dtSaida, qtPessoas, tipoApto);
-  console.log(
-    "Datas: ",
-    processDate(dtEntrada),
-    new Date(),
-    processDate(dtEntrada) < new Date()
-  );
-  console.log(checkData(dtEntrada), checkData(dtSaida));
+  // console.log("CheckInfo...", dtEntrada, dtSaida, qtPessoas, tipoApto);
+  // console.log(
+  //   "Datas: ",
+  //   processDate(dtEntrada),
+  //   new Date(),
+  //   processDate(dtEntrada) < new Date()
+  // );
+  // console.log(checkData(dtEntrada), checkData(dtSaida));
   return msgReturn;
 }
 
@@ -341,7 +347,7 @@ export function confirmaReserva() {
     linhaServico = `Servico: Café manhã quarto. Valor dia : R$ 100,00 Total Período : ${currencyFormat(
       vlrTotalServico
     )}|`;
-    console.log("Valor Serviço currency", currencyFormat(vlrTotalServico));
+    // console.log("Valor Serviço currency", currencyFormat(vlrTotalServico));
     servicosEscolhidos = servicosEscolhidos + linhaServico;
   }
   if (localStorage.getItem("servico2") == "true") {
@@ -377,11 +383,6 @@ export function confirmaReserva() {
     servicosEscolhidos = servicosEscolhidos + linhaServico;
   }
 
-  // console.log("servicosEscolhidos", servicosEscolhidos);
-  // servicosEscolhidos.forEach((element) => {
-  //   console.log(element);
-  // });
-
   localStorage.setItem("servicosEscolhidos", servicosEscolhidos);
   localStorage.setItem("valorTotalServicos", currencyFormat(vlrSomaServicos));
 
@@ -402,15 +403,14 @@ export function currencyFormat(strVlr) {
     maximumFractionDigits: 3,
   };
   const formatter = new Intl.NumberFormat("pt-BR", options);
-  console.log(formatter.format(2500)); /* $2,500.00 */
   return formatter.format(strVlr); /* $2,500.00 */
 }
 
 export function preencheModalResumo() {
   const divServicos = document.getElementById("servicos");
-  console.log("Entrei na preenche modal resumo.;;;", divServicos);
+  //console.log("Entrei na preenche modal resumo.;;;", divServicos);
   const divDiarias = document.getElementById("diarias");
-  console.log("Entrei na preenche modal resumo.;;;", divDiarias);
+  //console.log("Entrei na preenche modal resumo.;;;", divDiarias);
   const divTotal = document.getElementById("total");
 
   let servicosEscolhidos = "";
@@ -419,8 +419,6 @@ export function preencheModalResumo() {
         .getItem("servicosEscolhidos")
         .split("|"))
     : "";
-
-  // console.log("servicosEscolhidos", servicosEscolhidos);
 
   // limpa div para eliminar seleções anteriores...
   while (divServicos.hasChildNodes()) {
@@ -491,7 +489,7 @@ export function preencheModalResumo() {
     "Total geral: " + localStorage.getItem("valorTotalGeral") + "<br />";
   document.getElementById("total").appendChild(createPara(paraTexto));
 
-  console.log("preencheModal...");
+  console.log("Chamei a preencheModalResumo...");
 
   return true;
 }

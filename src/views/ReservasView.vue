@@ -3,20 +3,23 @@
 
 <template>
   <div class="reservas">
-    <h3>Teste - branch FCERVANT</h3>
+    <div class="">
+      <h3>Teste - branch FCERVANT</h3>
+      <div>
+        <FormReserva />
+      </div>
+      <hr />
+    </div>
+    <div id="painelEsquerdo" class="row justify-content-left">
+      <div class="col-7">
+        <PainelAcomodacoes />
+      </div>
+      <div class="col-3">
+        <PainelReserva />
+      </div>
+    </div>
+    <hr />
   </div>
-  <div>
-    <FormReserva />
-  </div>
-  <hr />
-  <div>
-    <PainelAcomodacoes />
-  </div>
-  <hr />
-  <div>
-    <PainelReserva />
-  </div>
-  <hr />
 </template>
 
 <script>
@@ -43,11 +46,20 @@ export default {
 </script>
 
 <style scoped>
+.reservas {
+  background-color: #112434;
+  color: white;
+}
 .reservas p {
-  color: red;
+  color: white;
 }
 .reservas h1 {
-  color: brown;
+  color: white;
   margin: 5px 5px 5px 5px;
+}
+
+#painelEsquerdo {
+  border: solid 2px;
+  margin: 1%;
 }
 </style>

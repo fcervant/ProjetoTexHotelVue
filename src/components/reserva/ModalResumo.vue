@@ -62,6 +62,17 @@
               <button id="btnCupom" type="button" class="btn btn-secondary">
                 Aplicar Cupom
               </button>
+
+              <button class="btn btn-secondary" @click="confirmaReserva">
+                Confirma Reserva
+              </button>
+              <!-- <button
+                id="btnConfReserva"
+                type="button"
+                class="btn btn-secondary"
+              >
+                Confirma Reserva
+              </button> -->
             </div>
             <hr />
             <p id="totalDesconto"></p>
@@ -74,9 +85,9 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Fechar
         </button>
-        <button type="button" id="btnConfirma" class="btn btn-secondary">
+        <!-- <button type="button" id="btnConfirma" class="btn btn-secondary">
           Confirma!
-        </button>
+        </button> -->
         <!-- <a data-dismiss="modal" data-toggle="modal" href="#modalConfirma"
           >Click</a
         > -->
@@ -85,13 +96,12 @@
     </div>
   </div>
 </template>
-
 <script>
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 const bootstrap = require("bootstrap");
 
-import { preencheModalResumo } from "./FormReserva.vue";
+//import { preencheModalResumo } from "./FormReserva.vue";
 import { cupomDesconto } from "./FormReserva.vue";
 
 // gera cupom de desconto caso não exista nenhum. Se já houver a mensagem é que não podem ser gerados dois cupons no mesmo dia...
@@ -127,13 +137,19 @@ export default {
       });
       return modal;
     },
+    confirmaReserva() {
+      localStorage.setItem("cupomDescontoValido", "NOK");
+      alert("Sua reserva foi confirmada - você irá receber um email com a confirmação! Obrigado!")
+      // gravaReserva();
+      window.$("#modalResumo").modal("hide")
+    }
   },
   computed: {
     //
   },
   mounted() {
     // atualiza dados da modalResumo
-    preencheModalResumo();
+    // preencheModalResumo();
   },
 };
 
@@ -155,8 +171,16 @@ export default {
 
 window.$().ready(function () {
   // confirmação da reserva...
-  window.$("#btnConfirma").click(function () {
+  window.$("#btnConfReserva").click(function () {
     console.log("Cliquei na confirmação...");
+    console.log("Teste...");
+    // verifica se desconto foi utilizado, para mudar flag de aplicar desconto...
+    if (
+      localStorage.getItem("vlrTotalGeral") !==
+      localStorage.getItem("vlrTotalDesconto")
+    ) {
+      localStorage.setItem("cupomDescontoValido", "NOK");
+    }
     // window.$("#modalResumo").modal("hide");
     // window.$("#modalConfirma").modal("show");
     // let element = window.$.document.getElementById("bodyConfirma");
@@ -171,13 +195,27 @@ window.$().ready(function () {
       .value.toLowerCase();
     let cupomStorage = localStorage.getItem("cupomDesconto");
     let vlrTotalGeral = localStorage.getItem("valorTotalGeral").split("$");
-    let desconto = parseFloat(vlrTotalGeral[1].replace(".", "")) * 0.9;
-    // ternario
-    cupomEntry == cupomStorage
-      ? localStorage.setItem("vlrTotalDesconto", `R$ ${desconto.toFixed(2)}`)
-      : alert("Cupom inválido");
-    let msg = `Total Geral com Desconto....: R$ ${desconto.toFixed(2)}`;
-    document.getElementById("totalDesconto").innerText = msg;
+    let percDesc = 1;
+    let msg = "Total Reserva....: R$ "; //${localStorage.getItem("valorTotalGeral")}`;
+
+    if (localStorage.getItem("cupomDescontoValido") == "OK") {
+      // tem direito a usar o cupom...
+      if (cupomEntry == cupomStorage) {
+        percDesc = 0.9;
+        msg = "Total Reserva com desconto....: R$ ";
+      } else {
+        alert("Cupom inválido");
+        document.getElementById("inputDesconto").value = "";
+      }
+    } else {
+      // não pode mais usar o cupom...
+      alert("Este cupom já foi utilizado ou não é mais válido...");
+    }
+
+    let desconto = parseFloat(vlrTotalGeral[1].replace(".", "")) * percDesc;
+    localStorage.setItem("vlrTotalDesconto", `R$ ${desconto.toFixed(2)}`);
+    let msg2 = `${msg} ${desconto.toFixed(2)}`;
+    document.getElementById("totalDesconto").innerText = msg2;
   });
 });
 </script>
