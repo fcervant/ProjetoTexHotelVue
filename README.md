@@ -64,13 +64,13 @@ npm install @vue/cli-service / npm install @vue/cli-service --save-dev
 ```
 
 - Customizar configuração do Vue
-
+~~~html
 See [Configuration Reference](https://cli.vuejs.org/config/).
-
+~~~
 - Documentação do Vue
-
+~~~html
 https://learnvue.co/tutorials/vuex-in-vue-3
-
+~~~
 ## Detalhes do projeto:
 
 - Todos os detalhes do projeto HOTEL CASA NA PRAIA se encontram neste: <a href="https://www.notion.so/gaaduartee/TEX-GRUPO-03-dc3226352a844eb195eca7ffba60bfac/" target="_blank"/>[LINK DO NOTION]</a> <br>
