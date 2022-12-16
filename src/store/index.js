@@ -48,6 +48,7 @@ export default createStore({
     // dados para acomodações
     acomodacoes: [
       {
+        ordem: 1,
         id: "master",
         nome: "Master",
         descricaoLonga: "Descrição longa - Master",
@@ -58,6 +59,7 @@ export default createStore({
         vlrDiaria: 600,
       },
       {
+        ordem: 2,
         id: "family",
         nome: "Family",
         descricaoLonga: "Descrição longa - Family",
@@ -68,6 +70,7 @@ export default createStore({
         vlrDiaria: 400,
       },
       {
+        ordem: 3,
         id: "comfort",
         nome: "Comfort",
         descricaoLonga: "Descrição longa - Comfort",
@@ -81,9 +84,11 @@ export default createStore({
   },
 
   getters: {
+    // https://serversideup.net/sorting-in-vuejs-components-and-vuex-state/
     acomodacoes: (state) => {
       let quartos_hotel = state.acomodacoes.map((item) => {
         return {
+          ordem: item.ordem,
           id: item.id,
           nome: item.nome,
           descricaoLonga: item.descricaoLonga,
@@ -108,8 +113,29 @@ export default createStore({
       return servicos_hotel;
     },
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    // methods - alteração dos dados - exemplo:
+    // aplicaDesconto: (state, tipo) => {
+    //   state.produtos[tipo].forEach((item) => {
+    //     item.preco = (item.preco * 0.9).toFixed(2);
+    //   });
+    // },
+    confirmaServicos: (state) => {
+      console.log("Teste",state);
+      // state.servicos.forEach((item) => {
+      //   console.log(item.label);
+      // });
+    },
+  },
+  actions: {
+    // yyy - confirmação das mutações - exemplo:
+    // aplicaDesconto: (context, tipo) => {
+    //   context.commit("aplicaDesconto", tipo);
+    // },
+    confirmaServicos: (context) => {
+      context.commit("confirmaServicos");
+    },
+  },
   modules: {},
 });
 

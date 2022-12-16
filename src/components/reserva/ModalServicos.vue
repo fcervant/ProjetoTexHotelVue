@@ -18,7 +18,11 @@
           <hr />
           <div class="painelServicos" v-for="item in servicos" :key="item">
             <input
-              type="checkbox" v-model="checked" :id="item.id" :name="item.name" :value="item.label"
+              type="checkbox"
+              v-model="checked"
+              :id="item.id"
+              :name="item.name"
+              :value="item.label"
             />
             <label>{{ item.descricao }} - R$ {{ item.vlrDiaria }} </label>
             <br />
@@ -29,7 +33,9 @@
             informações
           </p>
         </div>
-
+        <button class="btn btn-secondary" @click="aplicaDesconto">
+          Confirma Serviços
+        </button>
         <!-- FINAL DO CONTEÚDO -->
       </div>
       <div class="modal-footer">
@@ -71,6 +77,14 @@ export default {
         }
       );
       return modal;
+    },
+    alerta() {
+      //
+    },
+    confirmaServicos() {
+      console.log("Teste confirma servicos");
+
+      // this.$store.dispatch("confirmaServicos");
     },
   },
   computed: {
