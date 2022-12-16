@@ -65,7 +65,7 @@ npm install @vue/cli-service / npm install @vue/cli-service --save-dev
 
 - Customizar configuração do Vue
 ~~~html
-See [Configuration Reference](https://cli.vuejs.org/config/).
+https://cli.vuejs.org/config/
 ~~~
 - Documentação do Vue
 ~~~html
