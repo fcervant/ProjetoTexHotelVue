@@ -1,8 +1,7 @@
 <template>
   <div class="PainelReserva">
-    <h1>{{ msg }}</h1>
-    <h2>Componente PainelReserva.vue</h2>
-    <p>Teste PainelReserva</p>
+    <p>{{ msg }}</p>
+    <p>Componente PainelReserva.vue</p>
     <ModalServicos />
     <ModalResumo />
     <div class="resumo">
@@ -69,5 +68,18 @@ a {
 .btn:hover {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+#btnResumo {
+  background-color: white;
+  border: none;
+  color: blue;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 </style>

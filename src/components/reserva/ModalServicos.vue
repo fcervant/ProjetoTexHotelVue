@@ -33,7 +33,7 @@
             informações
           </p>
         </div>
-        <button class="btn btn-secondary" @click="aplicaDesconto">
+        <button class="btn btn-secondary" @click="confirmaServicos">
           Confirma Serviços
         </button>
         <!-- FINAL DO CONTEÚDO -->
@@ -82,9 +82,8 @@ export default {
       //
     },
     confirmaServicos() {
-      console.log("Teste confirma servicos");
-
-      // this.$store.dispatch("confirmaServicos");
+      alert("Serviços adicionais incluídos! Obrigado!");
+      window.$("#modalServicos").modal("hide");
     },
   },
   computed: {
@@ -96,6 +95,25 @@ export default {
     // this.abreModal().show();
 
     // deve ter outro jeito melhor de fazer isso...
+    // cria array para controle de servicos
+    // let arrayServicos = JSON.stringify(this.servicos);
+    console.log("Servicos da store...", this.servicos);
+    
+    // para entender melhor o comportamento de json - string - array...
+    // let arrayServicos = JSON.stringify(this.servicos);
+    // localStorage.setItem("testeServicos", JSON.stringify(this.servicos));
+    // console.log("arrayServico", arrayServicos);
+    // let objJson = JSON.parse(arrayServicos);
+    // console.log("objJson", objJson);
+    // console.log("objJson", objJson[0].id);
+    // for (let i = 0; i < this.servicos.length; i++) {
+    //   console.log(this.servicos[i].id);
+    //   let servico = `"${this.servicos[i].id}"`;
+    //   console.log(servico)
+    //   console.log(window.$(#servico).is(":checked"))
+      
+    // }
+
     window.$("#servico1").click(function () {
       if (window.$("#servico1").is(":checked")) {
         localStorage.setItem("servico1", true);
@@ -139,3 +157,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.modal-body {
+  color: black;
+}
+</style>

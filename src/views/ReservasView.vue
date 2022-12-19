@@ -4,7 +4,6 @@
 <template>
   <div class="reservas">
     <div class="">
-      <h3>Teste - branch FCERVANT</h3>
       <div>
         <FormReserva />
       </div>
