@@ -3,9 +3,6 @@
 
 <template>
   <div class="FormReserva">
-    <!--<h1>{{ msg }}</h1>
-    <h2>Componente FormReserva.vue</h2>
-    <p>Teste</p> -->
     <h1>Minha Reserva</h1>
     <br />
     <h3>Forneça a data de entrada, saída e quantidade de pessoas.</h3>
@@ -179,36 +176,42 @@ export function atualizaLocalStorage() {
     "tipoAcomodacao"
   ).innerHTML = `<b> ${localStorage.getItem("tipoApto")} </b>`;
 
-  // teste com localStorage...
-  let index = 1;
-  let a1 = "'dtEntrada':'01/12/2022'";
-  let a2 = "'qtPessoas':'5'";
-  let array01 = [];
-  let arrayStr = "";
-  array01 = "{[";
-  array01 = array01 + a1;
-  array01 = array01 + `,${a2}`;
-  array01 = array01 + "]}";
+  // // teste com localStorage...
+  // let index = 1;
+  // let a1 = "'dtEntrada':'01/12/2022'";
+  // let a2 = "'qtPessoas':'5'";
+  // let array01 = [];
+  // let arrayStr = "";
+  // array01 = "{[";
+  // array01 = array01 + a1;
+  // array01 = array01 + `,${a2}`;
+  // array01 = array01 + "]}";
 
-  //array01.push(a1);
-  //array01.push(a2);
-  index++;
-  localStorage.setItem(`testeArray${index}`, arrayStr);
+  // //array01.push(a1);
+  // //array01.push(a2);
+  // index++;
+  // localStorage.setItem(`testeArray${index}`, arrayStr);
 
-  arrayStr = array01.toString();
+  // arrayStr = array01.toString();
 
-  // cria dados na localStorage em uma unica variavel - "Reserva_dd/mm/aaaa"
-  let ReservaAux = "[{";
-  ReservaAux =
-    ReservaAux +
-    `"dtEntrada":"${formatDate(dateStart)}","dtSaida":"${formatDate(
-      dateEnd
-    )}","qtPessoas":"${
-      qtPessoas.value
-    }","difDates":"${difDates}","tipoApto":"${tipoApto}"}]`;
+  // // cria dados na localStorage em uma unica variavel - "Reserva_dd/mm/aaaa"
 
-  //console.log("localstorage dtReserva", `Reserva_${formatDate(dateReserva)}`);
-  localStorage.setItem(`Reserva_${formatDate(dateReserva)}`, ReservaAux);
+  // // var value = ["aa","bb","cc"]
+  // // localStorage.setItem("testKey", JSON.stringify(value));
+  // // var test = JSON.parse(localStorage.getItem("testKey"));
+  // // alert(test);
+
+  // let ReservaAux = "[{";
+  // ReservaAux =
+  //   ReservaAux +
+  //   `"dtEntrada":"${formatDate(dateStart)}","dtSaida":"${formatDate(
+  //     dateEnd
+  //   )}","qtPessoas":"${
+  //     qtPessoas.value
+  //   }","difDates":"${difDates}","tipoApto":"${tipoApto}"}]`;
+
+  // //console.log("localstorage dtReserva", `Reserva_${formatDate(dateReserva)}`);
+  // localStorage.setItem(`Reserva_${formatDate(dateReserva)}`, ReservaAux);
   //console.log(
   //   "atualizaLocalStorage...",
   //   dtEntrada,
@@ -344,7 +347,7 @@ export function confirmaReserva() {
   if (localStorage.getItem("servico1") == "true") {
     vlrTotalServico = 100 * qtdDiarias;
     vlrSomaServicos = vlrSomaServicos + vlrTotalServico;
-    linhaServico = `Servico: Café manhã quarto. Valor dia : R$ 100,00 Total Período : ${currencyFormat(
+    linhaServico = `Café manhã quarto. Valor dia : R$ 100,00 Total Período : ${currencyFormat(
       vlrTotalServico
     )}|`;
     // console.log("Valor Serviço currency", currencyFormat(vlrTotalServico));
@@ -353,7 +356,7 @@ export function confirmaReserva() {
   if (localStorage.getItem("servico2") == "true") {
     vlrTotalServico = 50 * qtdDiarias;
     vlrSomaServicos = vlrSomaServicos + vlrTotalServico;
-    linhaServico = `Servico: Internet 5G. Valor dia : R$ 50,00 Total Período : ${currencyFormat(
+    linhaServico = `Internet 5G. Valor dia : R$ 50,00 Total Período : ${currencyFormat(
       vlrTotalServico
     )}|`;
     servicosEscolhidos = servicosEscolhidos + linhaServico;
@@ -361,7 +364,7 @@ export function confirmaReserva() {
   if (localStorage.getItem("servico3") == "true") {
     vlrTotalServico = 150 * qtdDiarias;
     vlrSomaServicos = vlrSomaServicos + vlrTotalServico;
-    linhaServico = `Servico : Massagem terapéutica. Valor dia : R$ 150,00 Total Período : ${currencyFormat(
+    linhaServico = `Massagem terapéutica. Valor dia : R$ 150,00 Total Período : ${currencyFormat(
       vlrTotalServico
     )}|`;
     servicosEscolhidos = servicosEscolhidos + linhaServico;
@@ -369,7 +372,7 @@ export function confirmaReserva() {
   if (localStorage.getItem("servico4") == "true") {
     vlrTotalServico = 200 * qtdDiarias;
     vlrSomaServicos = vlrSomaServicos + vlrTotalServico;
-    linhaServico = `Servico : ChildrenCare. Valor dia : R$ 200,00 Total Período : ${currencyFormat(
+    linhaServico = `ChildrenCare. Valor dia : R$ 200,00 Total Período : ${currencyFormat(
       vlrTotalServico
     )}|`;
     servicosEscolhidos = servicosEscolhidos + linhaServico;
@@ -377,7 +380,7 @@ export function confirmaReserva() {
   if (localStorage.getItem("servico5") == "true") {
     vlrTotalServico = 100 * qtdDiarias;
     vlrSomaServicos = vlrSomaServicos + vlrTotalServico;
-    linhaServico = `Servico : PetCare. Valor dia : R$ 100,00 Total Período : ${currencyFormat(
+    linhaServico = `PetCare. Valor dia : R$ 100,00 Total Período : ${currencyFormat(
       vlrTotalServico
     )}|`;
     servicosEscolhidos = servicosEscolhidos + linhaServico;
@@ -394,6 +397,66 @@ export function confirmaReserva() {
   return true;
 }
 
+export function gravaReserva() {
+  let dateStart = localStorage.getItem("dtEntrada");
+  let dateEnd = localStorage.getItem("dtSaida");
+  let qtPessoas = localStorage.getItem("qtPessoas");
+  let difDates = localStorage.getItem("difDates");
+  let tipoApto = localStorage.getItem("tipoApto");
+  let dtReserva = localStorage.getItem("dtReserva");
+  let vlrTotal = localStorage.getItem("valorTotalGeral");
+  let vlrTotalcomDesconto = localStorage.getItem("vlrTotalDesconto");
+  let cupom = localStorage.getItem("cupomDesconto");
+
+  // cria json com todos os dados...
+  // let ReservaAux = "[{";
+  // falta tratar servicos e incluir mais alguns campos...
+  let ReservaAux = `"[{"dtReserva": "${dtReserva}",
+	"codCliente": "cod Cliente",
+	"dtEntrada": "${dateStart}",
+	"dtSaida": "${dateEnd}",
+	"qtPessoas":"${qtPessoas}",
+	"tipoApto":"${tipoApto}",
+	"diarias":"${difDates}",
+	"vlrTotal":"${vlrTotal}",
+	"vlrTotalcomDesconto":"${vlrTotalcomDesconto}",
+	"cupom":"${cupom}",
+	"servicos": [
+				{ "id": "1001", "servico": "Regular", "vlrServico":"Valor Servico" },
+				{ "id": "1002", "servico": "Regular", "vlrServico":"Valor Servico" },
+				{ "id": "1003", "servico": "Regular", "vlrServico":"Valor Servico" },
+				{ "id": "1004", "servico": "Regular", "vlrServico":"Valor Servico" },
+				{ "id": "1005", "servico": "Regular", "vlrServico":"Valor Servico" }
+	]
+}]"`;
+
+  console.log("localstorage dtReserva", `Reserva_${dtReserva}`);
+  console.log(ReservaAux);
+  localStorage.setItem(`Reserva_${dtReserva}`, ReservaAux);
+
+  limpaLocalStorage();
+  return true;
+
+  // exemplo
+  // var value = ["aa","bb","cc"]
+  // localStorage.setItem("testKey", JSON.stringify(value));
+  // var test = JSON.parse(localStorage.getItem("testKey"));
+  // alert(test);
+}
+
+export function limpaLocalStorage() {
+  // zera servicos...
+  localStorage.setItem("dtEntrada","");
+  localStorage.setItem("dtSaida","");
+  localStorage.setItem("qtPessoas","");
+  localStorage.setItem("difDates","");
+  localStorage.setItem("tipoApto","");
+  localStorage.setItem("dtReserva","");
+  localStorage.setItem("valorTotalGeral","");
+  localStorage.setItem("vlrTotalDesconto","");
+  localStorage.setItem("cupomDesconto","");
+
+}
 export function currencyFormat(strVlr) {
   // Intl.NumberFormat JavaScript has a number formatter (part of the Internationalization API).
   const options = {
@@ -439,16 +502,13 @@ export function preencheModalResumo() {
   // cria elemento P
   let paraTexto = "";
   // atualiza div Diarias - apto selecionado, quantidade diarias, valor das diarias, nr de pessoas, valor total
-  paraTexto =
-    "Apto selecionado: " + localStorage.getItem("tipoApto") + "<br />";
+  paraTexto = "Apto selecionado: " + localStorage.getItem("tipoApto");
   document.getElementById("diarias").appendChild(createPara(paraTexto));
 
-  paraTexto =
-    "Quantidade hospedes: " + localStorage.getItem("qtPessoas") + "<br />";
+  paraTexto = "Quantidade hospedes: " + localStorage.getItem("qtPessoas");
   document.getElementById("diarias").appendChild(createPara(paraTexto));
 
-  paraTexto =
-    "Quantidade diarias: " + localStorage.getItem("difDates") + "<br />";
+  paraTexto = "Quantidade diarias: " + localStorage.getItem("difDates");
   document.getElementById("diarias").appendChild(createPara(paraTexto));
 
   paraTexto =
@@ -496,10 +556,16 @@ export function preencheModalResumo() {
 
 export function createPara(conteudo) {
   var para = document.createElement("p");
+  // exemplo aplicado
+  // para.style.cssText = "background-color:pink;font-size:55px;border:2px dashed green;color:black;"
+  para.style.cssText =
+    "font-size:15px; color:black, line-height: 10px; margin-bottom: 10px;";
   para.innerHTML = conteudo;
   return para;
 }
 
+// line-height: 10px;   /* within paragraph */
+// margin-bottom: 5px; /* between paragraphs */
 export function cupomDesconto() {
   let cupom = Math.random().toString(36).substring(2, 9);
   return cupom;
@@ -508,19 +574,6 @@ export function cupomDesconto() {
 export function aplicaDesconto() {
   //
 }
-
-// document.querySelector("#cupom p").innerText = cupomDesconto();
-// document.querySelector("#btnCupom").addEventListener("click", () => {
-//   let desconto = resultado * 0.9;
-
-//   // ternario
-//   document.querySelector("#inputDesconto").value.toLowerCase() ==
-//   document.querySelector("#cupom p").innerText
-//     ? (document.querySelector(
-//         "#totalCarrinho"
-//       ).innerText = `R$ ${desconto.toFixed(2)}`)
-//     : alert("Cupom inválido");
-// });
 </script>
 
 <style scoped>
@@ -550,6 +603,24 @@ a {
 
 #msgAlerta {
   color: red;
+}
+
+#btnResumo {
+  background-color: white;
+  border: none;
+  color: blue;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#btnResumo:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 </style>
 

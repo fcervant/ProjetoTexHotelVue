@@ -1,9 +1,7 @@
 <template>
   <div class="PainelAcomodacoes">
-    <h1>{{ msg }}</h1>
-    <h2>Componente PainelAcomodacoes.vue</h2>
-    <p>Teste PainelAcomodacoes</p>
-
+    <p>{{ msg }}</p>
+    <p>Componente PainelAcomodacoes.vue</p>
     <h4>Escolha o quarto e demais opções.</h4>
 
     <!-- mostra painel a partir da store...-->
@@ -62,7 +60,7 @@ export default {
   grid-gap: 20px;
 }
 .acomodacaoReserva p {
-  color: blue;
+  color: white;
 }
 
 .acomodacaoReserva img {

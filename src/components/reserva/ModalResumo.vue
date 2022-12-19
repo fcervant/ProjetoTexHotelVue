@@ -26,24 +26,15 @@
             <h3>Veja o resumo de sua solicitação!</h3>
             <hr />
             <h2>Diárias</h2>
-            <br />
             <div id="diarias">
-              <p>...</p>
-              <p></p>
             </div>
             <hr />
             <h2>Servicos Adicionais</h2>
-            <br />
-            <p></p>
             <div id="servicos">
-              <p>...</p>
-              <p></p>
             </div>
             <hr />
-            <p>Total</p>
+            <h2>Total</h2>
             <div id="total">
-              <p>...</p>
-              <p></p>
             </div>
             <hr />
           </div>
@@ -103,6 +94,7 @@ const bootstrap = require("bootstrap");
 
 //import { preencheModalResumo } from "./FormReserva.vue";
 import { cupomDesconto } from "./FormReserva.vue";
+import { gravaReserva } from "./FormReserva.vue";
 
 // gera cupom de desconto caso não exista nenhum. Se já houver a mensagem é que não podem ser gerados dois cupons no mesmo dia...
 let msgCupomDesconto = "Lamento, um cupom de desconto já foi utilizado hoje...";
@@ -139,10 +131,12 @@ export default {
     },
     confirmaReserva() {
       localStorage.setItem("cupomDescontoValido", "NOK");
-      alert("Sua reserva foi confirmada - você irá receber um email com a confirmação! Obrigado!")
-      // gravaReserva();
-      window.$("#modalResumo").modal("hide")
-    }
+      alert(
+        "Sua reserva foi confirmada - você irá receber um email com a confirmação! Obrigado!"
+      );
+      gravaReserva();
+      window.$("#modalResumo").modal("hide");
+    },
   },
   computed: {
     //
@@ -152,22 +146,6 @@ export default {
     // preencheModalResumo();
   },
 };
-
-// // aplica cupom...
-// window.$().ready(function () {
-//   window.$("#btnCupom").click(function () {
-//     let cupomEntry = window.$.document
-//       .querySelector("#inputDesconto")
-//       .value.toLowerCase();
-//     let cupomStorage = localStorage.getItem("cupomDesconto");
-//     let desconto = localStorage.getItem("valorTotalGeral") * 0.9;
-
-//     // ternario
-//     cupomEntry == cupomStorage
-//       ? localStorage.setItem("vlrTotalDesconto", `R$ ${desconto.toFixed(2)}`)
-//       : alert("Cupom inválido");
-//   });
-// });
 
 window.$().ready(function () {
   // confirmação da reserva...
@@ -221,6 +199,11 @@ window.$().ready(function () {
 </script>
 
 <style scoped>
+
+* {
+  color: black;
+}
+
 h3 {
   font-size: 20px;
   margin: 20px 0 0;
@@ -230,8 +213,8 @@ h3 {
 h2 {
   font-size: 15px;
   margin: 20px 0 0;
-  color: black;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -240,8 +223,16 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-p,
+
 a {
   color: #2304ed;
 }
+
+p {
+  color: brown;
+  line-height: 10px;   /* within paragraph */
+  margin-bottom: 10px; /* between paragraphs */
+  font-size:15px;
+}
+
 </style>
