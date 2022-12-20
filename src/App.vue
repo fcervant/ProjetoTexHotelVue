@@ -9,42 +9,19 @@
       <img alt="" src="./assets/BANNER-CASANAPRAIA.png">
     </div>
     <router-view />
-    <footer class="footer">
-      <div class="redessociaisfooter">
-        <a href="https://github.com/AlmirRLima/grupo03" target="_blank">
-          <img src="./assets/github.png" alt="Logo do github"></a>
-        <a href="https://chat.whatsapp.com/KthRdCQBgphIxusvtrUFs7" target="_blank">
-          <img src="./assets/whatsapp.png" alt="Logo do whatsapp"></a>
-        <router-link to="/Contato" class="links">
-          <h3>Fale conosco</h3>
-        </router-link>
-      </div>
-      <div class="logodireitosreservados">
-        <img src="./assets/logo_hotel.png" alt="Logo">
-        <p>
-          Todos os direitos reservados: HOTEL CASA NA PRAIA
-        </p>
-        <a class="links" href="#inicio">Voltar ao topo</a>
-      </div>
-      <div class="menufooter">
-        <h3>LINKS ÚTEIS</h3>
-        <router-link class="links" to="/">Home</router-link>
-        <router-link to="/Acomodacoes" class="links">Acomodações</router-link>
-        <router-link class="links" to="/Reservas">Reservas</router-link>
-      </div>
-
-    </footer>
+    <FooterComponent/>
   </div>
 </template>
 
 <script>
 // import BannerComponent from './components/banner/BannerComponent.vue';
 import HeaderComponent from "./components/header/HeaderComponent.vue";
+import FooterComponent from "./components/footer/FooterComponent.vue";
 
 export default {
   name: 'AppVue',
   components: {
-    HeaderComponent,
+    HeaderComponent,FooterComponent,
     // BannerComponent
   }
 }
@@ -79,57 +56,7 @@ body {
   display: none;
 }
 
-.footer {
-  padding: 2vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-footer .redessociaisfooter img {
-  width: 3em;
-  height: 3em;
-}
-
-footer .logodireitosreservados img {
-  width: 7em;
-  height: 7em;
-}
-
-.redessociaisfooter {
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-}
-
-.menufooter {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
-  padding: 10px;
-}
-
-.logodireitosreservados {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-}
-
-.direitosreservadosfooter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-}
-
-.links {
-  text-decoration: none;
-  color: black;
-  padding: 0.4em;
-}
 
 .banner {
   width: 100%;

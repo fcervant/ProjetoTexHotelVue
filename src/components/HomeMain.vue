@@ -105,7 +105,7 @@
           <p>Uma vasta variedade de Lanches e Porções feitos com produtos de excelente qualidade, porções
             tipicas, e lanches artesanais feitos feitos na brasa, mantendo assim o sabor natural do
             alimento
-            e acrescentando aquele abor inconfundivel de churrasco.</p>
+            e acrescentando aquele sabor inconfundivel de churrasco.</p>
           <a href="/root/pages/formulario.html#/Reservas"><img src="../assets/lanches.jpg" alt="lanches"></a>
         </div>
         <br><br>
