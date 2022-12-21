@@ -65,7 +65,7 @@ export default createStore({
         descricaoLonga: "Descrição longa - Family",
         descricaoBreve:
           "Quarto amplo com duas camas tamanho king-size, para até 4 pessoas. Sala conjugada com TV de 50'' e programação livre (NetFlix, Prime e canais abertos). Sofá cama , frigobar, pia e cafeteira.",
-        imgURL: require("/src/assets/images/reservas/room01_master.jpg"),
+        imgURL: require("/src/assets/images/reservas/room02_family2.jpg"),
         qtPessoas: 6,
         vlrDiaria: 400,
       },
@@ -76,7 +76,7 @@ export default createStore({
         descricaoLonga: "Descrição longa - Comfort",
         descricaoBreve:
           "Cama confortável, TV a cabo e frigobar. Mesa de trabalho, internet e serviços adicionais sob consulta.",
-        imgURL: require("/src/assets/images/reservas/room01_master.jpg"),
+        imgURL: require("/src/assets/images/reservas/room03_comfort2.jpg"),
         qtPessoas: 2,
         vlrDiaria: 200,
       },
@@ -85,10 +85,15 @@ export default createStore({
 
   getters: {
     // https://serversideup.net/sorting-in-vuejs-components-and-vuex-state/
+    // https://www.youtube.com/watch?v=OtLRQdjmFvs
+    // https://www.youtube.com/watch?v=OjS6SWS6G5c
     acomodacoes: (state) => {
+      //let aptoSelected = localStorage.getItem("tipoApto");
+      let aptoSelected = "comfort";
       let quartos_hotel = state.acomodacoes.map((item) => {
         return {
-          ordem: item.ordem,
+          // define ordem para
+          ordem: item.id == aptoSelected ? 0 : item.ordem,
           id: item.id,
           nome: item.nome,
           descricaoLonga: item.descricaoLonga,
@@ -98,8 +103,53 @@ export default createStore({
           vlrDiaria: item.vlrDiaria.toFixed(2),
         };
       });
-      return quartos_hotel;
+
+      let objStr = JSON.stringify(quartos_hotel);
+      console.log("getters =>", quartos_hotel.length);
+      for (let i = 0; i < quartos_hotel.length; i++) {
+        console.log("getters 2", quartos_hotel[i].id);
+        if (quartos_hotel[i].id == "family") {
+          console.log("mudar valor da ordem");
+        } else {
+          console.log("manter valor da ordem");
+        }
+      }
+
+      // for (var i=0;i < quartos_hotel.length; i++) {
+      //   // console.log("getters =>",Object.entries(quartos_hotel))
+      //   console.log("getters =>", JSON.stringify(quartos_hotel));
+      // }
+      // teste com ordenação...
+      //let roomSelected = "family"
+
+      // replace não funcionou pois só atua no campo que está sendo analisado...
+      // let objStr = JSON.stringify(quartos_hotel, function replacer(key, value) {
+      //   if (key == "id" && value == "family") {
+      //     return "TESTE"; // define nr de ordem para 0
+      //   }
+      //   return value;
+      // });
+
+      console.log("getters =>", objStr);
+      let objJson = JSON.parse(objStr);
+
+      return objJson;
+      // return quartos_hotel;
+
+      // }
+      // var user = {
+      //   name: "John Doe",
+      //   occupation: "gardener",
+      //   age: 34,
+      //   dob: new Date("1992-12-31"),
+      // };
+      // console.dir(JSON.stringify(user, replacer));
     },
+
+    // acomodacoes_sort(state) {
+    //   let allAcomodacoes = state.allAcomodacoes;
+    // },
+
     servicos: (state) => {
       let servicos_hotel = state.servicos.map((item) => {
         return {
@@ -121,7 +171,7 @@ export default createStore({
     //   });
     // },
     confirmaServicos: (state) => {
-      console.log("Teste",state);
+      console.log("Teste", state);
       // state.servicos.forEach((item) => {
       //   console.log(item.label);
       // });
@@ -139,33 +189,39 @@ export default createStore({
   modules: {},
 });
 
-    //   // dados exemplo...
-    //   produtos: {
-    //     pratosQuentes: [
-    //       { nome: "Lasanha", preco: 80 },
-    //       { nome: "Feijoada", preco: 100 },
-    //       { nome: "Salmão grelhado", preco: 140 },
-    //       { nome: "File a Parmeggiana", preco: 240 },
-    //     ],
-    //     sobremesas: [
-    //       { nome: "Quindim", preco: 20 },
-    //       { nome: "Pudim", preco: 10 },
-    //       { nome: "Sorvete", preco: 14 },
-    //       { nome: "Bomba de Chocolate", preco: 16 },
-    //     ],
-    //   },
-    // },
+//     function replaceOrder(key, value) {
+//   if (typeof value === "string") {
+//     return value.toUpperCase();
+//   }
+//   return value;
+// }
+//   // dados exemplo...
+//   produtos: {
+//     pratosQuentes: [
+//       { nome: "Lasanha", preco: 80 },
+//       { nome: "Feijoada", preco: 100 },
+//       { nome: "Salmão grelhado", preco: 140 },
+//       { nome: "File a Parmeggiana", preco: 240 },
+//     ],
+//     sobremesas: [
+//       { nome: "Quindim", preco: 20 },
+//       { nome: "Pudim", preco: 10 },
+//       { nome: "Sorvete", preco: 14 },
+//       { nome: "Bomba de Chocolate", preco: 16 },
+//     ],
+//   },
+// },
 
-    // getter exemplo...
+// getter exemplo...
 
-    //   getters: {
-    //     loja: (state) => (tipo) => {
-    //       let produtos_loja = state.produtos[tipo].map((item) => {
-    //         return {
-    //           nome: item.nome,
-    //           preco: item.preco,
-    //         };
-    //       });
-    //       return produtos_loja;
-    //     },
-    //   },
+//   getters: {
+//     loja: (state) => (tipo) => {
+//       let produtos_loja = state.produtos[tipo].map((item) => {
+//         return {
+//           nome: item.nome,
+//           preco: item.preco,
+//         };
+//       });
+//       return produtos_loja;
+//     },
+//   },
