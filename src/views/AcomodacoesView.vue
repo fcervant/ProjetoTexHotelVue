@@ -17,7 +17,7 @@
                     <br />
                     <h2>Premium Master Suite - "Ninho das Araras"</h2>                    
                     <div class="acomodacoes">
-                        <div id="acomodacoes_card_imgMaster1" class="acomodacoes_card , acomodacoes_card_imgMaster1">
+                        <div id="acomodacoes_card_imgMaster1" class="acomodacoes_card">
                         <h2 class="card__titulo_"></h2>
                         <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Premium master" /></a>                        
                         </div>
@@ -75,23 +75,23 @@
                         <h2 class="card__titulo_"></h2>
                        <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Familia Suite" /></a>                        
                         </div>
-                        <div id="acomodacoes_card_imgFamilia2" class="acomodacoes_card card">
+                        <div id="acomodacoes_card_imgFamilia2" class="acomodacoes_card">
                         <h2 class="card__titulo_"></h2>
                         <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Familia Suite" /></a>
                         </div>
-                        <div id="acomodacoes_card_imgFamilia3" class="acomodacoes_card card">
+                        <div id="acomodacoes_card_imgFamilia3" class="acomodacoes_card">
                         <h2 class="card__titulo_"></h2>
                         <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Familia Suite" /></a>
                         </div>
-                        <div id="acomodacoes_card_imgFamilia4" class="acomodacoes_card card">
+                        <div id="acomodacoes_card_imgFamilia4" class="acomodacoes_card">
                         <h2 class="card__titulo_"></h2>
                         <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Familia Suite" /></a>
                         </div>
-                        <div id="acomodacoes_card_imgFamilia5" class="acomodacoes_card card">
+                        <div id="acomodacoes_card_imgFamilia5" class="acomodacoes_card">
                         <h2 class="card__titulo_"></h2>
                         <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Familia Suite" /></a>
                         </div>
-                        <div id="acomodacoes_card_imgFamilia6" class="acomodacoes_card card">
+                        <div id="acomodacoes_card_imgFamilia6" class="acomodacoes_card">
                         <h2 class="card__titulo_"></h2>
                         <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Familia Suite" /></a>
                         </div>
@@ -124,27 +124,27 @@
                     <h2>Economic Single - "Recanto da Águia"</h2>
                     <br />
                     <div class="acomodacoes">
-                        <div id="acomodacoes_card_imgSingle1" class="acomodacoes_card card">
+                        <div id="acomodacoes_card_imgSingle1" class="acomodacoes_card">
                         <h2 class="card__titulo_"></h2>
                         <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Economic Single" /></a>
                         </div>
-                        <div id="acomodacoes_card_imgSingle2" class="acomodacoes_card card">
+                        <div id="acomodacoes_card_imgSingle2" class="acomodacoes_card">
                         <h2 class="card__titulo_"></h2>
                         <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Economic Single" /></a>
                         </div>
-                        <div id="acomodacoes_card_imgSingle3" class="acomodacoes_card card">
+                        <div id="acomodacoes_card_imgSingle3" class="acomodacoes_card">
                         <h2 class="card__titulo_"></h2>
                         <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Economic Single" /></a>
                         </div>
-                        <div id="acomodacoes_card_imgSingle4" class="acomodacoes_card card">
+                        <div id="acomodacoes_card_imgSingle4" class="acomodacoes_card">
                         <h2 class="card__titulo_"></h2>
                         <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Economic Single" /></a>
                         </div>
-                        <div id="acomodacoes_card_imgSingle5" class="acomodacoes_card card">
+                        <div id="acomodacoes_card_imgSingle5" class="acomodacoes_card">
                         <h2 class="card__titulo_"></h2>
                         <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Economic Single" /></a>
                         </div>
-                        <div id="acomodacoes_card_imgSingle6" class="acomodacoes_card card">
+                        <div id="acomodacoes_card_imgSingle6" class="acomodacoes_card">
                         <h2 class="card__titulo_"></h2>
                         <a href="/root/pages/acomodacoes.html#/Reservas"><img src="../assets/room01_master.jpg" alt="Economic Single" /></a>
                         </div>

@@ -7,7 +7,6 @@
       <div>
         <FormReserva />
       </div>
-      <hr />
     </div>
     <div id="painelEsquerdo" class="row justify-content-left">
       <div class="col-7">
@@ -17,7 +16,6 @@
         <PainelReserva />
       </div>
     </div>
-    <hr />
   </div>
 </template>
 
@@ -45,20 +43,25 @@ export default {
 </script>
 
 <style scoped>
-.reservas {
-  background-color: #112434;
-  color: white;
+
+#text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 4em;
+  color:black;
 }
-.reservas p {
-  color: white;
+.reservas {
+  background-color: #f3ede3;
+  padding: 2vw;
 }
 .reservas h1 {
-  color: white;
+  
   margin: 5px 5px 5px 5px;
 }
 
 #painelEsquerdo {
-  border: solid 2px;
+ 
   margin: 1%;
 }
 </style>

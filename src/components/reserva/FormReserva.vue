@@ -17,7 +17,7 @@
       <label for="qtPessoas">Quantidade Pessoas</label>
       <input type="number" id="qtPessoas" name="qtPessoas" value="1" />
       <!-- manter botão aqui para agilizar os testes...-->
-      <button type="button" class="btn" id="btnResumo">Fechar reserva!</button>
+      <button type="button" class="button" id="btnResumo">Fechar reserva!</button>
       <!-- <button type="button" class="btn" id="btnConfirma">Modal Confirma</button> -->
     </div>
   </div>
@@ -592,6 +592,23 @@ a {
   color: #42b983;
 }
 
+.button {
+    background: transparent;
+    color: black;
+    padding: 0.4em;
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    font-size: 1.5em;
+}
+
+.button:hover {
+    background: #112434;
+    color: #fff;
+    border-radius: 50px;
+    padding: 0.4em;
+}
+
 .btn {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -605,7 +622,7 @@ a {
   color: red;
 }
 
-#btnResumo {
+btnResumo {
   background-color: white;
   border: none;
   color: blue;

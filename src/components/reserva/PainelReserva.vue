@@ -24,7 +24,7 @@
           <span id="btnServicos">Adicionar mais serviços</span>
           <br />
           <br />
-          <button type="button" class="btn" id="btnResumo">Confirmar</button>
+          <button type="button" class="button" id="btnResumo">Confirmar</button>
         </form>
       </div>
     </div>
@@ -61,6 +61,23 @@ a {
   color: #79382a;
 }
 
+.button {
+    background: transparent;
+    color: black;
+    padding: 0.4em;
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    font-size: 1.5em;
+}
+
+.button:hover {
+    background: #112434;
+    color: #fff;
+    border-radius: 50px;
+    padding: 0.4em;
+}
+
 .btn {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -70,7 +87,7 @@ a {
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-#btnResumo {
+btnResumo {
   background-color: white;
   border: none;
   color: blue;

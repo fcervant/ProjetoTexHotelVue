@@ -20,9 +20,9 @@
         v-bind:value="item.id" :checked="item.ordem == 1"
       />
       <label for="suiteMaster">Selecionar a suite {{ item.nome }}!</label><br />
-      <hr />
+      
     </div>
-    <hr />
+    
   </div>
 </template>
 
@@ -55,18 +55,21 @@ export default {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   max-width: 60%;
-  padding: 0px;
+  padding: 1%;
   margin-top: 20px;
   grid-gap: 20px;
 }
 .acomodacaoReserva p {
-  color: white;
+  font-size: 1.2em;
+  color: black;
+  
 }
 
 .acomodacaoReserva img {
   border: 2px solid #1c6ea4;
   box-shadow: 5px 5px 15px 5px #000000;
-  width: 25%;
+  width: 100%;
+  height: 100%;
   margin: 2px 5px 2px 5px;
 }
 

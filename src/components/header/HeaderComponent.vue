@@ -36,7 +36,7 @@
                     <input class="box1 login" type="email" name="login" id="login" />
                     <label for="password"><strong>SENHA</strong></label>
                     <input class="box1 pswd" type="password" name="password" id="password" />
-                    <input class="button btnLogin" type="button" value="OK" id="btnLogin" />
+                    <input class="button btnLogin" v-on:click="validate" type="button" value="OK" id="btnLogin" />
                     <br />
                     <router-link to="/Cadastro">Cadastre-se!</router-link>
                     <a class="links" href="">Esqueceu sua senha?</a>
@@ -44,7 +44,7 @@
             </div>
             <div class="logedin hide">
                 <p id="user"></p>
-                <input class="button btnExit" id="btnExit" type="button" value="Sair" />
+                <input class="button btnExit" v-on:click="logOut" id="btnExit" type="button" value="Sair" />
             </div>
         </header>
     </nav>
@@ -53,6 +53,70 @@
 <script>
 export default {
     name: "HeaderComponent",
+    data(){
+        return{
+            btnLogin : document.getElementById('btnLogin'),
+            regexLogin : /[A-Z.A-Z]@[A-Z.A-Z]/gi,
+            regexLoginAdm : /[A-Za-z0-9]/gi,
+            regexPswd : /[A-Za-z0-9]{8,14}/g,
+            loged : localStorage.getItem('loged'),
+            logedin : localStorage.getItem('loginStatus'),
+            btnExit : document.getElementById('btnExit')
+        }
+    },
+    methods:{
+        validate() {
+        let login = document.getElementById('login').value
+        let pswd = document.getElementById('password').value
+        
+            if (login != "" && pswd != ""){
+                if (login.match(this.regexLogin) && pswd.match(this.regexPswd)) {
+                    let logedOn = 1
+                    localStorage.setItem('loged', login)
+                    localStorage.setItem('loginStatus', logedOn)
+                    this.logedin = localStorage.getItem('logedin')
+                    alert('Logado com sucesso!')
+                    this.showHide('.logedin', 'remove')
+                    this.showHide('.campologin', 'add')
+                    document.getElementById('user').innerText = `Olá (${this.loged})`
+                }else if(login.match(this.regexLoginAdm) && pswd.match(this.regexPswd)){
+                    let logedOn = 1
+                    localStorage.setItem('loged', login)
+                    localStorage.setItem('loginStatus', logedOn)
+                    this.logedin = localStorage.getItem('logedin') 
+                    alert('Logado com sucesso!')
+                    this.showHide('.logedin', 'remove')
+                    this.showHide('.campologin', 'add')
+                }else {
+                    alert('Usuario ou senha incorretos')
+                }
+            }else{
+                alert('È preciso preencher os campos de login e senha')
+            }
+            console.log(this.loged)
+        },
+
+        showHide(obj, action) {
+            document.querySelector(obj).classList[action]('hide')
+        },
+
+        logOut() {
+            let logedOut = 0
+            this.showHide('.campologin', 'remove')
+            this.showHide('.logedin', 'add')
+            localStorage.setItem('loginStatus', logedOut)
+            this.logedin = localStorage.getItem('logedOut')
+        },
+
+        loginCheck(){
+            if(this.logedin == 1){
+                this.showHide('.campologin', 'add')
+                this.showHide('.logedin', 'remove')
+                console.log('ok')
+                document.getElementById('user').innerText = `Olá (${this.loged})`
+            }
+        }
+    }
 };
 </script>
 

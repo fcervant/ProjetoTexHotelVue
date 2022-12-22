@@ -4,11 +4,13 @@
     <!-- <BannerComponent/> -->
     <!--Header-->
     <HeaderComponent/>
-    <!--Footer-->
     <div class="banner">
       <img alt="" src="./assets/BANNER-CASANAPRAIA.png">
     </div>
     <router-view />
+    <div class="banner">
+      <img alt="" src="./assets/footerborder.png">
+    </div>
     <FooterComponent/>
   </div>
 </template>
@@ -55,8 +57,6 @@ body {
 .hide {
   display: none;
 }
-
-
 
 .banner {
   width: 100%;
