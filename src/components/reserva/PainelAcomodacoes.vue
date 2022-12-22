@@ -7,7 +7,7 @@
     <!-- mostra painel a partir da store...-->
     <!-- a ordem é mostrar primeiro a acomodação selecionada IMPLEMENTAR!!! -->
     <div class="painelEsquerdo" v-for="item in acomodacoes" :key="item">
-      <h2>{{item.ordem}} - {{ item.nome }}</h2>
+      <h2>{{ item.ordem }} - {{ item.nome }}</h2>
       <div class="acomodacaoReserva">
         <img :src="item.imgURL" :alt="item.nome" />
         <p>{{ item.descricaoBreve }}</p>
@@ -17,7 +17,8 @@
         type="radio"
         id="tipoApto"
         name="tipoApto"
-        v-bind:value="item.id" :checked="item.ordem == 1"
+        v-bind:value="item.id"
+        :checked="item.ordem == 1"
       />
       <label for="suiteMaster">Selecionar a suite {{ item.nome }}!</label><br />
       
@@ -66,10 +67,10 @@ export default {
 }
 
 .acomodacaoReserva img {
+  width: 150px;
+  height: 130px;
   border: 2px solid #1c6ea4;
   box-shadow: 5px 5px 15px 5px #000000;
-  width: 100%;
-  height: 100%;
   margin: 2px 5px 2px 5px;
 }
 
