@@ -1,7 +1,7 @@
 <template>
   <div class="PainelAcomodacoes">
-    <p>{{ msg }}</p>
-    <p>Componente PainelAcomodacoes.vue</p>
+    <!-- <p>{{ msg }}</p>
+    <p>Componente PainelAcomodacoes.vue</p> -->
     <h4>Escolha o quarto e demais opções.</h4>
 
     <!-- mostra painel a partir da store...-->
@@ -21,9 +21,7 @@
         :checked="item.ordem == 1"
       />
       <label for="suiteMaster">Selecionar a suite {{ item.nome }}!</label><br />
-      
     </div>
-    
   </div>
 </template>
 
@@ -63,7 +61,6 @@ export default {
 .acomodacaoReserva p {
   font-size: 1.2em;
   color: black;
-  
 }
 
 .acomodacaoReserva img {

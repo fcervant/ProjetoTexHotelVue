@@ -7,8 +7,8 @@
     <br />
     <h3>Forneça a data de entrada, saída e quantidade de pessoas.</h3>
     <br />
-    <p id="msgAlerta">msgAlerta</p>
-    <div class="minhaReserva form">
+    <p id="msgAlerta"></p>
+    <div class="minhaReserva form" id="formDadosReserva">
       <label for="dtEntrada">Entrada</label>
       <!-- <input type="date" id="dtEntrada" name="dtEntrada" value="2022-11-16" /> -->
       <input type="date" id="dtEntrada" name="dtEntrada" v-model="dtEntrada" />
@@ -16,9 +16,18 @@
       <input type="date" id="dtSaida" name="dtSaida" v-model="dtSaida" />
       <label for="qtPessoas">Quantidade Pessoas</label>
       <input type="number" id="qtPessoas" name="qtPessoas" value="1" />
+
+      <!-- teste
+      <div id="app">
+        <button @click="updateBinding">Click me</button><br />
+        <input id="input" v-model="message" placeholder="edit me" />
+        <p>Message is: {{ message }}</p>
+      </div> -->
+
       <!-- manter botão aqui para agilizar os testes...-->
-      <button type="button" class="button" id="btnResumo">Fechar reserva!</button>
-      <!-- <button type="button" class="btn" id="btnConfirma">Modal Confirma</button> -->
+      <button type="button" class="button" id="btnResumo">
+        Fechar reserva!
+      </button>
     </div>
   </div>
 </template>
@@ -36,11 +45,19 @@ export default {
   data() {
     return {
       //
-      // tipo: "pratosQuentes",
+      // inicializa dados form,
       dtEntrada: new Date().toISOString().substring(0, 10),
       dtSaida: new Date().toISOString().substring(0, 10),
       qtPessoas: 1,
     };
+  },
+  methods: {
+    // exemplo...
+    // updateBinding() {
+    //   let el = document.getElementById("input");
+    //   el.value = "Hello!";
+    //   el.dispatchEvent(new Event("input"));
+    // },
   },
   computed: {
     // produtos() {
@@ -89,9 +106,6 @@ export default {
         let check = false;
         // executa function para checar dados da reserva...
         check = confirmaReserva();
-        // check = msgAula();
-        //console.log("btnResumo - Check ", check);
-
         if (check) {
           window.$("#modalResumo").modal("show");
           preencheModalResumo();
@@ -125,6 +139,9 @@ export function atualizaLocalStorage() {
     difDates,
     dateEndAux,
     dateReserva;
+
+  // limpa mensagem de erro do form...
+  document.getElementById("msgAlerta").innerHTML = "";
 
   // armazena a data atual como data do dia da reserva...
   dateReserva = formatDate(new Date());
@@ -176,51 +193,25 @@ export function atualizaLocalStorage() {
     "tipoAcomodacao"
   ).innerHTML = `<b> ${localStorage.getItem("tipoApto")} </b>`;
 
-  // // teste com localStorage...
-  // let index = 1;
-  // let a1 = "'dtEntrada':'01/12/2022'";
-  // let a2 = "'qtPessoas':'5'";
-  // let array01 = [];
-  // let arrayStr = "";
-  // array01 = "{[";
-  // array01 = array01 + a1;
-  // array01 = array01 + `,${a2}`;
-  // array01 = array01 + "]}";
+  return true;
+}
 
-  // //array01.push(a1);
-  // //array01.push(a2);
-  // index++;
-  // localStorage.setItem(`testeArray${index}`, arrayStr);
+// atualiza dados do form no início e a cada confirmação de reserva
+export function updateBindingForm() {
+  let elDtEntrada = document.getElementById("dtEntrada");
+  elDtEntrada.value = new Date().toISOString().substring(0, 10);
+  elDtEntrada.dispatchEvent(new Event("dtEntrada"));
 
-  // arrayStr = array01.toString();
+  let elDtSaida = document.getElementById("dtSaida");
+  elDtSaida.value = new Date().toISOString().substring(0, 10);
+  elDtSaida.dispatchEvent(new Event("dtSaida"));
 
-  // // cria dados na localStorage em uma unica variavel - "Reserva_dd/mm/aaaa"
+  let elQtPessoas = document.getElementById("qtPessoas");
+  elQtPessoas.value = 1;
+  elQtPessoas.dispatchEvent(new Event("qtPessoas"));
 
-  // // var value = ["aa","bb","cc"]
-  // // localStorage.setItem("testKey", JSON.stringify(value));
-  // // var test = JSON.parse(localStorage.getItem("testKey"));
-  // // alert(test);
+  atualizaLocalStorage();
 
-  // let ReservaAux = "[{";
-  // ReservaAux =
-  //   ReservaAux +
-  //   `"dtEntrada":"${formatDate(dateStart)}","dtSaida":"${formatDate(
-  //     dateEnd
-  //   )}","qtPessoas":"${
-  //     qtPessoas.value
-  //   }","difDates":"${difDates}","tipoApto":"${tipoApto}"}]`;
-
-  // //console.log("localstorage dtReserva", `Reserva_${formatDate(dateReserva)}`);
-  // localStorage.setItem(`Reserva_${formatDate(dateReserva)}`, ReservaAux);
-  //console.log(
-  //   "atualizaLocalStorage...",
-  //   dtEntrada,
-  //   dtSaida,
-  //   dateReserva,
-  //   qtPessoas,
-  //   tipoApto,
-  //   difDates
-  // );
   return true;
 }
 
@@ -269,14 +260,6 @@ export function checkInfo() {
     msgReturn = [false, "Tipo de apartamento não selecionado"];
   }
 
-  // console.log("CheckInfo...", dtEntrada, dtSaida, qtPessoas, tipoApto);
-  // console.log(
-  //   "Datas: ",
-  //   processDate(dtEntrada),
-  //   new Date(),
-  //   processDate(dtEntrada) < new Date()
-  // );
-  // console.log(checkData(dtEntrada), checkData(dtSaida));
   return msgReturn;
 }
 
@@ -391,8 +374,10 @@ export function confirmaReserva() {
 
   valorTotalGeral = vlrSomaServicos + valorTotalDiarias;
 
+  // grava valor geral
   localStorage.setItem("valorTotalGeral", currencyFormat(valorTotalGeral));
-  console.log("confirmaReserva...");
+  // repete valor geral para total com desconto, será utilizado em outra função...
+  localStorage.setItem("vlrTotalDesconto", currencyFormat(valorTotalGeral));
 
   return true;
 }
@@ -409,9 +394,19 @@ export function gravaReserva() {
   let cupom = localStorage.getItem("cupomDesconto");
 
   // cria json com todos os dados...
-  // let ReservaAux = "[{";
-  // falta tratar servicos e incluir mais alguns campos...
+  // gravando na localStorage = JSON.stringify
+  // recupeando da localSorage = JSON.parse
+
+  let novoId = 1;
+  if (localStorage.getItem("reservaId")) {
+    // verifica ultimo id para definir id da reserva a partir do mesmo
+    novoId = parseInt(localStorage.getItem("reservaId")) + 1;
+  }
+  console.log("novoId", novoId);
+
+  localStorage.setItem("reservaId", novoId);
   let ReservaAux = `"[{"dtReserva": "${dtReserva}",
+
 	"codCliente": "cod Cliente",
 	"dtEntrada": "${dateStart}",
 	"dtSaida": "${dateEnd}",
@@ -430,32 +425,25 @@ export function gravaReserva() {
 	]
 }]"`;
 
-  console.log("localstorage dtReserva", `Reserva_${dtReserva}`);
-  console.log(ReservaAux);
-  localStorage.setItem(`Reserva_${dtReserva}`, ReservaAux);
+  console.log("localstorage dtReserva", `Reserva_${novoId}`);
+  localStorage.setItem(`Reserva_${novoId}`, ReservaAux);
 
   limpaLocalStorage();
-  return true;
 
-  // exemplo
-  // var value = ["aa","bb","cc"]
-  // localStorage.setItem("testKey", JSON.stringify(value));
-  // var test = JSON.parse(localStorage.getItem("testKey"));
-  // alert(test);
+  return true;
 }
 
 export function limpaLocalStorage() {
   // zera servicos...
-  localStorage.setItem("dtEntrada","");
-  localStorage.setItem("dtSaida","");
-  localStorage.setItem("qtPessoas","");
-  localStorage.setItem("difDates","");
-  localStorage.setItem("tipoApto","");
-  localStorage.setItem("dtReserva","");
-  localStorage.setItem("valorTotalGeral","");
-  localStorage.setItem("vlrTotalDesconto","");
-  localStorage.setItem("cupomDesconto","");
-
+  localStorage.setItem("dtEntrada", "");
+  localStorage.setItem("dtSaida", "");
+  localStorage.setItem("qtPessoas", "");
+  localStorage.setItem("difDates", "");
+  localStorage.setItem("tipoApto", "");
+  localStorage.setItem("dtReserva", "");
+  localStorage.setItem("valorTotalGeral", "");
+  localStorage.setItem("vlrTotalDesconto", "");
+  localStorage.setItem("cupomDesconto", "");
 }
 export function currencyFormat(strVlr) {
   // Intl.NumberFormat JavaScript has a number formatter (part of the Internationalization API).
@@ -593,20 +581,20 @@ a {
 }
 
 .button {
-    background: transparent;
-    color: black;
-    padding: 0.4em;
-    border-radius: 50px;
-    cursor: pointer;
-    overflow: hidden;
-    font-size: 1.5em;
+  background: transparent;
+  color: black;
+  padding: 0.4em;
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  font-size: 1.5em;
 }
 
 .button:hover {
-    background: #112434;
-    color: #fff;
-    border-radius: 50px;
-    padding: 0.4em;
+  background: #112434;
+  color: #fff;
+  border-radius: 50px;
+  padding: 0.4em;
 }
 
 .btn {

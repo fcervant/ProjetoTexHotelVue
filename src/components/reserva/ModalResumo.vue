@@ -26,16 +26,13 @@
             <h3>Veja o resumo de sua solicitação!</h3>
             <hr />
             <h2>Diárias</h2>
-            <div id="diarias">
-            </div>
+            <div id="diarias"></div>
             <hr />
             <h2>Servicos Adicionais</h2>
-            <div id="servicos">
-            </div>
+            <div id="servicos"></div>
             <hr />
             <h2>Total</h2>
-            <div id="total">
-            </div>
+            <div id="total"></div>
             <hr />
           </div>
           <!-- Fim body Resumo-->
@@ -95,6 +92,7 @@ const bootstrap = require("bootstrap");
 //import { preencheModalResumo } from "./FormReserva.vue";
 import { cupomDesconto } from "./FormReserva.vue";
 import { gravaReserva } from "./FormReserva.vue";
+import { updateBindingForm } from "./FormReserva.vue";
 
 // gera cupom de desconto caso não exista nenhum. Se já houver a mensagem é que não podem ser gerados dois cupons no mesmo dia...
 let msgCupomDesconto = "Lamento, um cupom de desconto já foi utilizado hoje...";
@@ -130,11 +128,28 @@ export default {
       return modal;
     },
     confirmaReserva() {
-      localStorage.setItem("cupomDescontoValido", "NOK");
+      console.log("Cliquei na confirmação...");
+      console.log(
+        "Teste...",
+        localStorage.getItem("valorTotalGeral") !==
+          localStorage.getItem("vlrTotalDesconto")
+      );
+      console.log(
+        "Teste2",
+        localStorage.getItem("valorTotalGeral"),
+        localStorage.getItem("vlrTotalDesconto")
+      );
+      if (
+        localStorage.getItem("valorTotalGeral") !==
+        localStorage.getItem("vlrTotalDesconto")
+      ) {
+        localStorage.setItem("cupomDescontoValido", "NOK");
+      }
       alert(
         "Sua reserva foi confirmada - você irá receber um email com a confirmação! Obrigado!"
       );
       gravaReserva();
+      updateBindingForm();
       window.$("#modalResumo").modal("hide");
     },
   },
@@ -154,18 +169,15 @@ window.$().ready(function () {
     console.log("Teste...");
     // verifica se desconto foi utilizado, para mudar flag de aplicar desconto...
     if (
-      localStorage.getItem("vlrTotalGeral") !==
+      localStorage.getItem("vlrTotalGeral") !=
       localStorage.getItem("vlrTotalDesconto")
     ) {
       localStorage.setItem("cupomDescontoValido", "NOK");
+    } else {
+      localStorage.setItem("cupomDescontoValido", "OK");
     }
-    // window.$("#modalResumo").modal("hide");
-    // window.$("#modalConfirma").modal("show");
-    // let element = window.$.document.getElementById("bodyConfirma");
-    // element.removeAttribute("hidden");
-    // para esconder novamente a grade de confirmação...
-    //element.setAttribute("hidden", "hidden");
   });
+
   // aplica cupom...
   window.$("#btnCupom").click(function () {
     let cupomEntry = document
@@ -191,6 +203,7 @@ window.$().ready(function () {
     }
 
     let desconto = parseFloat(vlrTotalGeral[1].replace(".", "")) * percDesc;
+    console.log("VlrTotalDesconto", desconto);
     localStorage.setItem("vlrTotalDesconto", `R$ ${desconto.toFixed(2)}`);
     let msg2 = `${msg} ${desconto.toFixed(2)}`;
     document.getElementById("totalDesconto").innerText = msg2;
@@ -199,7 +212,6 @@ window.$().ready(function () {
 </script>
 
 <style scoped>
-
 * {
   color: black;
 }
@@ -230,9 +242,8 @@ a {
 
 p {
   color: brown;
-  line-height: 10px;   /* within paragraph */
+  line-height: 10px; /* within paragraph */
   margin-bottom: 10px; /* between paragraphs */
-  font-size:15px;
+  font-size: 15px;
 }
-
 </style>

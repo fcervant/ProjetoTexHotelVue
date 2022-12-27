@@ -51,7 +51,7 @@
           <hr />
           <p>Total</p>
           <div id="total">
-            <p>..total cofnirma.</p>
+            <p>..total confirma.</p>
             <p></p>
           </div>
           <hr />
@@ -77,6 +77,7 @@ const bootstrap = require("bootstrap");
 // import { preencheModalResumo } from "./FormReserva.vue";
 import { createPara } from "./FormReserva.vue";
 import { cupomDesconto } from "./FormReserva.vue";
+import { updateBindingForm } from "./FormReserva.vue";
 
 // gera cupom de desconto caso não exista nenhum. Se já houver a mensagem é que não podem ser gerados dois cupons no mesmo dia...
 let msgCupomDesconto = "Lamento, um cupom de desconto já foi utilizado hoje...";
