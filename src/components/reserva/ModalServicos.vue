@@ -92,67 +92,45 @@ export default {
     },
   },
   mounted() {
-    // this.abreModal().show();
-
     // deve ter outro jeito melhor de fazer isso...
-    // cria array para controle de servicos
-    // let arrayServicos = JSON.stringify(this.servicos);
-    console.log("Servicos da store...", this.servicos);
-    
-    // para entender melhor o comportamento de json - string - array...
-    // let arrayServicos = JSON.stringify(this.servicos);
-    // localStorage.setItem("testeServicos", JSON.stringify(this.servicos));
-    // console.log("arrayServico", arrayServicos);
-    // let objJson = JSON.parse(arrayServicos);
-    // console.log("objJson", objJson);
-    // console.log("objJson", objJson[0].id);
-    // for (let i = 0; i < this.servicos.length; i++) {
-    //   console.log(this.servicos[i].id);
-    //   let servico = `"${this.servicos[i].id}"`;
-    //   console.log(servico)
-    //   console.log(window.$(#servico).is(":checked"))
-      
+    // teste para tentar simplificar a seleção de serviços...não funcionou
+    // console.log(
+    //   "Servicos da store 0...",
+    //   this.servicos.length,
+    //   this.servicos,
+    //   this.servicos[0].id,
+    //   this.servicos[1].id,
+    // );
+
+    // let tempServ = "";
+    // for (let i=0;i<this.servicos.length;i++) {
+    //   tempServ="#"+this.servicos[i].id
+    //   console.log("Servico:",tempServ)
+    //   window.$(tempServ).click(function () {
+    //     if (window.$(tempServ).is(":checked")) {
+    //       console.log(`${tempServ} checked!`)
+    //       localStorage.setItem("servico1", true);
+    //   } // checked
+    //   else {
+    //     localStorage.setItem(tempServ, false);
+    //   } // unchecked
+    // });
     // }
 
     window.$("#servico1").click(function () {
-      if (window.$("#servico1").is(":checked")) {
-        localStorage.setItem("servico1", true);
-      } // checked
-      else {
-        localStorage.setItem("servico1", false);
-      } // unchecked
+      (window.$("#servico1").is(":checked")) ? localStorage.setItem("servico1", true) : localStorage.setItem("servico1", false)
     });
     window.$("#servico2").click(function () {
-      if (window.$("#servico2").is(":checked")) {
-        localStorage.setItem("servico2", true);
-      } // checked
-      else {
-        localStorage.setItem("servico2", false);
-      } // unchecked
+      (window.$("#servico2").is(":checked")) ? localStorage.setItem("servico2", true) : localStorage.setItem("servico2", false)
     });
     window.$("#servico3").click(function () {
-      if (window.$("#servico3").is(":checked")) {
-        localStorage.setItem("servico3", true);
-      } // checked
-      else {
-        localStorage.setItem("servico3", false);
-      } // unchecked
+      (window.$("#servico3").is(":checked")) ? localStorage.setItem("servico3", true) : localStorage.setItem("servico3", false)
     });
     window.$("#servico4").click(function () {
-      if (window.$("#servico4").is(":checked")) {
-        localStorage.setItem("servico4", true);
-      } // checked
-      else {
-        localStorage.setItem("servico4", false);
-      } // unchecked
+      (window.$("#servico4").is(":checked")) ? localStorage.setItem("servico4", true) : localStorage.setItem("servico4", false)
     });
     window.$("#servico5").click(function () {
-      if (window.$("#servico5").is(":checked")) {
-        localStorage.setItem("servico5", true);
-      } // checked
-      else {
-        localStorage.setItem("servico5", false);
-      } // unchecked
+      (window.$("#servico5").is(":checked")) ? localStorage.setItem("servico5", true) : localStorage.setItem("servico5", false)
     });
   },
 };

@@ -35,6 +35,9 @@ export default {
     acomodacoes() {
       return this.$store.getters.acomodacoes;
     },
+    reservasAnteriores() {
+      return this.$store.getters.reservas;
+    }
   },
 };
 </script>
