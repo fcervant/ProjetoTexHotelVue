@@ -1,7 +1,6 @@
 // artigo sobre imagens na store...
 // https://stackoverflow.com/questions/53412106/linking-to-images-referenced-in-vuex-store-in-vue-js
-// artigo sobre VUE e localStorage
-// https://www.section.io/engineering-education/vue2-crud-app-with-localstorage/#:~:text=Load%20data%20from%20local%20storage&text=We%20will%20use%20a%20lifecycle,use%20to%20retrieve%20the%20data.
+//
 
 import { createStore } from "vuex";
 
@@ -82,43 +81,6 @@ export default createStore({
         vlrDiaria: 200,
       },
     ],
-    reservas: [
-      {
-        dtReserva: "28/12/2022",
-
-        codCliente: "cod Cliente",
-        dtEntrada: "28/12/2022",
-        dtSaida: "29/12/2022",
-        qtPessoas: "2",
-        tipoApto: "master",
-        diarias: "1",
-        vlrTotal: "R$ 1.200,00",
-        vlrTotalcomDesconto: "R$ 1.200,00",
-        cupom: "drbuosa",
-        servicos: [
-          { id: "1001", servico: "Regular", vlrServico: "Valor Servico" },
-          { id: "1002", servico: "Regular", vlrServico: "Valor Servico" },
-          { id: "1003", servico: "Regular", vlrServico: "Valor Servico" },
-          { id: "1004", servico: "Regular", vlrServico: "Valor Servico" },
-          { id: "1005", servico: "Regular", vlrServico: "Valor Servico" },
-        ],
-      },
-    ],
-    reservas2: {
-      handler() {
-        for (var i = 0; i < localStorage.length; i++) {
-          // do something with localStorage.getItem(localStorage.key(i));
-          if (localStorage.key(i).includes("Reserva_")) {
-            console.log(
-              "Reservas anteriores",
-              localStorage.key(i),
-              localStorage.getItem(localStorage.key(i))
-            );
-          }
-        }
-        // localStorage.setItem("books", JSON.stringify(this.books));
-      },
-    },
   },
 
   getters: {
@@ -159,6 +121,7 @@ export default createStore({
       // }
       // teste com ordenação...
       //let roomSelected = "family"
+
       // replace não funcionou pois só atua no campo que está sendo analisado...
       // let objStr = JSON.stringify(quartos_hotel, function replacer(key, value) {
       //   if (key == "id" && value == "family") {
@@ -171,7 +134,22 @@ export default createStore({
       let objJson = JSON.parse(objStr);
 
       return objJson;
+      // return quartos_hotel;
+
+      // }
+      // var user = {
+      //   name: "John Doe",
+      //   occupation: "gardener",
+      //   age: 34,
+      //   dob: new Date("1992-12-31"),
+      // };
+      // console.dir(JSON.stringify(user, replacer));
     },
+
+    // acomodacoes_sort(state) {
+    //   let allAcomodacoes = state.allAcomodacoes;
+    // },
+
     servicos: (state) => {
       let servicos_hotel = state.servicos.map((item) => {
         return {
@@ -184,19 +162,6 @@ export default createStore({
       });
       return servicos_hotel;
     },
-    reservas: (state) => {
-      let reservasAnteriores = state.reservas.map((item) => {
-        return {
-          dtReserva: item.dtReserva,
-          dtCheckIn: item.dtEntrada,
-          dtCheckOut: item.dtSaida,
-          qtPessoas: item.qtPessoas,
-          vlrTotal: item.vlrTotalcomDesconto,
-        };
-      });
-      console.log("gettters reservasAnteriores", reservasAnteriores);
-      return reservasAnteriores;
-    },
   },
   mutations: {
     // methods - alteração dos dados - exemplo:
@@ -205,7 +170,6 @@ export default createStore({
     //     item.preco = (item.preco * 0.9).toFixed(2);
     //   });
     // },
-
     confirmaServicos: (state) => {
       console.log("Teste", state);
       // state.servicos.forEach((item) => {
@@ -224,3 +188,40 @@ export default createStore({
   },
   modules: {},
 });
+
+//     function replaceOrder(key, value) {
+//   if (typeof value === "string") {
+//     return value.toUpperCase();
+//   }
+//   return value;
+// }
+//   // dados exemplo...
+//   produtos: {
+//     pratosQuentes: [
+//       { nome: "Lasanha", preco: 80 },
+//       { nome: "Feijoada", preco: 100 },
+//       { nome: "Salmão grelhado", preco: 140 },
+//       { nome: "File a Parmeggiana", preco: 240 },
+//     ],
+//     sobremesas: [
+//       { nome: "Quindim", preco: 20 },
+//       { nome: "Pudim", preco: 10 },
+//       { nome: "Sorvete", preco: 14 },
+//       { nome: "Bomba de Chocolate", preco: 16 },
+//     ],
+//   },
+// },
+
+// getter exemplo...
+
+//   getters: {
+//     loja: (state) => (tipo) => {
+//       let produtos_loja = state.produtos[tipo].map((item) => {
+//         return {
+//           nome: item.nome,
+//           preco: item.preco,
+//         };
+//       });
+//       return produtos_loja;
+//     },
+//   },
