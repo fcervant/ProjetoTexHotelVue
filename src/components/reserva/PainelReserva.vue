@@ -4,6 +4,7 @@
     <p>Componente PainelReserva.vue</p> -->
     <ModalServicos />
     <ModalResumo />
+    <ModalMinhasReservas />
     <div class="resumo">
       <h3>Resumo da reserva</h3>
       <div class="gridReserva resumo form">
@@ -27,7 +28,11 @@
           <button type="button" class="button" id="btnResumoReserva">
             Confirmar
           </button>
+          <button type="button" class="button" id="btnMinhasReservas">
+            Minhas Reservas
+          </button>
         </form>
+        <br />
       </div>
     </div>
   </div>
@@ -40,15 +45,24 @@ window.$ = jQuery;
 
 import ModalServicos from "./ModalServicos";
 import ModalResumo from "./ModalResumo";
+import ModalMinhasReservas from "./ModalMinhasReservas";
 
 import { confirmaReserva } from "./FormReserva.vue";
 import { preencheModalResumo } from "./FormReserva.vue";
 
 export default {
   name: "PainelReserva",
-  components: { ModalServicos, ModalResumo },
+  components: { ModalServicos, ModalResumo, ModalMinhasReservas },
   props: {
     msg: String,
+  },
+  computed: {
+    reservas() {
+      return this.$store.getters.reservas;
+    },
+    servicos() {
+      return this.$store.getters.servicos;
+    },
   },
 };
 
@@ -62,6 +76,13 @@ window.$().ready(function () {
       window.$("#modalResumo").modal("show");
       preencheModalResumo();
     }
+  });
+});
+
+// chama modal para display das reservas anteriores
+window.$().ready(function () {
+  window.$("#btnMinhasReservas").click(function () {
+    window.$("#modalMinhasReservas").modal("show");
   });
 });
 </script>
@@ -124,5 +145,9 @@ btnResumo {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+}
+
+.ultimasReservas {
+  font-size: 0.8rem;
 }
 </style>
