@@ -154,6 +154,7 @@ export default {
     },
   },
   computed: {
+    //
   },
   mounted() {
     // atualiza dados da modalResumo

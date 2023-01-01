@@ -179,7 +179,7 @@ export function atualizaLocalStorage() {
   localStorage.setItem("qtPessoas", qtPessoas.value);
   localStorage.setItem("tipoApto", tipoApto);
 
-  // atualiza dados na tela PainelReserva - dados reserva
+  // atualiza dados na tela
   document.getElementById("dtCheckin").innerHTML = `<b> ${localStorage.getItem(
     "dtEntrada"
   )} </b>`;
@@ -192,19 +192,6 @@ export function atualizaLocalStorage() {
   document.getElementById(
     "tipoAcomodacao"
   ).innerHTML = `<b> ${localStorage.getItem("tipoApto")} </b>`;
-
-  // atualiza dados na tela PainelReserva - dados reservas anteriores
-
-  for (var i = 0; i < localStorage.length; i++) {
-    // do something with localStorage.getItem(localStorage.key(i));
-    if (localStorage.key(i).includes("Reserva_")) {
-      console.log(
-        "Reservas anteriores",
-        localStorage.key(i),
-        localStorage.getItem(localStorage.key(i))
-      );
-    }
-  }
 
   return true;
 }
