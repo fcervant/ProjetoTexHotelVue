@@ -38,7 +38,7 @@
                     <input class="box1 pswd" type="password" name="password" id="password" />
                     <input class="button btnLogin" v-on:click="validate" type="button" value="OK" id="btnLogin" />
                     <br />
-                    <router-link to="/Cadastro">Cadastre-se!</router-link>
+                    <a href=""><router-link to="/Cadastro">Cadastre-se!</router-link></a>                                           
                     <a class="links" href="">Esqueceu sua senha?</a>
                 </form>
             </div>
@@ -231,7 +231,9 @@ header {
 }
 
 .navigation div a:hover,
-.navigation div a.router-link-active {
+.navigation div a.router-link-active,
+.campologin a.router-link-active,
+.campologin a:hover {
     background: #112434;
     color: #fff;
     padding: 0.5em;

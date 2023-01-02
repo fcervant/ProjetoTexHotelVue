@@ -4,9 +4,9 @@
 <template>
   <div class="FormReserva">
     <h1>Minha Reserva</h1>
-    <br />
+    
     <h3>Forneça a data de entrada, saída e quantidade de pessoas.</h3>
-    <br />
+    
     <p id="msgAlerta"></p>
     <div class="minhaReserva form" id="formDadosReserva">
       <label for="dtEntrada">Entrada</label>
