@@ -1,15 +1,15 @@
 <template>
-  <div class="PainelReserva">
+  <div class="secResumo">
     <!-- <p>{{ msg }}</p>
     <p>Componente PainelReserva.vue</p> -->
     <ModalServicos />
     <ModalResumo />
-    <div class="resumo">
-      <h3>Resumo da reserva</h3>
-      <div class="gridReserva resumo form">
+    <div><h3>Resumo da reserva</h3></div>
+    <div class="flex">
+      <div class="form">
         <form action="">
           <h4>Apartamento:</h4>
-          <span id="tipoAcomodacao">tipoApto</span>
+          <p id="tipoAcomodacao">tipoApto</p>
           <br />
           <h4>Checkin:</h4>
           <p id="dtCheckin">dtCheckin</p>
@@ -19,14 +19,10 @@
           <br />
           <h4>Pessoas</h4>
           <p id="qtHospedes">qtHospedes</p>
-          <br />
-          <br />
-          <span id="btnServicos">Adicionar mais serviços</span>
-          <br />
-          <br />
-          <button type="button" class="button" id="btnResumoReserva">
-            Confirmar
-          </button>
+          <br/>
+          <button type="button" class="button" id="btnServicos">Adicionar mais serviços</button>
+          <br/>
+          <button type="button" class="button" id="btnResumoReserva">Confirmar</button>
         </form>
       </div>
     </div>
@@ -67,13 +63,62 @@ window.$().ready(function () {
 </script>
 
 <style scoped>
-.resumo {
-  border: 1px solid;
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-h3 {
-  margin: 40px 0 0;
+.secResumo {
+  border-color:black ;
+  border-style: solid;
+  position: relative;
+  padding: 2vw;
+  transition: all 0.3s ease;
+  color: black;
 }
+
+.secResumo > div{
+  max-width: 90%;
+  margin: 2% 5%; 
+}
+.secResumo h2 {
+  font-size: 3em;
+}
+
+.secResumo h3,
+.secResumo h4 {
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+.secResumo p {
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
+img{
+  width: 523px;
+  height: 294px;
+  display: block;
+  border-radius: 20px;
+}
+
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 90%;
+  margin: 0 5%; 
+}
+
+.flex > div{
+  flex: 1 1 420px;
+  margin: 10px;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -95,6 +140,7 @@ a {
   cursor: pointer;
   overflow: hidden;
   font-size: 1.5em;
+  margin-top:10px;
 }
 
 .button:hover {
@@ -102,27 +148,5 @@ a {
   color: #fff;
   border-radius: 50px;
   padding: 0.4em;
-}
-
-.btn {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.btn:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-
-btnResumo {
-  background-color: white;
-  border: none;
-  color: blue;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
 }
 </style>

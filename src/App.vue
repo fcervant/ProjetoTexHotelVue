@@ -7,7 +7,7 @@
     <div class="banner">
       <img alt="" src="./assets/BANNER-CASANAPRAIA.png">
     </div>
-    <router-view />
+    <router-view class="content"/>
     <div class="banner">
       <img alt="" src="./assets/footerborder.png">
     </div>
@@ -39,6 +39,11 @@ export default {
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+}
+
+.content{
+  background-color: #f4f2e7;
+  background-image: linear-gradient(90deg, #f4f2e7 0%, #f7f4e9 46%, #efe5d5 100%);  
 }
 
 body {

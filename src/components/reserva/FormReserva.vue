@@ -1,35 +1,23 @@
-<!--  npm install bootstrap -->
-<!--  npm install bootstrap -->
-
 <template>
-  <div class="FormReserva">
-    <h1>Minha Reserva</h1>
-    
-    <h3>Forneça a data de entrada, saída e quantidade de pessoas.</h3>
-    
-    <p id="msgAlerta"></p>
-    <div class="minhaReserva form" id="formDadosReserva">
-      <label for="dtEntrada">Entrada</label>
-      <!-- <input type="date" id="dtEntrada" name="dtEntrada" value="2022-11-16" /> -->
-      <input type="date" id="dtEntrada" name="dtEntrada" v-model="dtEntrada" />
-      <label for="dtSaida">Saida</label>
-      <input type="date" id="dtSaida" name="dtSaida" v-model="dtSaida" />
-      <label for="qtPessoas">Quantidade Pessoas</label>
-      <input type="number" id="qtPessoas" name="qtPessoas" value="1" />
-
-      <!-- teste
-      <div id="app">
-        <button @click="updateBinding">Click me</button><br />
-        <input id="input" v-model="message" placeholder="edit me" />
-        <p>Message is: {{ message }}</p>
-      </div> -->
-
+  <div class="secReserva">
+      <h2>Minha Reserva</h2>
+      <p>Forneça a data de entrada, saída e quantidade de pessoas.</p>
+    <div class="flex" id="formDadosReserva">
+      <div>
+        <label for="dtEntrada">Entrada</label>
+        <input type="date" id="dtEntrada" name="dtEntrada" v-model="dtEntrada" />
+        <label for="dtSaida">Saida</label>
+        <input type="date" id="dtSaida" name="dtSaida" v-model="dtSaida" />
+        <label for="qtPessoas">Quantidade Pessoas</label>
+        <input type="number" id="qtPessoas" name="qtPessoas" value="1" />
+        <button type="button" class="button" id="btnResumo">
+          Fechar reserva!
+        </button>
+      </div>
       <!-- manter botão aqui para agilizar os testes...-->
-      <button type="button" class="button" id="btnResumo">
-        Fechar reserva!
-      </button>
-    </div>
+    </div>   
   </div>
+  <hr>
 </template>
 
 <script>
@@ -565,19 +553,61 @@ export function aplicaDesconto() {
 </script>
 
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap");
+* {
+  margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+.secReserva {
+  position: relative;
+  padding: 2vw;
+  transition: all 0.3s ease;
+  color: black;
 }
-a {
-  color: #42b983;
+
+.secReserva > div{
+  max-width: 90%;
+  margin: 2% 5%; 
+}
+.secReserva h2,
+h2 {
+  font-size: 3em;
+}
+
+.secReserva h3,
+.secReserva h4,
+h3 {
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+.secReserva p,
+p {
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
+img{
+  width: 523px;
+  height: 294px;
+  display: block;
+  border-radius: 20px;
+}
+
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 90%;
+  margin: 0 5%;  
+}
+
+.flex > div{
+  flex: 1 1 420px;
+  margin: 10px;
 }
 
 .button {
@@ -590,6 +620,24 @@ a {
   font-size: 1.5em;
 }
 
+.flex > div > button{
+  margin-right: 10px;
+}
+
+.flex > div > label{
+  margin-right: 10px;
+}
+
+.flex > div > input{
+  max-width: 125px;
+  margin-right: 10px;
+}
+
+#qtPessoas{
+  max-width:50px;
+  margin-right: 10px;
+}
+
 .button:hover {
   background: #112434;
   color: #fff;
@@ -597,84 +645,4 @@ a {
   padding: 0.4em;
 }
 
-.btn {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.btn:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-
-#msgAlerta {
-  color: red;
-}
-
-btnResumo {
-  background-color: white;
-  border: none;
-  color: blue;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-
-#btnResumo:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
 </style>
-
-<!-- 
-<template>
-    <form>
-        <input v-model="form.first_name"/>
-        <input v-model="form.last_name"/>
-        <input v-model="form.email"/>
-    </form> 
-</template>
-
-<script>
-    const defaultForm = {
-        first_name: '',
-        last_name: '',
-        email: '',
-    }  
-    export default {
-      data () {
-        return {
-            form: defaultForm
-        }
-      },
-      computed: {
-        hasChanged () {
-          return Object.keys(this.form).some(field => this.form[field] !== defaultForm[field])
-        }
-      }
-    }
-
-   
-</script> */ -->
-
-<!-- parse a date in yyyy-mm-dd format
-// export function parseDate(input) {
-//   // input string como "Thu Dec 08 2022 00:00:00 GMT-0300 (Horário Padrão de Brasília)"
-//   // var parts = input.match(/(\d+)/g);
-//   var parts = input.split(" ");
-//   // new Date(year, month [, date [, hours[, minutes[, seconds[, ms]]]]])
-//   console.log(
-//     "parseData",
-//     input,
-//     parts,
-//     parts[0],
-//     parts[1],
-//     parts[2],
-//     parts[3]
-//   );
-//   return new Date(parts[1], parts[2], parts[31]); // months are 0-based
-// }
--->

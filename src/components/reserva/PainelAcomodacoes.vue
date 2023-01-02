@@ -1,26 +1,27 @@
 <template>
-  <div class="PainelAcomodacoes">
+  <div class="secAcomodacoes">
     <!-- <p>{{ msg }}</p>
     <p>Componente PainelAcomodacoes.vue</p> -->
     <h4>Escolha o quarto e demais opções.</h4>
 
     <!-- mostra painel a partir da store...-->
     <!-- a ordem é mostrar primeiro a acomodação selecionada IMPLEMENTAR!!! -->
-    <div class="painelEsquerdo" v-for="item in acomodacoes" :key="item">
-      <h2>{{ item.ordem }} - {{ item.nome }}</h2>
-      <div class="acomodacaoReserva">
-        <img :src="item.imgURL" :alt="item.nome" />
+    <div class="flex" v-for="item in acomodacoes" :key="item">
+      <div>
+        <input class="inputRadio"
+          type="radio"
+          id="tipoApto"
+          name="tipoApto"
+          v-bind:value="item.id"
+          :checked="item.ordem == 1"
+        />
+        <label for="suiteMaster"><h2>{{ item.nome }}</h2></label>        
         <p>{{ item.descricaoBreve }}</p>
+        <h3>R$ {{ item.vlrDiaria }}</h3>
       </div>
-      <h3>R$ {{ item.vlrDiaria }}</h3>
-      <input
-        type="radio"
-        id="tipoApto"
-        name="tipoApto"
-        v-bind:value="item.id"
-        :checked="item.ordem == 1"
-      />
-      <label for="suiteMaster">Selecionar a suite {{ item.nome }}!</label><br />
+      <div>
+        <img :src="item.imgURL" :alt="item.nome" />
+      </div>
     </div>
   </div>
 </template>
@@ -49,40 +50,55 @@ export default {
   font-family: "Poppins", sans-serif;
 }
 
-.acomodacaoReserva {
-  display: flex;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  max-width: 60%;
-  padding: 1%;
-  margin-top: 20px;
-  grid-gap: 20px;
-}
-.acomodacaoReserva p {
-  font-size: 1.2em;
+.secAcomodacoes {
+  position: relative;
+  padding: 2vw;
+  transition: all 0.3s ease;
   color: black;
 }
 
-.acomodacaoReserva img {
-  width: 150px;
-  height: 130px;
-  border: 2px solid #1c6ea4;
-  box-shadow: 5px 5px 15px 5px #000000;
-  margin: 2px 5px 2px 5px;
+.secAcomodacoes > div{
+  max-width: 90%;
+  margin: 2% 5%; 
+}
+.secAcomodacoes h2 {
+  font-size: 3em;
 }
 
-h3 {
-  margin: 40px 0 0;
+.secAcomodacoes h3,
+.secAcomodacoes h4 {
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+.secAcomodacoes p {
+  font-size: 1.2em;
+  font-weight: 300;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+img{
+  width: 523px;
+  height: 294px;
+  display: block;
+  border-radius: 20px;
 }
-p {
-  color: #42b983;
+
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 90%;
+  margin: 0 5%;  
+}
+
+.flex > div{
+  flex: 1 1 420px;
+  margin: 10px;
+}
+
+.inputRadio{
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  
 }
 </style>

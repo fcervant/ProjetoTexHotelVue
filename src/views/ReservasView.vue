@@ -1,22 +1,17 @@
-<!-- utilizar como <base href="// /home/fernandorc/Documentos/aulaVUE/projeto_spa" -->
-<!-- utilizar como <base href="// /home/fernandorc/Documentos/aulaVUE/projeto_spa" -->
-
 <template>
-  <div class="reservas">
-    <div class="">
+    <div class="secR">
       <div>
-        <FormReserva />
+        <FormReserva/>
+      </div>
+      <div class="flexR">
+        <div>
+          <PainelAcomodacoes/>
+        </div>
+        <div>
+          <PainelReserva/>
+        </div>
       </div>
     </div>
-    <div id="painelEsquerdo" class="row justify-content-left">
-      <div class="col-7">
-        <PainelAcomodacoes />
-      </div>
-      <div class="col-3">
-        <PainelReserva />
-      </div>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -43,25 +38,25 @@ export default {
 </script>
 
 <style scoped>
-
-#text {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 4em;
-  color:black;
-}
-.reservas {
-  background-color: #f3ede3;
-  padding: 2vw;
-}
-.reservas h1 {
-  
-  margin: 5px 5px 5px 5px;
+.secR {
+  margin-top: -1%;
 }
 
-#painelEsquerdo {
- 
-  margin: 1%;
+.secR > div{
+  max-width: 90%;
+  margin: 2% 5%; 
 }
+
+.flexR{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 90%;
+  margin: 0 5%;  
+}
+
+.flexR > div{
+  flex: 1 1 420px;
+  margin: 10px;
+}
+
 </style>
