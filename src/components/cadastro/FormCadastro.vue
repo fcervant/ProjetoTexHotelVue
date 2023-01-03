@@ -1,58 +1,70 @@
 <template>
+  <main>
     <section class="sec">
-                <h2>CADASTRO DE HOSPEDES</h2>
-                <form>
-                    <fieldset class="formularios">
+      <div>
+        <div>
+          <h2>CADASTRO DE HOSPEDES</h2>
+          <p>Preencha todos os campos</p>
+        </div>
+        <div>
+          <form>
+              <fieldset class="formularios">
+                  <br>
+                  <div class="flex">
+                    <div>
+                      <label class="cadlabel" for="nome"><strong>Nome</strong></label>
+                      <input class="cadinput" type="text" name="nome" id="nomeCli" required>
+                    </div>
+                    <div>
+                      <label class="cadlabel" for="telefone"><strong>Telefone</strong></label>
+                      <input class="cadinput" type="number" name="telefone" id="telefoneCli" required>
+                    </div>
+                    <div>
+                      <label class="cadlabel" for="email"><strong>Email</strong></label>
+                      <input class="cadinput" type="email" name="email" id="emailCli" required>
+                    </div>
+                    <div>
+                      <label class="cadlabel" for="dataNascimento"><strong>Nascimento</strong></label>
+                      <input class="cadinput" type="date" name="dataNascimento" id="datnascCli" required>
+                    </div>
+                    <div>
+                      <label class="cadlabel" for="nacionalidade"><strong>Nacionalidade</strong></label>
+                      <input class="cadinput" type="text" name="nacionalidade" id="nacionalidadeCli" required>
+                    </div>
+                    <div>
+                      <div>
+                      <label class="cadlabel" for="genero"><strong>Genero</strong></label>
+                      <select class="cadselect" name="genero" id="genCli" required>
+                          <option selected disabled value="">Selecione</option>
+                          <option>Homem</option>
+                          <option>Mulher</option>
+                          <option>Pessoa não-binaria</option>
+                          <option>Prefiro não informar</option>
+                      </select>
+                      </div>
+                    </div>  
+                    <div>
+                        <label class="cadlabel" for="endereco"><strong>Endereço</strong></label>
                         <br>
-                        <div class="">
-                            <label class="cadlabel" for="nome"><strong>Nome Completo</strong></label>
-                            <input class="cadinput" type="text" name="nome" id="nomeCli" required>
-                            <br>
-                            <label class="cadlabel" for="telefone"><strong>Telefone</strong></label>
-                            <input class="cadinput" type="number" name="telefone" id="telefoneCli" required>
-                            <br>
-                            <label class="cadlabel" for="email"><strong>Email</strong></label>
-                            <input class="cadinput" type="email" name="email" id="emailCli" required>
-                            <br>
-                            <label class="cadlabel" for="dataNascimento"><strong>Data de Nascimento</strong></label>
-                            <input class="cadinput" type="date" name="dataNascimento" id="datnascCli" required>
-                            <br>
-                            <label class="cadlabel" for="nacionalidade"><strong>Nacionalidade</strong></label>
-                            <input class="cadinput" type="text" name="nacionalidade" id="nacionalidadeCli" required>
-                            <br>
-                        </div>
-                        <div class="">
-                            <label class="cadlabel" for="genero"><strong>Genero</strong></label>
-                            <select class="cadselect" name="genero" id="genCli" required>
-                                <option selected disabled value="">Selecione</option>
-                                <option>Homem</option>
-                                <option>Mulher</option>
-                                <option>Pessoa não-binaria</option>
-                                <option>Prefiro não informar</option>
-                            </select>
-                        </div>
-                        <div class="">
-                            <br>
-                            <label class="cadlabel" for="endereco"><strong>Endereço</strong></label>
-                            <br>
-                            <textarea class="cadtextarea" rows="6" id="endCli" name="endereco"></textarea>
-                        </div>
-                        <br>
+                        <textarea class="cadtextarea" rows="6" id="endCli" name="endereco"></textarea>
                         <div class="check">
                             <label for="notificaEmail"><strong>Notificações por E-mail?</strong></label>
                             <input class="checkbox" type="checkbox" id="npe" name="notificaEmail">
                         </div>
-                    </fieldset>
-                    <br>
-                    <button class="button1" type="button" id="salvarCadastro" v-on:click="clickbutton()">Salvar Cadastro</button>
-                </form>
-        </section>
+                    </div>
+                  </div>              
+                  <br>
+              </fieldset>
+              <br>
+              <button class="button" type="button" id="salvarCadastro" v-on:click="clickbutton()">Salvar Cadastro</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
 </template>
 
-<script async>
-
-
-
+<script>
 export default{
     name:"FormCadastro",
     methods:{
@@ -81,115 +93,94 @@ export default{
     }
 
 }
-
-
-
 </script>
 
 <style scoped>
-    * {
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap");
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
-body {
-  overflow-x: hidden;
-  background: #fff;
-  min-height: 100vh;
-}
-  .sec {
+.sec {
   position: relative;
   padding: 2vw;
-  background: #112434;
   transition: all 0.3s ease;
+  color: black;
+}
+
+.sec > div{
+  max-width: 90%;
+  margin: 2% 5%; 
+}
+.sec h2 {
+  font-size: 3em;
+}
+
+.sec h3,
+.sec h4 {
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+.sec p {
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 90%;
+  margin: 0 5%;  
+}
+
+.flex > div{
+  flex: 1 1 420px;
+  margin: 10px;
 }
     
-.cadinput .cadselect {
+.cadinput{
   display: inline-block;
-  width: 8.1vw;
-  margin: 2px;
+  width: 200px;
+  margin: 5px;
 }
 
 .cadlabel {
   display: inline-block;
-  width: 9vw;
-  margin: 2px;
+  width: 130px;
+  margin-right: 15px;
+  font-size: 1.2em;
 }
 
 .cadtextarea {
-  width: 17.3vw;
+  width: 310px;
 }
-
 
 .checkbox {
-  width: 1vw;
-  height: 2vh;
+  width: 1em;
+  height: 1em;
+  margin: 5px;
 }
 
-.sec h2 {
-  font-size: 3em;
-  color: #fff;
-  margin-bottom: 1em;
-}
-
-.sec h3 {
-  color: #fff;
-  margin-bottom: 1em;
-}
-
-.sec h4 {
-  color: #fff;
-  margin-bottom: 1em;
-}
-
-.sec q {
-  color: #fff;
-}
-
-.sec p {
-  font-size: 1em;
-  color: #fff;
-  font-weight: 300;
-}
-
-.sec img,
-.sec iframe {
-  width: 35vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: left;
-}
-
-.formularios {
-  background-color: #112434;
-  color: #fff;
-  padding: 10px;
-  font-size: 0.90rem;
-}
-
-.formularios li {
-  list-style-type: none;
-}
-
-.button1 {
-  background: white;
-  color: #112434;
+.button {
+  background: transparent;
+  color: black;
   padding: 0.4em;
-  border-color: #fff;
   border-radius: 50px;
   cursor: pointer;
   overflow: hidden;
   font-size: 1.5em;
+  margin-top:10px;
 }
 
-.button1:hover {
-  background: aquamarine;
-  color: #112434;
+.button:hover {
+  background: #112434;
+  color: #fff;
   border-radius: 50px;
   padding: 0.4em;
-  transform: translate(0px, -2px);
 }
 </style>

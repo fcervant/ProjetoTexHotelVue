@@ -1,8 +1,9 @@
 <template>
-  <div class="secReserva">
+  <div class="sec FormReserva">
       <h2>Minha Reserva</h2>
       <p>Forneça a data de entrada, saída e quantidade de pessoas.</p>
-    <div class="flex" id="formDadosReserva">
+      <p id="msgAlerta"></p>
+    <div class="flex minhaReserva" id="formDadosReserva">
       <div>
         <label for="dtEntrada">Entrada</label>
         <input type="date" id="dtEntrada" name="dtEntrada" v-model="dtEntrada" />
@@ -10,11 +11,8 @@
         <input type="date" id="dtSaida" name="dtSaida" v-model="dtSaida" />
         <label for="qtPessoas">Quantidade Pessoas</label>
         <input type="number" id="qtPessoas" name="qtPessoas" value="1" />
-        <button type="button" class="button" id="btnResumo">
-          Fechar reserva!
-        </button>
+        <button type="button" class="button" id="btnResumo">Fechar reserva!</button>
       </div>
-      <!-- manter botão aqui para agilizar os testes...-->
     </div>   
   </div>
   <hr>
@@ -167,7 +165,7 @@ export function atualizaLocalStorage() {
   localStorage.setItem("qtPessoas", qtPessoas.value);
   localStorage.setItem("tipoApto", tipoApto);
 
-  // atualiza dados na tela
+  // atualiza dados na tela PainelReserva - dados reserva
   document.getElementById("dtCheckin").innerHTML = `<b> ${localStorage.getItem(
     "dtEntrada"
   )} </b>`;
@@ -180,6 +178,19 @@ export function atualizaLocalStorage() {
   document.getElementById(
     "tipoAcomodacao"
   ).innerHTML = `<b> ${localStorage.getItem("tipoApto")} </b>`;
+
+  // atualiza dados na tela PainelReserva - dados reservas anteriores
+
+  for (var i = 0; i < localStorage.length; i++) {
+    // do something with localStorage.getItem(localStorage.key(i));
+    if (localStorage.key(i).includes("Reserva_")) {
+      console.log(
+        "Reservas anteriores",
+        localStorage.key(i),
+        localStorage.getItem(localStorage.key(i))
+      );
+    }
+  }
 
   return true;
 }
@@ -554,38 +565,37 @@ export function aplicaDesconto() {
 
 <style scoped>
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  
 }
 
-.secReserva {
+.sec {
   position: relative;
   padding: 2vw;
   transition: all 0.3s ease;
   color: black;
 }
 
-.secReserva > div{
+.sec > div{
   max-width: 90%;
   margin: 2% 5%; 
 }
-.secReserva h2,
+.sec h2,
 h2 {
   font-size: 3em;
 }
 
-.secReserva h3,
-.secReserva h4,
+.sec h3,
+.sec h4,
 h3 {
   margin-bottom: 0.5em;
   margin-top: 0.5em;
 }
 
-.secReserva p,
+.sec p,
 p {
   font-size: 1.2em;
   font-weight: 300;

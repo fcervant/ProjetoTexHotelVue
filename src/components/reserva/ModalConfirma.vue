@@ -77,7 +77,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 const bootstrap = require("bootstrap");
 
-//import { preencheModalResumo } from "./FormReserva.vue";
+// import { preencheModalResumo } from "./FormReserva.vue";
 import { createPara } from "./FormReserva.vue";
 import { cupomDesconto } from "./FormReserva.vue";
 //import { updateBindingForm } from "./FormReserva.vue";

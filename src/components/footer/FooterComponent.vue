@@ -52,6 +52,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
 }
 
 footer .redessociaisfooter img {

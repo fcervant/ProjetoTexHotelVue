@@ -18,8 +18,5 @@ export default {
 </script>
 
 <style scoped>
-.conteudo{
-  margin-top: -1%;
-}
 
 </style>

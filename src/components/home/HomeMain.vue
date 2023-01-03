@@ -195,8 +195,6 @@ export default {
 .sec {
   position: relative;
   padding: 2vw;
-  background-color: #f4f2e7;
-  background-image: linear-gradient(90deg, #f4f2e7 0%, #f7f4e9 46%, #efe5d5 100%);
   transition: all 0.3s ease;
   color: black;
 }

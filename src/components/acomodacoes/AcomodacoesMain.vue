@@ -184,8 +184,6 @@ export default {
 .sec {
     position: relative;
     padding: 2vw;
-    background-color: #f4f2e7;
-    background-image: linear-gradient(90deg, #f4f2e7 0%, #f7f4e9 46%, #efe5d5 100%);
     transition: all 0.3s ease;
     color: black;
 }
@@ -239,9 +237,9 @@ export default {
   /* CARDS de Acomodacoes...*/
   /* CARDS - MASTER */
   .acomodacoes_card_imgMaster1 {
-    background-image: url();
     background-size: cover;
     /*& h2::before {
+      background-image: url();
       content: "Premium Master Suite Quarto";
       font-size: 5pix;
       display: block;
@@ -252,9 +250,9 @@ export default {
   }
   
   #acomodacoes_card_imgMaster2 {
-    background-image: url();
     background-size: cover;
     /*& h2::before {
+      background-image: url();
       content: "Premium Master Suite Banheiro";
       font-size: 5pix;
       display: block;
@@ -265,9 +263,9 @@ export default {
   }
   
   #acomodacoes_card_imgMaster3 {
-    background-image: url();
     background-size: cover;
     /*& h2::before {
+      background-image: url();
       content: "Premium Master Suite Cozinha";
       font-size: 5pix;
       display: block;
@@ -278,9 +276,9 @@ export default {
   }
   
   #acomodacoes_card_imgMaster4 {
-    background-image: url();
     background-size: cover;
     /*& h2::before {
+      background-image: url();
       content: "Premium Master Suite Sala";
       font-size: 5pix;
       display: block;
@@ -291,9 +289,9 @@ export default {
   }
   
   #acomodacoes_card_imgMaster5 {
-    background-image: url();
     background-size: cover;
     /*& h2::before {
+      background-image: url();
       content: "Premium Master Suite Sala 2";
       font-size: 5pix;
       display: block;
@@ -304,9 +302,9 @@ export default {
   }
   
   #acomodacoes_card_imgMaster6 {
-    background-image: url();
     background-size: cover;
     /*& h2::before {
+      background-image: url();
       content: "Premium Master Suite Sacada";
       font-size: 5pix;
       display: block;
@@ -318,9 +316,9 @@ export default {
   
   /* CARDS - Familia */
   #acomodacoes_card_imgFamilia1 {
-    background-image: url();
     background-size: cover;
     /* & h2::before {
+      background-image: url();
       content: "Família Suite Quarto";
       display: block;
       background-color: rgba(0, 0, 0, 0.4);
@@ -330,9 +328,9 @@ export default {
   }
   
   #acomodacoes_card_imgFamilia2 {
-    background-image: url();
     background-size: cover;
     /* & h2::before {
+      background-image: url();
       content: "Família Suite Banheiro";
       display: block;
       background-color: rgba(0, 0, 0, 0.4);
@@ -342,9 +340,9 @@ export default {
   }
   
   #acomodacoes_card_imgFamilia3 {
-    background-image: url();
     background-size: cover;
     /* & h2::before {
+      background-image: url();
       content: "Família Suite Cozinha";
       display: block;
       background-color: rgba(0, 0, 0, 0.4);
@@ -354,9 +352,9 @@ export default {
   }
   
   #acomodacoes_card_imgFamilia4 {
-    background-image: url();
     background-size: cover;
     /* & h2::before {
+      background-image: url();
       content: "Família Suite Quarto 2";
       display: block;
       background-color: rgba(0, 0, 0, 0.4);
@@ -366,9 +364,9 @@ export default {
   }
   
   #acomodacoes_card_imgFamilia5 {
-    background-image: url();
     background-size: cover;
     /* & h2::before {
+      background-image: url();
       content: "Família Suite Quarto 3";
       display: block;
       background-color: rgba(0, 0, 0, 0.4);
@@ -378,9 +376,9 @@ export default {
   }
   
   #acomodacoes_card_imgFamilia6 {
-    background-image: url();
     background-size: cover;
     /* & h2::before {
+      background-image: url();
       content: "Família Suite Quarto 4";
       display: block;
       background-color: rgba(0, 0, 0, 0.4);
@@ -391,9 +389,9 @@ export default {
   
   /* CARDS - Single */
   #acomodacoes_card_imgSingle1 {
-    background-image: url();
     background-size: cover;
     /*& h2::before {
+      background-image: url();
       content: "Economic Single Quarto";
       display: block;
       background-color: rgba(0, 0, 0, 0.4);
@@ -403,9 +401,9 @@ export default {
   }
   
   #acomodacoes_card_imgSingle2 {
-    background-image: url();
     background-size: cover;
     /*& h2::before {
+      background-image: url();
       content: "Economic Single Cozinha";
       display: block;
       background-color: rgba(0, 0, 0, 0.4);
@@ -415,9 +413,9 @@ export default {
   }
   
   #acomodacoes_card_imgSingle3 {
-    background-image: url();
     background-size: cover;
     /*& h2::before {
+      background-image: url();
       content: "Economic Single Banheiro";
       display: block;
       background-color: rgba(0, 0, 0, 0.4);
@@ -427,9 +425,9 @@ export default {
   }
   
   #acomodacoes_card_imgSingle4 {
-    background-image: url();
     background-size: cover;
     /*& h2::before {
+      background-image: url();
       content: "Economic Single Quarto 2";
       display: block;
       background-color: rgba(0, 0, 0, 0.4);
@@ -439,9 +437,9 @@ export default {
   }
   
   #acomodacoes_card_imgSingle5 {
-    background-image: url();
     background-size: cover;
     /*& h2::before {
+      background-image: url();
       content: "Economic Single Quarto 3";
       display: block;
       background-color: rgba(0, 0, 0, 0.4);
@@ -451,9 +449,9 @@ export default {
   }
   
   #acomodacoes_card_imgSingle6 {
-    background-image: url();
     background-size: cover;
     /*& h2::before {
+      background-image: url();
       content: "Economic Single Sacada";
       display: block;
       background-color: rgba(0, 0, 0, 0.4);

@@ -31,24 +31,15 @@ export default {
 </script>
 
 <style>
-@charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
 
 .content{
-  background-color: #f4f2e7;
-  background-image: linear-gradient(90deg, #f4f2e7 0%, #f7f4e9 46%, #efe5d5 100%);  
+  margin-top: -1%;
 }
 
 body {
   overflow-x: hidden;
-  background: #fff;
+  background-color: #f4f2e7;
+  background-image: linear-gradient(90deg, #f4f2e7 0%, #f7f4e9 46%, #efe5d5 100%);
   min-height: 100vh;
 }
 
@@ -72,5 +63,6 @@ body {
   object-fit: cover;
   width: 100%;
   object-position: center;
+  
 }
 </style>

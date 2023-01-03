@@ -1,9 +1,8 @@
 <template>
+  <ModalServicos />
+  <ModalResumo />
+  <ModalMinhasReservas />
   <div class="secResumo">
-    <!-- <p>{{ msg }}</p>
-    <p>Componente PainelReserva.vue</p> -->
-    <ModalServicos />
-    <ModalResumo />
     <div><h3>Resumo da reserva</h3></div>
     <div class="flex">
       <div class="form">
@@ -22,6 +21,8 @@
           <br/>
           <button type="button" class="button" id="btnServicos">Adicionar mais serviços</button>
           <br/>
+          <button type="button" class="button" id="btnMinhasReservas">Minhas Reservas</button>
+          <br/>
           <button type="button" class="button" id="btnResumoReserva">Confirmar</button>
         </form>
       </div>
@@ -36,15 +37,24 @@ window.$ = jQuery;
 
 import ModalServicos from "./ModalServicos";
 import ModalResumo from "./ModalResumo";
+import ModalMinhasReservas from "./ModalMinhasReservas.vue";
 
 import { confirmaReserva } from "./FormReserva.vue";
 import { preencheModalResumo } from "./FormReserva.vue";
 
 export default {
   name: "PainelReserva",
-  components: { ModalServicos, ModalResumo },
+  components: { ModalServicos, ModalResumo, ModalMinhasReservas },
   props: {
     msg: String,
+  },
+  computed: {
+    reservas() {
+      return this.$store.getters.reservas;
+    },
+    servicos() {
+      return this.$store.getters.servicos;
+    },
   },
 };
 
@@ -60,16 +70,21 @@ window.$().ready(function () {
     }
   });
 });
+
+// chama modal para display das reservas anteriores
+window.$().ready(function () {
+  window.$("#btnMinhasReservas").click(function () {
+    window.$("#modalMinhasReservas").modal("show");
+  });
+});
 </script>
 
 <style scoped>
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
 .secResumo {
@@ -79,6 +94,7 @@ window.$().ready(function () {
   padding: 2vw;
   transition: all 0.3s ease;
   color: black;
+  background-color: #f4f2e7;
 }
 
 .secResumo > div{
