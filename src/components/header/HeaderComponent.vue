@@ -16,7 +16,8 @@
                                 <input class="box1" type="email" name="login" id="logindrop" />
                                 <label for="password"><strong>SENHA</strong></label>
                                 <input class="box1" type="password" name="password" id="passworddrop" />
-                                <input class="button" type="submit" value="OK" />
+                                <div><input class="button" type="submit" value="OK" /></div>
+                                
                                 <br />
                                 <router-link to="/Cadastro">Cadastre-se!</router-link>
                                 <a class="links" href="">Esqueceu sua senha?</a>
@@ -141,7 +142,6 @@ header {
     right: 0;
     width: 100%;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     z-index: 1000;
     transition: all 0.3s cubic-bezier(0.2, 1, 0.2, 1) ease;
@@ -165,14 +165,18 @@ header {
 .campologin,
 .campologindrop,
 .logedin {
-    padding: 0.5%;
+    padding: 5px 0;
+    margin: 0 20px;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 80%;
+    justify-content: center;
+    width: 100%;
     transition: all 0.3s ease;
-    align-content: center;
     flex-wrap: wrap;
+}
+
+.campologin label{
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .campologin a {
@@ -212,17 +216,17 @@ header {
 
 .navigation {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
-    padding: 1%;
+    padding: 1% 0;
+    margin: 0 20px;
     box-sizing: border-box;
     transition: all 0.3s ease;
 }
 
 .navigation div {
-    padding-left: 2%;
-    padding-right: 2%;
+    width: 120px;
+    margin: 0 auto;
 }
 
 .navigation div a {

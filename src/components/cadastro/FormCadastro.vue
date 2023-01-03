@@ -8,7 +8,7 @@
         </div>
         <div>
           <form>
-              <fieldset class="formularios">
+              <div class="formularios">
                   <br>
                   <div class="flex">
                     <div>
@@ -54,7 +54,7 @@
                     </div>
                   </div>              
                   <br>
-              </fieldset>
+                </div>
               <br>
               <button class="button" type="button" id="salvarCadastro" v-on:click="clickbutton()">Salvar Cadastro</button>
           </form>
@@ -182,5 +182,9 @@ export default{
   color: #fff;
   border-radius: 50px;
   padding: 0.4em;
+}
+
+.formularios{
+  border:solid;
 }
 </style>

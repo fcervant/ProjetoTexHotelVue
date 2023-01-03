@@ -1,11 +1,10 @@
 <template>
-  <div class="secR">
-    <div class="">
-      <div>
-        <FormReserva />
-      </div>
+  <div class="sec">
+    <div>
+      <FormReserva />
     </div>
-    <div id="painelEsquerdo" class="row justify-content-left">
+    <hr>
+    <div id="painelEsquerdo" class="row justify-content-left flex">
       <div class="col-7">
         <PainelAcomodacoes />
       </div>
@@ -39,26 +38,34 @@ export default {
 
 <style scoped>
 @charset "UTF-8";
-
-.secR {
-  margin-top: -1%;
-  background-color: #f4f2e7;
-  background-image: linear-gradient(90deg, #f4f2e7 0%, #f7f4e9 46%, #efe5d5 100%);
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.secR > div{
+.sec {
+  position: relative;
+  padding: 2vw;
+  transition: all 0.3s ease;
+  color: black;
+}
+
+.sec > div{
   max-width: 90%;
   margin: 2% 5%; 
 }
 
-.flexR{
+.flex{
   display: flex;
   flex-wrap: wrap;
   max-width: 90%;
   margin: 0 5%;  
 }
 
-.flexR > div{
+.flex > div{
   flex: 1 1 420px;
   margin: 10px;
 }

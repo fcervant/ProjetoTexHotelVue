@@ -42,70 +42,64 @@ export default {
 
 
 <style scoped>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-    }
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
 
-    body {
-        overflow-x: hidden;
-        background: #fff;
-        min-height: 100vh;
-    }
+.sec {
+    position: relative;
+    padding: 2vw;
+    background: #112434;
+    transition: all 0.3s ease;
+}
 
-    .sec {
-        position: relative;
-        padding: 2vw;
-        background: #112434;
-        transition: all 0.3s ease;
-    }
-    
-    .sec h2 {
-        font-size: 3em;
-        color: #fff;
-        margin-bottom: 1em;
-    }
+.sec h2 {
+    font-size: 3em;
+    color: #fff;
+    margin-bottom: 1em;
+}
 
-    .sec h3 {
-        color: #fff;
-        margin-bottom: 1em;
-    }
+.sec h3 {
+    color: #fff;
+    margin-bottom: 1em;
+}
 
-    .sec h4 {
-        color: #fff;
-        margin-bottom: 1em;
-    }
+.sec h4 {
+    color: #fff;
+    margin-bottom: 1em;
+}
 
-    .sec q {
-        color: #fff;
-    }
+.sec q {
+    color: #fff;
+}
 
-    .sec p {
-        font-size: 1em;
-        color: #fff;
-        font-weight: 300;
-    }
+.sec p {
+    font-size: 1em;
+    color: #fff;
+    font-weight: 300;
+}
 
-    .sec img,
-    .sec iframe {
-        width: 35vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: left;
-        align-items: left;
-    }
+.sec img,
+.sec iframe {
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+}
 
-    .formularios {
-        background-color: #112434;
-        color: #fff;
-        padding: 10px;
-        font-size: 1.25rem;
-    }
+.formularios {
+    background-color: #112434;
+    color: #fff;
+    padding: 10px;
+    font-size: 1.25rem;
+}
 
-    .formularios li {
-         list-style-type: none;
-    }
-
+.formularios li {
+     list-style-type: none;
+}
 </style>

@@ -1,6 +1,5 @@
 <template>
-  <div class="sec">
-
+  <div>
     <!-- Modal Confirma -->
     <div class="modal" tabindex="-1" id="modalConfirma">
       <div class="modal-dialog modal-lg">

@@ -1,8 +1,9 @@
 <template>
-  <div class="sec FormReserva">
-      <h2>Minha Reserva</h2>
+    <div>
+      <h2>RESERVAS</h2>
       <p>Forneça a data de entrada, saída e quantidade de pessoas.</p>
       <p id="msgAlerta"></p>
+    </div>
     <div class="flex minhaReserva" id="formDadosReserva">
       <div>
         <label for="dtEntrada">Entrada</label>
@@ -14,8 +15,6 @@
         <button type="button" class="button" id="btnResumo">Fechar reserva!</button>
       </div>
     </div>   
-  </div>
-  <hr>
 </template>
 
 <script>
@@ -565,11 +564,12 @@ export function aplicaDesconto() {
 
 <style scoped>
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
+  font-family: "Poppins", sans-serif;
 }
 
 .sec {
