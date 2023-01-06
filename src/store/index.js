@@ -85,7 +85,6 @@ export default createStore({
     reservas: [
       {
         dtReserva: "28/12/2022",
-
         codCliente: "cod Cliente",
         dtEntrada: "28/12/2022",
         dtSaida: "29/12/2022",
@@ -93,6 +92,26 @@ export default createStore({
         tipoApto: "master",
         diarias: "1",
         vlrTotal: "R$ 1.200,00",
+        vlrTotalcomDesconto: "R$ 1.200,00",
+        cupom: "drbuosa",
+        servicos: [
+          { id: "1001", servico: "Regular", vlrServico: "Valor Servico" },
+          { id: "1002", servico: "Regular", vlrServico: "Valor Servico" },
+          { id: "1003", servico: "Regular", vlrServico: "Valor Servico" },
+          { id: "1004", servico: "Regular", vlrServico: "Valor Servico" },
+          { id: "1005", servico: "Regular", vlrServico: "Valor Servico" },
+        ],
+      },
+      {
+        dtReserva: "04/01/2023",
+
+        codCliente: "cod Cliente",
+        dtEntrada: "05/01/2023",
+        dtSaida: "09/01/2023",
+        qtPessoas: "2",
+        tipoApto: "family",
+        diarias: "3",
+        vlrTotal: "R$ 2.200,00",
         vlrTotalcomDesconto: "R$ 1.200,00",
         cupom: "drbuosa",
         servicos: [

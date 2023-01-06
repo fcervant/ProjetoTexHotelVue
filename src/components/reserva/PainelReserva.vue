@@ -18,12 +18,28 @@
           <br />
           <h4>Pessoas</h4>
           <p id="qtHospedes">qtHospedes</p>
-          <br/>
-          <button type="button" class="button" id="btnServicos">Adicionar serviços</button>
-          <br/>
-          <button type="button" class="button" id="btnMinhasReservas">Minhas Reservas</button>
-          <br/>
-          <button type="button" class="button" id="btnResumoReserva">Confirmar</button>
+          <br />
+          <button type="button" class="button" id="btnServicos">
+            Adicionar serviços
+          </button>
+          <br />
+          <button
+            type="button"
+            class="button"
+            id="btnMinhasReservas"
+            ref="btnMinhasReservas"
+          >
+            Minhas Reservas
+          </button>
+          <br />
+          <button
+            type="button"
+            class="button"
+            id="btnResumoReserva"
+            ref="btnResumoReserva"
+          >
+            Confirmar
+          </button>
         </form>
       </div>
     </div>
@@ -55,6 +71,20 @@ export default {
       return this.$store.getters.servicos;
     },
   },
+  mounted() {
+    // verifica se usuario esta logado para ativar botão "Minhas Reservas"
+    console.log("Entrei no mounted - PainelReserva");
+    if (localStorage.getItem("loginStatus") === "1") {
+      console.log("Entrei no mounted - PainelReserva - tá logado");
+      //this.$refs.btnMinhasReservas.setAttribute("hidden", "false");
+      this.$refs.btnMinhasReservas.style.visibility = "visible";
+    } else {
+      console.log("Entrei no mounted - PainelReserva - não tá logado");
+      //this.$refs.btnMinhasReservas.setAttribute("hidden", "true");
+      this.$refs.btnMinhasReservas.style.visibility = "hidden";
+    }
+    this.$forceUpdate();
+  },
 };
 
 // confirmação da reserva e display da modal de confirmação
@@ -72,6 +102,7 @@ window.$().ready(function () {
 
 // chama modal para display das reservas anteriores
 window.$().ready(function () {
+  console.log("Cliquei em MinhasResevas");
   window.$("#btnMinhasReservas").click(function () {
     window.$("#modalMinhasReservas").modal("show");
   });
@@ -89,7 +120,7 @@ window.$().ready(function () {
 }
 
 .secResumo {
-  border-color:black ;
+  border-color: black;
   border-style: solid;
   position: relative;
   padding: 2vw;
@@ -98,9 +129,9 @@ window.$().ready(function () {
   background-color: #f4f2e7;
 }
 
-.secResumo > div{
+.secResumo > div {
   max-width: 90%;
-  margin: 2% 5%; 
+  margin: 2% 5%;
 }
 .secResumo h2 {
   font-size: 3em;
@@ -117,21 +148,21 @@ window.$().ready(function () {
   font-weight: 300;
 }
 
-img{
+img {
   width: 523px;
   height: 294px;
   display: block;
   border-radius: 20px;
 }
 
-.flex{
+.flex {
   display: flex;
   flex-wrap: wrap;
   max-width: 90%;
-  margin: 0 5%; 
+  margin: 0 5%;
 }
 
-.flex > div{
+.flex > div {
   flex: 1 1 420px;
   margin: 10px;
 }
@@ -157,7 +188,7 @@ a {
   cursor: pointer;
   overflow: hidden;
   font-size: 1.5em;
-  margin-top:10px;
+  margin-top: 10px;
 }
 
 .button:hover {
