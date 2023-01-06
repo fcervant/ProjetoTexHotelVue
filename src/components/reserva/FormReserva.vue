@@ -405,7 +405,7 @@ export function gravaReserva() {
   localStorage.setItem("reservaId", novoId);
   let ReservaAux = `"[{"dtReserva": "${dtReserva}",
 
-	"codCliente": "cod Cliente",
+	"codCliente": ${localStorage.getItem("loged")},
 	"dtEntrada": "${dateStart}",
 	"dtSaida": "${dateEnd}",
 	"qtPessoas":"${qtPessoas}",

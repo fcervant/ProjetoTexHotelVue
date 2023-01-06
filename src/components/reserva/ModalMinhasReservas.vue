@@ -14,7 +14,7 @@
         </div>
         <div class="modal-body">
           <!-- INÍCIO DO CONTEÚDO ajustado para trazer da store...-->
-          <h4>Suas ultimas reservas</h4>
+          <h4>Suas ultimas reservas, {{ userLoged }}</h4>
           <div class="ultimasReservas">
             <table class="tableReserva">
               <thead>
@@ -39,7 +39,7 @@
               <tbody>
                 <tr
                   class="ultimasReservas"
-                  v-for="item in reservas"
+                  v-for="item in reservas2"
                   :key="item"
                 >
                   <td>{{ item.dtReserva }}</td>
@@ -82,6 +82,7 @@ export default {
   data() {
     return {
       // informações que podem ser utilizadas no template...
+      userLoged: localStorage.getItem("loged"),
     };
   },
   methods: {
@@ -101,6 +102,59 @@ export default {
   computed: {
     reservas() {
       return this.$store.getters.reservas;
+    },
+    reservas2() {
+      let arrayReservas = []
+      arrayReservas.push(localStorage.getItem("Reserva_1"));
+      arrayReservas.push(localStorage.getItem("Reserva_2"));
+      console.log("ArrayReservas", arrayReservas);
+      let teste = JSON.stringify(localStorage.getItem("Reserva_1"))
+      console.log("Teste",teste)
+      for (var i = 0; i < localStorage.length; i++) {
+        // do something with localStorage.getItem(localStorage.key(i));
+        // console.log("Reservas2 localStorage Key",localStorage.key(i))
+        if (localStorage.key(i).includes("Reserva_")) {
+          console.log(
+            "Reservas 2 Computed modal - Reservas anteriores",
+            localStorage.key(i),
+            localStorage.getItem(localStorage.key(i))
+          );
+          // console.log("dtReserva",localStorage.getItem(localStorage.key(i)))
+          // console.log("Array",JSON.stringify(localStorage.getItem(localStorage.key(i))).dtEntrada)
+        }
+      }
+
+      // <td>{{ item.dtReserva }}</td>
+      // <td>{{ item.dtCheckIn }}</td>
+      // <td>{{ item.dtCheckOut }}</td>
+      // <td>{{ item.qtPessoas }}</td>
+      // <td>{{ item.vlrTotal }}</td>
+      // dtReserva: item.dtReserva,
+      // dtCheckIn: item.dtEntrada,
+      // dtCheckOut: item.dtSaida,
+      // qtPessoas: item.qtPessoas,
+      // vlrTotal: item.vlrTotalcomDesconto,
+      let arrayTeste = [
+        {
+          dtReserva: "04/01/2023",
+          codCliente: "cod Cliente",
+          dtCheckIn: "05/01/2023",
+          dtCheckOut: "09/01/2023",
+          qtPessoas: "2",
+          tipoApto: "family",
+          vlrTotal: "R$ 2.200,00",
+        },
+        {
+          dtReserva: "05/01/2023",
+          codCliente: "cod Cliente",
+          dtCheckIn: "06/01/2023",
+          dtCheckOut: "12/01/2023",
+          qtPessoas: "2",
+          tipoApto: "family",
+          vlrTotal: "R$ 3.200,00",
+        },
+      ];
+      return arrayTeste;
     },
   },
   mounted() {
