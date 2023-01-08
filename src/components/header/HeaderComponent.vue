@@ -9,7 +9,7 @@
           <ul>
             <li><a href="" class="active">Home</a></li>
             <li><a href="">Acomodações</a></li>
-            <li><a href="">RESERVAS</a></li>
+            <li><a href="">Reservas</a></li>
             <div class="campologindrop">
               <form action="campologin" method="post">
                 <label for="login"><strong>USUARIO</strong></label>
@@ -34,7 +34,7 @@
       <div id="inicio" class="navigation">
         <div><router-link to="/">Home</router-link></div>
         <div><router-link to="/Acomodacoes">Acomodações</router-link></div>
-        <div><router-link to="/Reservas">RESERVAS</router-link></div>
+        <div><router-link to="/Reservas">Reservas</router-link></div>
       </div>
       <div class="campologin">
         <form action="campologin" method="post">
@@ -74,6 +74,8 @@
 </template>
 
 <script>
+console.log("HeaderComponent script...");
+
 export default {
   name: "HeaderComponent",
   data() {
@@ -97,7 +99,8 @@ export default {
           let logedOn = 1;
           localStorage.setItem("loged", login);
           localStorage.setItem("loginStatus", logedOn);
-          this.logedin = localStorage.getItem("logedin");
+          //this.logedin = localStorage.getItem("logedin");
+          this.logedin = localStorage.getItem("loginStatus");
           alert("Logado com sucesso!");
           this.showHide(".logedin", "remove");
           this.showHide(".campologin", "add");
@@ -111,7 +114,8 @@ export default {
           let logedOn = 1;
           localStorage.setItem("loged", login);
           localStorage.setItem("loginStatus", logedOn);
-          this.logedin = localStorage.getItem("logedin");
+          // this.logedin = localStorage.getItem("logedin");
+          this.logedin = localStorage.getItem("loginStatus");
           alert("Logado com sucesso!");
           this.showHide(".logedin", "remove");
           this.showHide(".campologin", "add");
@@ -121,6 +125,7 @@ export default {
       } else {
         alert("È preciso preencher os campos de login e senha");
       }
+      console.log("FRC Methods...");
       console.log(this.loged);
     },
 
@@ -140,13 +145,32 @@ export default {
     },
 
     loginCheck() {
-      if (this.logedin == 1) {
+      //  if (this.logedin == 1) {
+      if (localStorage.getItem("loginStatus") === 1) {
         this.showHide(".campologin", "add");
         this.showHide(".logedin", "remove");
         console.log("ok");
-        document.getElementById("user").innerText = `Olá ${localStorage.getItem("loged")}`;
+        document.getElementById("user").innerText = `Olá ${localStorage.getItem(
+          "loged"
+        )}`;
       }
     },
+  },
+  mounted() {
+    // this.loginCheck();
+    // verifica se usuario esta logado para ativar botão "Minhas Reservas"
+    console.log("Entrei no mounted - HeaderComponent");
+    if (localStorage.getItem("loginStatus") === "1") {
+      console.log("Entrei no mounted - HeaderComponent - tá logado");
+      this.showHide(".campologin", "add");
+      this.showHide(".logedin", "remove");
+      console.log("ok");
+      document.getElementById("user").innerText = `Olá ${localStorage.getItem(
+        "loged"
+      )}`;
+    } else {
+      console.log("Entrei no mounted - HeaderComponent - não tá logado");
+    }
   },
 };
 </script>

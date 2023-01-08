@@ -63,6 +63,15 @@ export default {
   props: {
     msg: String,
   },
+    methods: {
+    // força refresh do componente...
+    // https://michaelnthiessen.com/force-re-render/
+    methodThatForcesUpdate() {
+      // ...
+      this.$forceUpdate(); // Notice we have to use a $ here
+      // ...
+    },
+  },
   computed: {
     reservas() {
       return this.$store.getters.reservas;
@@ -83,7 +92,6 @@ export default {
       //this.$refs.btnMinhasReservas.setAttribute("hidden", "true");
       this.$refs.btnMinhasReservas.style.visibility = "hidden";
     }
-    this.$forceUpdate();
   },
 };
 

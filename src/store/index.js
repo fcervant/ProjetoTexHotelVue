@@ -94,13 +94,6 @@ export default createStore({
         vlrTotal: "R$ 1.200,00",
         vlrTotalcomDesconto: "R$ 1.200,00",
         cupom: "drbuosa",
-        servicos: [
-          { id: "1001", servico: "Regular", vlrServico: "Valor Servico" },
-          { id: "1002", servico: "Regular", vlrServico: "Valor Servico" },
-          { id: "1003", servico: "Regular", vlrServico: "Valor Servico" },
-          { id: "1004", servico: "Regular", vlrServico: "Valor Servico" },
-          { id: "1005", servico: "Regular", vlrServico: "Valor Servico" },
-        ],
       },
       {
         dtReserva: "04/01/2023",
@@ -114,13 +107,6 @@ export default createStore({
         vlrTotal: "R$ 2.200,00",
         vlrTotalcomDesconto: "R$ 1.200,00",
         cupom: "drbuosa",
-        servicos: [
-          { id: "1001", servico: "Regular", vlrServico: "Valor Servico" },
-          { id: "1002", servico: "Regular", vlrServico: "Valor Servico" },
-          { id: "1003", servico: "Regular", vlrServico: "Valor Servico" },
-          { id: "1004", servico: "Regular", vlrServico: "Valor Servico" },
-          { id: "1005", servico: "Regular", vlrServico: "Valor Servico" },
-        ],
       },
     ],
     reservas2: {
@@ -243,3 +229,11 @@ export default createStore({
   },
   modules: {},
 });
+
+        // servicos: [
+        //   { id: "1001", servico: "Regular", vlrServico: "Valor Servico" },
+        //   { id: "1002", servico: "Regular", vlrServico: "Valor Servico" },
+        //   { id: "1003", servico: "Regular", vlrServico: "Valor Servico" },
+        //   { id: "1004", servico: "Regular", vlrServico: "Valor Servico" },
+        //   { id: "1005", servico: "Regular", vlrServico: "Valor Servico" },
+        // ],

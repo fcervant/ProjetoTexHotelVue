@@ -47,6 +47,7 @@
                   <td>{{ item.dtCheckOut }}</td>
                   <td>{{ item.qtPessoas }}</td>
                   <td>{{ item.vlrTotal }}</td>
+                  <td><a class="links" href="">Comentário</a></td>
                 </tr>
               </tbody>
             </table>
@@ -95,6 +96,15 @@ export default {
       );
       return modal;
     },
+    
+    // força refresh do componente...
+    // https://michaelnthiessen.com/force-re-render/
+    methodThatForcesUpdate() {
+      // ...
+      this.$forceUpdate(); // Notice we have to use a $ here
+      // ...
+    },
+    
     alerta() {
       //
     },
@@ -104,12 +114,23 @@ export default {
       return this.$store.getters.reservas;
     },
     reservas2() {
-      let arrayReservas = []
-      arrayReservas.push(localStorage.getItem("Reserva_1"));
-      arrayReservas.push(localStorage.getItem("Reserva_2"));
-      console.log("ArrayReservas", arrayReservas);
-      let teste = JSON.stringify(localStorage.getItem("Reserva_1"))
-      console.log("Teste",teste)
+      //let arrayReservas = [];
+      //let arrayReservas = localStorage.getItem("Reserva_1");
+      //console.log("ModalMinhasReservas computed reservas2", arrayReservas);
+      //console.log("ModalMinhasReservas computed reservas2", arrayReservas[0]);
+      //var msg = JSON.parse('{"canApprove": true,"hasDisplayed": false}');
+      //alert(msg.canApprove);  //shows true.
+      //var msg = JSON.parse('{"canApprove": "bosta","hasDisplayed": "merda"}');
+      //var msg2=JSON.parse('{"dtReserva":"07/01/2023","codCliente":"fcervant@gmail.com","dtEntrada":"07/01/2023","dtSaida":"09/01/2023","qtPessoas":"2","tipoApto":"master","diarias":"2","vlrTotal":"R$ 2.400,00","vlrTotalcomDesconto":"R$ 2.400,00","cupom":"k155gcd"}');
+      //var msg3=arrayReservas
+      // var msg2=JSON.parse('{"dtReserva": "07/01/2023","codCliente": "fcervant@gmail.com"}');
+      //console.log("ModalMinhasReservas computed reservas2 msg", msg.canApprove);
+      //console.log("ModalMinhasReservas computed reservas2 msg2", msg2.codCliente);
+      //console.log("ModalMinhasReservas computed reservas2 msg3", msg3,msg3.codCliente);
+      // arrayReservas.push(localStorage.getItem("Reserva_2"));
+      // console.log("ArrayReservas", arrayReservas);
+      // let teste = JSON.stringify(localStorage.getItem("Reserva_1"))
+      // console.log("Teste",teste)
       for (var i = 0; i < localStorage.length; i++) {
         // do something with localStorage.getItem(localStorage.key(i));
         // console.log("Reservas2 localStorage Key",localStorage.key(i))
@@ -229,5 +250,11 @@ td {
 
 .tableReserva tr:nth-child(even) td {
   background: #f8f6ff;
+}
+
+.tableReserva .links {
+  text-decoration: none;
+  color: black;
+  padding: 0.4em;
 }
 </style>
