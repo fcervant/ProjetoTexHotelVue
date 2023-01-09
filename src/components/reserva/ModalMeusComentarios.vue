@@ -1,7 +1,6 @@
 <template>
-  <!-- Modal MinhasReservas -->
-  <ModalMeusComentarios />
-  <div class="modal" tabindex="-1" id="modalMinhasReservas">
+  <!-- Modal Meuscomentarios -->
+  <div class="modal" tabindex="-1" id="modalMeusComentarios">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -15,8 +14,8 @@
         </div>
         <div class="modal-body">
           <!-- INÍCIO DO CONTEÚDO ajustado para trazer da store...-->
-          <h4>Suas ultimas reservas, {{ userLoged }}</h4>
-          <div class="ultimasReservas">
+          <h4>{{ userLoged }}, insira aqui seus comentários e sua avaliação!</h4>
+          <div class="comentarios">
             <table class="tableReserva">
               <thead>
                 <tr>
@@ -48,7 +47,7 @@
                   <td>{{ item.dtCheckOut }}</td>
                   <td>{{ item.qtPessoas }}</td>
                   <td>{{ item.vlrTotal }}</td>
-                  <td><a id="comentario" class="links" href="">Comentário</a></td>
+                  <td><a class="links" href="">Comentário</a></td>
                 </tr>
               </tbody>
             </table>
@@ -63,7 +62,7 @@
       </div>
     </div>
   </div>
-  <!-- Fim Modal MinhasReservas -->
+  <!-- Fim Modal MeusComentarios -->
 </template>
 
 <script>
@@ -71,15 +70,12 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 const bootstrap = require("bootstrap");
 
-import ModalMeusComentarios from "./ModalMeusComentarios.vue";
-
 var jQuery = require("jquery");
 window.jQuery = jQuery;
 window.$ = jQuery;
 
 export default {
   name: "ModalView",
-    components: { ModalMeusComentarios },
   props: {
     // properties que vem da view que irá chamar o componente...
     msg: String,
@@ -93,7 +89,7 @@ export default {
   methods: {
     abreModal() {
       var modal = new bootstrap.Modal(
-        document.querySelector("#modalMinhasReservas"),
+        document.querySelector("#modalMeusComentarios"),
         {
           keyboard: false,
         }
@@ -127,6 +123,14 @@ export default {
       for (i = 0; i < localStorage.length; i++) {
         // verifica reservas anteriores...
         if (localStorage.key(i).includes("Reserva_")) {
+          console.log(
+            "Reservas2 Computed modal - Reservas anteriores",
+            localStorage.key(i),
+            localStorage.getItem(localStorage.key(i))
+          );
+          //arrayReservaLS.push(
+          //  JSON.parse(localStorage.getItem(localStorage.key(i)))
+          //);
           arrayAux = JSON.parse(localStorage.getItem(localStorage.key(i)));
           (el = {
             dtReserva: `${arrayAux[0].dtReserva}`,
@@ -147,15 +151,6 @@ export default {
     //
   },
 };
-
-// confirmação da reserva e display da modal de confirmação
-window.$().ready(function () {
-  window.$("#comentario").click(function () {
-      console.log("Cliquei em comentario")
-      window.$("#modalMeusComentarios").modal("show");
-  });
-});
-
 </script>
 
 <style scoped>
@@ -232,22 +227,3 @@ td {
   padding: 0.4em;
 }
 </style>
-
-<!-- // exemplo de utilização de arrays / json usando localStorage
-// https://stackoverflow.com/questions/29123251/how-to-store-and-fetch-data-from-array-using-localstorage-in-javascript/29123824#29123824
-var existingArray = [
-  { id: 1, country: "Country1", url: "example.com" },
-  { id: 2, country: "Country2", url: "example2.com" },
-];
-
-localStorage.setItem("myEventsArray", JSON.stringify(existingArray));
-
-/* on pageLoad */
-var pageLoadArray = [];
-var storedString = localStorage.getItem("myEventsArray");
-if (storedString) {
-  pageLoadArray = JSON.parse(storedString);
-  if (pageLoadArray.length) {
-    console.log("pageLoadArray", pageLoadArray, pageLoadArray[0].country);
-  }
-} -->

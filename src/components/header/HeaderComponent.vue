@@ -74,7 +74,6 @@
 </template>
 
 <script>
-console.log("HeaderComponent script...");
 
 export default {
   name: "HeaderComponent",
@@ -125,8 +124,6 @@ export default {
       } else {
         alert("È preciso preencher os campos de login e senha");
       }
-      console.log("FRC Methods...");
-      console.log(this.loged);
     },
 
     showHide(obj, action) {
@@ -159,17 +156,13 @@ export default {
   mounted() {
     // this.loginCheck();
     // verifica se usuario esta logado para ativar botão "Minhas Reservas"
-    console.log("Entrei no mounted - HeaderComponent");
     if (localStorage.getItem("loginStatus") === "1") {
-      console.log("Entrei no mounted - HeaderComponent - tá logado");
       this.showHide(".campologin", "add");
       this.showHide(".logedin", "remove");
       console.log("ok");
       document.getElementById("user").innerText = `Olá ${localStorage.getItem(
         "loged"
       )}`;
-    } else {
-      console.log("Entrei no mounted - HeaderComponent - não tá logado");
     }
   },
 };

@@ -82,13 +82,10 @@ export default {
   },
   mounted() {
     // verifica se usuario esta logado para ativar botão "Minhas Reservas"
-    console.log("Entrei no mounted - PainelReserva");
     if (localStorage.getItem("loginStatus") === "1") {
-      console.log("Entrei no mounted - PainelReserva - tá logado");
       //this.$refs.btnMinhasReservas.setAttribute("hidden", "false");
       this.$refs.btnMinhasReservas.style.visibility = "visible";
     } else {
-      console.log("Entrei no mounted - PainelReserva - não tá logado");
       //this.$refs.btnMinhasReservas.setAttribute("hidden", "true");
       this.$refs.btnMinhasReservas.style.visibility = "hidden";
     }
@@ -110,7 +107,6 @@ window.$().ready(function () {
 
 // chama modal para display das reservas anteriores
 window.$().ready(function () {
-  console.log("Cliquei em MinhasResevas");
   window.$("#btnMinhasReservas").click(function () {
     window.$("#modalMinhasReservas").modal("show");
   });

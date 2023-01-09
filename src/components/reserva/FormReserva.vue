@@ -135,7 +135,6 @@ export function atualizaLocalStorage() {
 
   // inicializa cupomDesconto para primeira utilização...checar depois para incluir a data tb.
   if (localStorage.getItem("cupomDescontoValido") == null) {
-    console.log("Atualizei a primeira vez o cupomDescontoValido, para OK...");
     localStorage.setItem("cupomDescontoValido", "OK");
   }
 
@@ -179,19 +178,6 @@ export function atualizaLocalStorage() {
   document.getElementById(
     "tipoAcomodacao"
   ).innerHTML = `<b> ${localStorage.getItem("tipoApto")} </b>`;
-
-  // atualiza dados na tela PainelReserva - dados reservas anteriores
-
-  for (var i = 0; i < localStorage.length; i++) {
-    // do something with localStorage.getItem(localStorage.key(i));
-    if (localStorage.key(i).includes("Reserva_")) {
-      console.log(
-        "Reservas anteriores",
-        localStorage.key(i),
-        localStorage.getItem(localStorage.key(i))
-      );
-    }
-  }
 
   return true;
 }
@@ -238,9 +224,15 @@ export function checkInfo() {
   qtPessoas = localStorage.getItem("qtPessoas");
   tipoApto = localStorage.getItem("tipoapto");
 
+  if (localStorage.getItem("loginStatus") != "1") {
+      alert("Você precisa estar logado para concluir a reserva!");
+      msgReturn = [false, "Você precisa estar logado para concluir a reserva!"];
+  }
+
   if (checkData(dtEntrada) || checkData(dtSaida)) {
     msgReturn = [false, "Datas de entrada e/ou saída inválidas"];
   }
+  
   let dataReserva = localStorage.getItem("dtReserva");
 
   if (
@@ -402,16 +394,10 @@ export function gravaReserva() {
     // verifica ultimo id para definir id da reserva a partir do mesmo
     novoId = parseInt(localStorage.getItem("reservaId")) + 1;
   }
-  // console.log("novoId", novoId);
 
   localStorage.setItem("reservaId", novoId);
-  let ReservaAux = `[{"dtReserva": "${dtReserva}","codCliente": "${localStorage.getItem("loged")}","dtEntrada": "${dateStart}","dtSaida": "${dateEnd}","qtPessoas": "${qtPessoas}","tipoApto": "${tipoApto}","diarias": "${difDates}","vlrTotal": "${vlrTotal}","vlrTotalcomDesconto": "${vlrTotalcomDesconto}","cupom": "${cupom}"}]`;
+  let ReservaAux = [{"dtReserva": `${dtReserva}`,"codCliente": `${localStorage.getItem("loged")}`,"dtEntrada": `${dateStart}`,"dtSaida": `${dateEnd}`,"qtPessoas": `${qtPessoas}`,"tipoApto": `${tipoApto}`,"diarias": `${difDates}`,"vlrTotal": `${vlrTotal}`,"vlrTotalcomDesconto": `${vlrTotalcomDesconto}`,"cupom": `${cupom}`}];
   localStorage.setItem(`Reserva_${novoId}`, JSON.stringify(ReservaAux));
-  // console.log(`GravaReserva Reserva_${novoId}`, localStorage.getItem(`Reserva_${novoId}`));
-  // console.log(`GravaReserva Reserva_${novoId}`, JSON.parse(localStorage.getItem(`Reserva_${novoId}`)));
-  // let myArray = JSON.parse(localStorage.getItem(`Reserva_${novoId}`))
-  // console.log(`GravaReserva myArray Reserva_${novoId}`,myArray)
-  // console.log(`GravaReserva myArray dtEntradaReserva_${novoId}`,myArray[0].dtEntrada)
   limpaLocalStorage();
 
   return true;
@@ -520,8 +506,6 @@ export function preencheModalResumo() {
   paraTexto =
     "Total geral: " + localStorage.getItem("valorTotalGeral") + "<br />";
   document.getElementById("total").appendChild(createPara(paraTexto));
-
-  console.log("Chamei a preencheModalResumo...");
 
   return true;
 }
