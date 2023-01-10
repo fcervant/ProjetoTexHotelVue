@@ -396,7 +396,7 @@ export function gravaReserva() {
   }
 
   localStorage.setItem("reservaId", novoId);
-  let ReservaAux = [{"dtReserva": `${dtReserva}`,"codCliente": `${localStorage.getItem("loged")}`,"dtEntrada": `${dateStart}`,"dtSaida": `${dateEnd}`,"qtPessoas": `${qtPessoas}`,"tipoApto": `${tipoApto}`,"diarias": `${difDates}`,"vlrTotal": `${vlrTotal}`,"vlrTotalcomDesconto": `${vlrTotalcomDesconto}`,"cupom": `${cupom}`}];
+  let ReservaAux = [{"reservaId": `Reserva_${novoId}`, "dtReserva": `${dtReserva}`,"codCliente": `${localStorage.getItem("loged")}`,"dtEntrada": `${dateStart}`,"dtSaida": `${dateEnd}`,"qtPessoas": `${qtPessoas}`,"tipoApto": `${tipoApto}`,"diarias": `${difDates}`,"vlrTotal": `${vlrTotal}`,"vlrTotalcomDesconto": `${vlrTotalcomDesconto}`,"cupom": `${cupom}`}];
   localStorage.setItem(`Reserva_${novoId}`, JSON.stringify(ReservaAux));
   limpaLocalStorage();
 
