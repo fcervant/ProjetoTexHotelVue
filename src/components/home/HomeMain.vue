@@ -22,7 +22,7 @@
       <div class="flex">
         <div>
           <h3>Gazebos</h3>
-          <a href="/root/pages/formulario.html#/Reservas"><img src="@/assets/gazebo.jpg" alt="gazebos"></a>
+          <a href="/root/pages/formulario.html#/Reservas"><img src="@/assets/images/home/gazebo.jpg" alt="gazebos"></a>
           <p>Localizado á 50 mtrs da praia de Ubatuba, o CASA NA PRAIA possui serviços de gazebos a beira mar.
             Além de pedidos que serão preparados direto pela cozinha do Hotel, mantendo a qualidade e
             higiene
@@ -30,33 +30,33 @@
         </div>
         <div>
           <h3>Piscinas-Bar</h3>
-          <a href="/root/pages/formulario.html#/Reservas"><img src="@/assets/piscinas-bar.jpg" alt="piscinas-bar"></a>
+          <a href="/root/pages/formulario.html#/Reservas"><img src="@/assets/images/home/piscinas-bar.jpg" alt="piscinas-bar"></a>
           <p>Anexo a piscina esta o Point bar do nosso hotel, um bar ao lado da piscina que atende aos
             hospedes de
             forma exclusiva com Drinks, Bebidas, Lanches e Porções.</p>
         </div>
         <div>
           <h3>Piscinas</h3>
-          <a href="/root/pages/formulario.html#/Reservas"><img src="@/assets/piscinas.jpg" alt="piscinas"></a>
+          <a href="/root/pages/formulario.html#/Reservas"><img src="@/assets/images/home/piscinas.jpg" alt="piscinas"></a>
           <P>Proporcionando lazer a toda familia nossa piscina é extensa é uma otima opção para quem quer
             aproveitar as ferias dentro das dependencias do Hotel com tranqilidade.</P>
         </div>
         <div>
           <h3>Lazer</h3>
-          <a href="/root/pages/formulario.html#/Reservas"> <img src="@/assets/lazer.jpg" alt="lazer"></a>
+          <a href="/root/pages/formulario.html#/Reservas"> <img src="@/assets/images/home/lazer.jpg" alt="lazer"></a>
           <p>No Hotel Casa na Praia as crianças tambem tem vez. O hotel possui um playground totalmente
             interativo, com monitores proporcionando brincadeiras e atividades para os pequenos.</p>
         </div>
         <div>
           <h3>Brinquedoteca</h3>
-          <a href="/root/pages/formulario.html#/Reservas"><img src="@/assets/brinquedoteca.jpg" alt="brinquedoteca"></a>
+          <a href="/root/pages/formulario.html#/Reservas"><img src="@/assets/images/home/brinquedoteca.jpg" alt="brinquedoteca"></a>
           <P>Na brinquedoteca as crianças aprendem brincando durante as férias. O ambiente é voltado
             totalmente
             para o entretenimento infantil, estimulando atividades individuais e em grupo.</P>
         </div>
         <div>
           <h3>Turismo</h3>
-          <a href="/root/pages/formulario.html#/Reservas"><img src="@/assets/cachoeiras.jpg" alt="cachoeiras"></a>
+          <a href="/root/pages/formulario.html#/Reservas"><img src="@/assets/images/home/cachoeiras.jpg" alt="cachoeiras"></a>
           <p>Para que nossos hospedes possam aproveitar ao maximo todas as atrações de Ubatuba, o Casa na
             Praia
             possui um programa de guia turistico proporcionando passeios únicos e inesquecíveis.</p>
@@ -73,13 +73,13 @@
       <div class="flex">
         <div>
           <h3>Saboreie nossa Culinaria</h3>
-          <a href="/root/pages/formulario.html#/Reservas"><img src="@/assets/buffet.jpg" alt="Buffet"></a>
+          <a href="/root/pages/formulario.html#/Reservas"><img src="@/assets/images/home/buffet.jpg" alt="Buffet"></a>
           <p>Um Buffet completo, entre massas, carnes, peixes e aves nossas refeições são balanceadas por
             nutricionistas especializados, para proporcionar toda a satisfação para o hóspede.</p>
         </div>
         <div>
           <h3>Lanches e Porções</h3>
-          <a href="/root/pages/formulario.html#/Reservas"><img src="@/assets/lanches.jpg" alt="lanches"></a>
+          <a href="/root/pages/formulario.html#/Reservas"><img src="@/assets/images/home/lanches.jpg" alt="lanches"></a>
           <p>Uma vasta variedade de Lanches e Porções feitos com produtos de excelente qualidade, porções
             tipicas, e lanches artesanais feitos feitos na brasa, mantendo assim o sabor natural do
             alimento
@@ -87,7 +87,7 @@
         </div>
         <div>
           <h3>Drinks e Sucos</h3>
-          <a href="/root/pages/formulario.html#/Reservas"><img src="@/assets/drinks.jpg" alt="drinks"></a>
+          <a href="/root/pages/formulario.html#/Reservas"><img src="@/assets/images/home/drinks.jpg" alt="drinks"></a>
           <p>Frutas selecionadas da mais alta qualidade diretamente do produtor, proporcionando alimentos
             frescos e saudaveis possibilitando um melhor preparo de Drinks e Sucos.</p>
         </div>
@@ -104,17 +104,17 @@
       <div class="flex">          
         <div>  
           <h3>Quarto Premium Casal</h3>  
-          <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/room3_basic.jpg" alt="Quarto03"></a>
+          <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/images/acomodacoes/premium-8.jpg" alt="Quarto03"></a>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam cumque, rerum quasi cum error reprehenderit ipsam tempora sit eveniet sequi eos in, inventore vero laborum ab. Nisi soluta ipsum magnam.</p>
         </div>  
         <div>
           <h3>Quarto Premium Solteiro</h3>  
-          <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/room4_basic.jpg" alt="Quarto01"></a>
+          <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/images/acomodacoes/aguia-6.jpg" alt="Quarto01"></a>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium eaque rem natus et reiciendis numquam veniam voluptatem aliquam, ratione optio. Quaerat nesciunt, repudiandae eaque dolores aliquam nulla necessitatibus suscipit labore?</p>
         </div>  
         <div>
           <h3>Quarto Família</h3>  
-          <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/room02_family.jpg" alt="Quarto02"></a>
+          <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/images/acomodacoes/tucanos-3.jpg" alt="Quarto02"></a>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum quo debitis nemo temporibus natus non voluptate nihil nam, illo ad cumque alias molestiae. Libero, est sed voluptas modi eos pariatur?</p>
         </div>
       </div>
@@ -128,31 +128,30 @@
         </p>
       </div>
       <div class="flex">          
-          <div class="mural">
+          <div class="">
             <h4>FÉRIAS EM FAMÍLIA</h4>
   
-            <img src="@/assets/familia.jpg" alt="familia">
+            <img src="@/assets/images/home/familia.jpg" alt="familia">
             <q> Foram as férias de nossas vidas, as crianças amaram, e o meu esposo e eu pudemos ter
               momentos
               relaxantes e ver nossos filhos se divertindo e interagindo com outras crianças, o serviço é
-              formidavel, as refeições são excelentes e com um cardapio amplamente variado </q>
-  
+              formidavel, as refeições são excelentes e com um cardapio amplamente variado </q>  
             <p>Carmen Lucia, 36 anos.</p>
           </div>
   
-          <div class="mural">
+          <div class="">
             <h4>LUA DE MEL</h4>  
-            <img src="@/assets/noivos.jpg" alt="noivos">
+            <img src="@/assets/images/home/noivos.jpg" alt="noivos">
             <q> Eu quis fazer uma surpresa para minha esposa, contratei o pacote Lua de Mel, para comemorar
               nosso casamento, ja na chegada minha esposa recebeu um lindo buque de rosas, com certeza
               voltaremos pra comemorar nossas bodas com vocês </q>
             <p>Daniel Fagundes, 29 anos.</p>
           </div>
   
-          <div class="mural">
+          <div class="">
             <h4>MELHOR IDADE</h4>
   
-            <img src="@/assets/melhor_idade.jpg" alt="melhor_idade">
+            <img src="@/assets/images/home/melhor_idade.jpg" alt="melhor_idade">
             <q> Minha filha disse mãe, vou marcar uma viajem pra senhora sair um pouco, e descobri um lugar
               com
               uma total extrutura para terceira idade, com aulas de hidroginastica, rampas de acesso e os
@@ -224,6 +223,14 @@ export default {
   flex-direction: column;
   justify-content: left;
   align-items: left;
+}
+
+mural > q {
+  width: 300px;
+}
+
+hr {
+  color:slategray;  
 }
 
 img{

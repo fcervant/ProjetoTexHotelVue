@@ -14,27 +14,27 @@
           <div class="flex">        
             <div id="acomodacoes_card_imgMaster1" class="acomodacoes_card">
               <h2 class="card__titulo_"></h2>
-              <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/room01_master.jpg" alt="Premium master" /></a>                        
+              <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/images/acomodacoes/premium-7.jpg" alt="Premium master" /></a>                        
             </div>
             <div id="acomodacoes_card_imgMaster2" class="acomodacoes_card">
               <h2 class="card__titulo_"></h2>
-              <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/room01_master.jpg" alt="Premium master" /></a>                        
+              <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/images/acomodacoes/premium-8.jpg" alt="Premium master" /></a>                        
             </div>
             <div id="acomodacoes_card_imgMaster3" class="acomodacoes_card">
               <h2 class="card__titulo_"></h2>
-              <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/room01_master.jpg" alt="Premium master" /></a>                        
+              <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/images/acomodacoes/premium-5.jpg" alt="Premium master" /></a>                        
             </div>
             <div id="acomodacoes_card_imgMaster4" class="acomodacoes_card">
               <h2 class="card__titulo_"></h2>                        
-              <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/room01_master.jpg" alt="Premium master" /></a>                        
+              <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/images/acomodacoes/premium-6.jpg" alt="Premium master" /></a>                        
             </div>
             <div id="acomodacoes_card_imgMaster5" class="acomodacoes_card">
               <h2 class="card__titulo_"></h2>
-              <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/room01_master.jpg" alt="Premium master" /></a>                        
+              <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/images/acomodacoes/premium-2.jpg" alt="Premium master" /></a>                        
             </div>
             <div id="acomodacoes_card_imgMaster6" class="acomodacoes_card">
               <h2 class="card__titulo_"></h2>
-              <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/room01_master.jpg" alt="Premium master" /></a>
+              <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/images/acomodacoes/premium-3.jpg" alt="Premium master" /></a>
             </div>
           </div>
           <div>
@@ -58,27 +58,27 @@
           <div class="flex">
             <div id="acomodacoes_card_imgFamilia1" class="acomodacoes_card">
             <h2 class="card__titulo_"></h2>
-           <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/room01_master.jpg" alt="Familia Suite" /></a>                        
+           <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/images/acomodacoes/tucanos-1.jpg" alt="Familia Suite" /></a>                        
             </div>
             <div id="acomodacoes_card_imgFamilia2" class="acomodacoes_card">
             <h2 class="card__titulo_"></h2>
-            <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/room01_master.jpg" alt="Familia Suite" /></a>
+            <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/images/acomodacoes/tucanos-2.jpg" alt="Familia Suite" /></a>
             </div>
             <div id="acomodacoes_card_imgFamilia3" class="acomodacoes_card">
             <h2 class="card__titulo_"></h2>
-            <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/room01_master.jpg" alt="Familia Suite" /></a>
+            <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/images/acomodacoes/tucanos-3.jpg" alt="Familia Suite" /></a>
             </div>
             <div id="acomodacoes_card_imgFamilia4" class="acomodacoes_card">
             <h2 class="card__titulo_"></h2>
-            <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/room01_master.jpg" alt="Familia Suite" /></a>
+            <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/images/acomodacoes/tucanos-5.jpg" alt="Familia Suite" /></a>
             </div>
             <div id="acomodacoes_card_imgFamilia5" class="acomodacoes_card">
             <h2 class="card__titulo_"></h2>
-            <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/room01_master.jpg" alt="Familia Suite" /></a>
+            <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/images/acomodacoes/tucanos-6.jpg" alt="Familia Suite" /></a>
             </div>
             <div id="acomodacoes_card_imgFamilia6" class="acomodacoes_card">
             <h2 class="card__titulo_"></h2>
-            <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/room01_master.jpg" alt="Familia Suite" /></a>
+            <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/images/acomodacoes/tucanos-4.jpg" alt="Familia Suite" /></a>
             </div>
           </div>
           <div>
@@ -99,27 +99,27 @@
           <div class="flex">
             <div id="acomodacoes_card_imgSingle1" class="acomodacoes_card">
             <h2 class="card__titulo_"></h2>
-            <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/room01_master.jpg" alt="Economic Single" /></a>
+            <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/images/acomodacoes/aguia-6.jpg" alt="Economic Single" /></a>
             </div>
             <div id="acomodacoes_card_imgSingle2" class="acomodacoes_card">
             <h2 class="card__titulo_"></h2>
-            <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/room01_master.jpg" alt="Economic Single" /></a>
+            <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/images/acomodacoes/aguia-4.jpg" alt="Economic Single" /></a>
             </div>
             <div id="acomodacoes_card_imgSingle3" class="acomodacoes_card">
             <h2 class="card__titulo_"></h2>
-            <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/room01_master.jpg" alt="Economic Single" /></a>
+            <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/images/acomodacoes/aguia-5.png" alt="Economic Single" /></a>
             </div>
             <div id="acomodacoes_card_imgSingle4" class="acomodacoes_card">
             <h2 class="card__titulo_"></h2>
-            <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/room01_master.jpg" alt="Economic Single" /></a>
+            <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/images/acomodacoes/aguia-1.jpg" alt="Economic Single" /></a>
             </div>
             <div id="acomodacoes_card_imgSingle5" class="acomodacoes_card">
             <h2 class="card__titulo_"></h2>
-            <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/room01_master.jpg" alt="Economic Single" /></a>
+            <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/images/acomodacoes/aguia-3.jpg" alt="Economic Single" /></a>
             </div>
             <div id="acomodacoes_card_imgSingle6" class="acomodacoes_card">
             <h2 class="card__titulo_"></h2>
-            <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/room01_master.jpg" alt="Economic Single" /></a>
+            <a href="/root/pages/acomodacoes.html#/Reservas"><img src="@/assets/images/acomodacoes/aguia-2.jpg" alt="Economic Single" /></a>
             </div>
           </div>
           <div>

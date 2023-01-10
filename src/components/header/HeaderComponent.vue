@@ -1,5 +1,6 @@
 <!-- Header -->
 <template>
+  <ModalSenha/>
   <nav>
     <header>
       <div class="navigation-drop">
@@ -54,9 +55,9 @@
             value="OK"
             id="btnLogin"
           />
-          <br />
-          <a href=""><router-link to="/Cadastro">Cadastre-se!</router-link></a>
-          <a class="links" href="">Esqueceu sua senha?</a>
+          <br />          
+            <a href=""><router-link to="/Cadastro">Cadastre-se!</router-link></a>
+            <a class="" data-bs-toggle="modal" href="#modalSenhaToggle" role="button">Esqueceu sua senha?</a>          
         </form>
       </div>
       <div class="logedin hide">
@@ -74,9 +75,13 @@
 </template>
 
 <script>
+import ModalSenha from '../home/ModalSenha';
 
 export default {
   name: "HeaderComponent",
+  components:{
+    ModalSenha
+  },
   data() {
     return {
       btnLogin: document.getElementById("btnLogin"),
