@@ -1,6 +1,6 @@
 <template>
   <!-- Modal MinhasReservas -->
-  <ModalMeusComentarios />
+  <!-- <ModalMeusComentarios /> -->
   <div class="modal" tabindex="-1" id="modalMinhasReservas">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -40,7 +40,7 @@
               <tbody>
                 <tr
                   class="ultimasReservas"
-                  v-for="item in reservas2"
+                  v-for="item in reservas"
                   :key="item"
                 >
                   <td>{{ item.dtReserva }}</td>
@@ -48,12 +48,71 @@
                   <td>{{ item.dtCheckOut }}</td>
                   <td>{{ item.qtPessoas }}</td>
                   <td>{{ item.vlrTotal }}</td>
-                  <td><a id="comentario" class="links" href="">Comentário</a></td>
+                  <td>
+                    <!-- <a id="comentario" class="button" href="">Comentário</a> -->
+                    <button
+                      type="button"
+                      @click="abreComentario(item)"
+                      class="btn btn-dark"
+                      id="btnAbreComentario"
+                    >
+                      Inserir comentário
+                    </button>
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
+
+        <div class="painelComentarios">
+          <div id="box03" class="boxPadrao bordaPadrao sombraPadrao">
+            <p class="labelPadrao textCenter textBold">
+              Deixe aqui seu comentário
+            </p>
+            <p id="lblReserva">Reserva: {{ reservaId }}</p>
+            <form>
+              <input
+                class="inputPadrao p-1 mtb-1 border textBold"
+                type="text"
+                placeholder="Nome"
+                id="inputNome"
+                v-model="inputNome"
+                name="nome"
+              />
+              <textarea
+                class="form-control inputPadrao p-1 mtb-1 border textBold"
+                name="mensagem"
+                id="txtMensagem"
+                v-model="txtMensagem"
+                rows="5"
+                placeholder="Comentários"
+              ></textarea>
+              <button
+                type="button"
+                @click="adComentario"
+                class="btn btn-dark"
+                id="btnComentario"
+              >
+                Confirmar
+              </button>
+            </form>
+            <div class="my-5">
+              <div
+                class="border p-3 my-2"
+                v-for="(coment, n) in comentarios"
+                :key="coment"
+              >
+                <span class="autor"
+                  ><strong>Nome: </strong>{{ coment.nome }}</span
+                >
+                <p class="my-4" id="mensagem">{{ coment.comentario }}</p>
+                <a href="#" @click.prevent="excluir(n)">Excluir</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- FINAL DO CONTEÚDO -->
       </div>
       <div class="modal-footer">
@@ -71,7 +130,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 const bootstrap = require("bootstrap");
 
-import ModalMeusComentarios from "./ModalMeusComentarios.vue";
+// import ModalMeusComentarios from "./ModalMeusComentarios.vue";
 
 var jQuery = require("jquery");
 window.jQuery = jQuery;
@@ -79,7 +138,7 @@ window.$ = jQuery;
 
 export default {
   name: "ModalView",
-    components: { ModalMeusComentarios },
+  // components: { ModalMeusComentarios },
   props: {
     // properties que vem da view que irá chamar o componente...
     msg: String,
@@ -87,7 +146,13 @@ export default {
   data() {
     return {
       // informações que podem ser utilizadas no template...
+      dadosReserva: [],
       userLoged: localStorage.getItem("loged"),
+      inputNome: "",
+      txtMensagem: "",
+      comentarios: [],
+      labelReserva: document.getElementById("lblReserva"),
+      reservaId: "",
     };
   },
   methods: {
@@ -101,6 +166,46 @@ export default {
       return modal;
     },
 
+    abreComentario(item) {
+      // console.log("Cliquei no abre comentário...ID da reserva:", item);
+      this.dadosReserva = item;
+      this.showHide(".painelComentarios", "remove");
+      this.reservaId = this.dadosReserva.reservaId;
+      console.log("thisReservaId", this.reservaId);
+    },
+
+    alerta() {
+      //
+    },
+
+    showHide(obj, action) {
+      document.querySelector(obj).classList[action]("hide");
+    },
+
+    // metodos para painel de comentarios...
+    adComentario() {
+      //document.getElementById("inputNome").innerHTML = "Reserva_X";
+      if (this.txtMensagem.trim() === "") return;
+      if (this.inputNome.trim() === "") this.inputNome = "Usuário Anônimo";
+      this.comentarios.push({
+        dtReserva: this.dadosReserva.dtReserva,
+        idReserva: this.dadosReserva.reservaId,
+        nome: this.userLoged,
+        comentario: this.txtMensagem,
+        avaliacao: 3,
+      });
+      console.log("DadosReserva:", this.dadosReserva);
+      localStorage.setItem(
+        `Coment_${this.dadosReserva.reservaId}`,
+        JSON.stringify(this.comentarios)
+      );
+      this.inputNome = "";
+      this.txtMensagem = "";
+    },
+    excluir(n) {
+      this.comentarios.splice(n, 1);
+    },
+
     // força refresh do componente...
     // https://michaelnthiessen.com/force-re-render/
     methodThatForcesUpdate() {
@@ -108,19 +213,11 @@ export default {
       this.$forceUpdate(); // Notice we have to use a $ here
       // ...
     },
-
-    alerta() {
-      //
-    },
   },
   computed: {
     reservas() {
-      return this.$store.getters.reservas;
-    },
-    reservas2() {
       // verifica campos na localStorage = Reserva_"X"
-      //let arrayReservaLS = [];
-      let arrayReservas2 = [];
+      let arrayReservas = [];
       let arrayAux = [];
       let el = "";
       let i = 0;
@@ -129,6 +226,7 @@ export default {
         if (localStorage.key(i).includes("Reserva_")) {
           arrayAux = JSON.parse(localStorage.getItem(localStorage.key(i)));
           (el = {
+            reservaId: `${arrayAux[0].reservaId}`,
             dtReserva: `${arrayAux[0].dtReserva}`,
             codCliente: `${arrayAux[0].codCliente}`,
             dtCheckIn: `${arrayAux[0].dtEntrada}`,
@@ -137,25 +235,27 @@ export default {
             tipoApto: `${arrayAux[0].tipoApto}`,
             vlrTotal: `${arrayAux[0].vlrTotalcomDesconto}`,
           }),
-            arrayReservas2.push(el);
+            arrayReservas.push(el);
         }
       }
-      return arrayReservas2;
+      return arrayReservas;
     },
   },
   mounted() {
-    //
+    // esconde o painel de comentários...
+    this.showHide(".painelComentarios", "add");
   },
 };
 
 // confirmação da reserva e display da modal de confirmação
 window.$().ready(function () {
   window.$("#comentario").click(function () {
-      console.log("Cliquei em comentario")
-      window.$("#modalMeusComentarios").modal("show");
+    console.log("Cliquei em comentario");
+    //this.showHide(".painelComentarios", "remove");
+    console.log("Cliquei em comentario pós remove...");
+    //window.$("#modalMeusComentarios").modal("show");
   });
 });
-
 </script>
 
 <style scoped>
