@@ -169,6 +169,16 @@ export default {
     abreComentario(item) {
       // console.log("Cliquei no abre comentário...ID da reserva:", item);
       this.dadosReserva = item;
+      // verifica se comentário já foi feito para a reserva selecionada, apresenta mensagem de editar se positivo
+      console.log(
+        `Coment_${this.dadosReserva.reservaId}`,
+        localStorage.getItem(`Coment_${this.dadosReserva.reservaId}`)
+      );
+      if (localStorage.getItem(`Coment_${this.dadosReserva.reservaId}`)) {
+        alert(
+          `Comentário já realizado para a reserva ${this.dadosReserva.reservaId}`
+        );
+      }
       this.showHide(".painelComentarios", "remove");
       this.reservaId = this.dadosReserva.reservaId;
       console.log("thisReservaId", this.reservaId);
@@ -201,6 +211,7 @@ export default {
       );
       this.inputNome = "";
       this.txtMensagem = "";
+      this.showHide(".painelComentarios", "add");
     },
     excluir(n) {
       this.comentarios.splice(n, 1);
@@ -223,7 +234,8 @@ export default {
       let i = 0;
       for (i = 0; i < localStorage.length; i++) {
         // verifica reservas anteriores...
-        if (localStorage.key(i).includes("Reserva_")) {
+        // if (localStorage.key(i).includes("Reserva_",0)) {
+        if (localStorage.key(i).substring(0, 8) === "Reserva_") {
           arrayAux = JSON.parse(localStorage.getItem(localStorage.key(i)));
           (el = {
             reservaId: `${arrayAux[0].reservaId}`,
